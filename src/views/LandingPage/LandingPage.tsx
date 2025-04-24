@@ -1,9 +1,12 @@
 import React from "react";
 import HeroSection from "./components/HeroSection/HeroSection";
+import TrustedBy from "./components/TrustedBy/TrustedBy";
+
 export default function LandingPage() {
   return (
-    <div className="container mx-auto max-w-7xl px-4 md:px-6 flex justify-between items-center p-4 py-16">
+    <div className="flex flex-col  py-16">
       <HeroSection />
+      <TrustedBy />
     </div>
   );
 }

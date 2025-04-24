@@ -35,7 +35,7 @@ export default function Navbar() {
           withAnimatedArrow
           arrowSize={28}
         >
-          <span className="mr-2">Contact Us</span>
+          <span>Contact Us</span>
         </Button>
       </div>
     </div>

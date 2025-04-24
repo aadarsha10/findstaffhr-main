@@ -7,7 +7,7 @@ import NameDisplayCards from "./components/NameDisplayCards";
 export default function HeroSection() {
   return (
     <div
-      className="w-full h-[calc(90vh-88px)] flex flex-col items-center relative bg-cover bg-center"
+      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-6xl px-4 md:px-6    flex flex-col items-center relative bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage.src})`,
       }}
@@ -31,13 +31,13 @@ export default function HeroSection() {
             withAnimatedArrow
             arrowSize={28}
           >
-            <span className="mr-2">Find your Sector</span>
+            <span>Find your Sector</span>
           </Button>
           <Button
             variant="withoutArrow"
             className="h-14 w-auto px-4 py-3  relative overflow-hidden font-primary text-sm font-normal group"
           >
-            <span className="mr-2">Talk to Our Team</span>
+            <span>Talk to Our Team</span>
           </Button>
         </div>
       </div>

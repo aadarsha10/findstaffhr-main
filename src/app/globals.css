@@ -10,6 +10,15 @@
   /* fonts */
   --font-primary: var(--font-be-vietnam-pro);
 
+  /* text size */
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+
   /* colors */
   --color-primary-black: #000000;
   --color-primary-gray: #334155;

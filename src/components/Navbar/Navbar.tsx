@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 export default function Navbar() {
   return (
     <div
-      className="container mx-auto max-w-6xl px-4 md:px-6 flex justify-between items-center "
+      className="container mx-auto max-w-7xl px-4 md:px-6 flex justify-between items-center "
       data-navbar
     >
       <div className="flex items-center justify-between w-full py-6">

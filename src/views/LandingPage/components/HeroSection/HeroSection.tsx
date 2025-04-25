@@ -7,7 +7,7 @@ import NameDisplayCards from "./components/NameDisplayCards";
 export default function HeroSection() {
   return (
     <div
-      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-6xl px-4 md:px-6    flex flex-col items-center relative bg-cover bg-center"
+      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-7xl px-4 md:px-6    flex flex-col items-center relative bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage.src})`,
       }}

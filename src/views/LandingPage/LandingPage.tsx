@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "./components/HeroSection/HeroSection";
 import TrustedBy from "./components/TrustedBy/TrustedBy";
 import BestSuitableJob from "./components/BestSuitableJob/BestSuitableJob";
+import OurServices from "./components/OurServices/OurServices";
 
 export default function LandingPage() {
   return (
@@ -9,6 +10,7 @@ export default function LandingPage() {
       <HeroSection />
       <TrustedBy />
       <BestSuitableJob />
+      <OurServices />
     </div>
   );
 }

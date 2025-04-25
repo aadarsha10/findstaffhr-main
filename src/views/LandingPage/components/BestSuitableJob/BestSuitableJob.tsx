@@ -7,7 +7,7 @@ export default function BestSuitableJob() {
   const [activeImage, setActiveImage] = useState(1);
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 md:px-6 flex flex-col items-center py-24 w-full">
+    <div className="container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center py-24 w-full">
       <div className="w-full flex flex-col items-center mb-16">
         <p className="text-primary text-center space-x-2  text-[54px] tracking-wider leading-tight font-normal">
           Finding you{" "}
@@ -26,14 +26,15 @@ export default function BestSuitableJob() {
         </p>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-full">
         {/* Main image container with background image */}
         <div
-          className="w-[1200px] h-[462px] relative transition-all duration-500 ease-in-out bg-center bg-no-repeat bg-contain flex items-center justify-center"
+          className="w-full max-w-[1600px] h-[600px] relative transition-all duration-500 ease-in-out bg-center bg-no-repeat bg-contain flex items-center justify-center"
           style={{
             backgroundImage: `url(${
               activeImage === 1 ? OverlayImage1.src : OverlayImage2.src
             })`,
+            backgroundSize: "contain",
           }}
         >
           {/* Button for first image */}

@@ -7,7 +7,7 @@ export default function OurServices() {
         <p className="text-tertiary-green mb-1 font-primary text-start space-x-2  text-[20px] tracking-wider leading-tight font-semibold">
           Our services
         </p>
-        <p className="text-primary text-start space-x-2  text-[54px] tracking-wider leading-tight font-normal">
+        <div className="text-primary text-start space-x-2  text-[54px] tracking-wider leading-tight font-normal">
           <p className="relative group flex flex-col w-fit font-semibold px-4 overflow-hidden">
             <span className="relative z-10  group-hover:text-white transition-colors duration-500 ease-in-out">
               End-to-End Solutions
@@ -15,7 +15,7 @@ export default function OurServices() {
             <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
           </p>{" "}
           for People searching for Work
-        </p>
+        </div>
         <div className="flex justify-between  items-center mt-6">
           <p className="text-primary-gray max-w-[831px]  text-left font-primary text-[20px] font-normal leading-normal">
             Customized solutions for people looking for work opportunities in

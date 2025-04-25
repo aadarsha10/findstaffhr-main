@@ -7,16 +7,21 @@ import NameDisplayCards from "./components/NameDisplayCards";
 export default function HeroSection() {
   return (
     <div
-      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-6xl px-4 md:px-6    flex flex-col items-center relative bg-cover bg-center"
+      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-7xl px-4 md:px-6    flex flex-col items-center relative bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage.src})`,
       }}
     >
       <div className="relative z-10 px-4 flex flex-col items-center justify-items-start mt-5">
-        <p className="text-primary text-center space-x-2  text-[54px] tracking-wide leading-tight font-normal">
+        <p className="text-primary text-center space-x-2  text-[54px] tracking-wider leading-tight font-normal">
           Bringing{" "}
-          <span className=" font-semibold px-4">Asia&apos;s Top Talent</span> to
-          power <br />
+          <span className="relative group font-semibold px-4 overflow-hidden">
+            <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
+              Asia&apos;s Top Talent
+            </span>
+            <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
+          </span>{" "}
+          to power <br />
           Dubai&apos;s Growth
         </p>
         <p className="text-primary-gray max-w-[874px] mt-6  text-center font-primary text-[20px] font-normal leading-normal">

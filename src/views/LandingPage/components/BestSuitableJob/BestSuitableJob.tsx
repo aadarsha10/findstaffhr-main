@@ -29,7 +29,7 @@ export default function BestSuitableJob() {
       <div className="flex flex-col items-center w-full">
         {/* Main image container with background image */}
         <div
-          className="w-full max-w-[1600px] h-[600px] relative transition-all duration-500 ease-in-out bg-center bg-no-repeat bg-contain flex items-center justify-center"
+          className="w-full max-w-[1600px] h-[600px] relative transition-all duration-300 ease-in-out bg-center bg-no-repeat bg-contain flex items-center justify-center"
           style={{
             backgroundImage: `url(${
               activeImage === 1 ? OverlayImage1.src : OverlayImage2.src

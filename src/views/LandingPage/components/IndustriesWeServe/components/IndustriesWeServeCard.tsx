@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Icon from "@/assets/LandingPage/IndustriesWeServe/icon.svg";
+import Icon from "@/assets/LandingPage/IndustriesWeServe/Icon.svg";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";

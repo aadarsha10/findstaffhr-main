@@ -27,10 +27,10 @@ const NameCard: React.FC<NameCardProps> = ({
   logoSrc,
 }) => {
   const positionClasses = {
-    "top-left": "absolute top-8 -left-44",
-    "top-right": "absolute top-8 -right-44",
-    "bottom-left": "absolute bottom-96 -left-44",
-    "bottom-right": "absolute bottom-96 -right-44",
+    "top-left": "absolute top-0 -left-20",
+    "top-right": "absolute top-0 -right-20",
+    "bottom-left": "absolute bottom-96 -left-20",
+    "bottom-right": "absolute bottom-96 -right-20",
   };
 
   const avatarPositionClasses = {

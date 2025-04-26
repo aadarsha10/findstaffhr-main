@@ -131,21 +131,60 @@ export default function OurServices() {
             </span>
             <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
           </p>{" "}
-          {/* Title without animation */}
-          <span className="inline-block">
-            {currentContent === "workers"
-              ? "for People searching for Work"
-              : "for Dubai Businesses"}
+          {/* Title with crossfade animation */}
+          <span className=" relative min-w-[300px]">
+            {/* Workers text */}
+            <span
+              className={`absolute top-0 left-0 whitespace-nowrap transition-opacity duration-500 ease-in-out ${
+                currentContent === "workers" ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              for People searching for Work
+            </span>
+
+            {/* Companies text */}
+            <span
+              className={`absolute top-0 left-0 whitespace-nowrap transition-opacity duration-500 ease-in-out ${
+                currentContent === "companies" ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              for Dubai Businesses
+            </span>
           </span>
         </div>
 
-        <div className="flex justify-between items-center mt-6">
-          {/* Description without animation */}
-          <p className="text-primary-gray max-w-[831px] text-left font-primary text-[20px] font-normal leading-normal">
-            {currentContent === "workers"
-              ? "Customized solutions for people looking for work opportunities in Dubai. From Construction to Tourism, from Hospitality to Manufacturing, we all all sectors."
-              : "From sourcing skilled workers across Asia to handling documentation, visas, and relocation—FindStaff takes care of the entire hiring process, so you don't have to."}
-          </p>
+        <div className="flex justify-between items-center mt-20">
+          {/* Description with crossfade animation */}
+          <div className="relative max-w-[831px]">
+            {/* Workers description */}
+            <p
+              className={`text-primary-gray text-left font-primary text-[20px] font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
+                currentContent === "workers" ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              Customized solutions for people looking for work opportunities in
+              Dubai. From Construction to Tourism, from Hospitality to
+              Manufacturing, we all all sectors.
+            </p>
+
+            {/* Companies description */}
+            <p
+              className={`text-primary-gray text-left font-primary text-[20px] font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
+                currentContent === "companies" ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              From sourcing skilled workers across Asia to handling
+              documentation, visas, and relocation—FindStaff takes care of the
+              entire hiring process, so you don&apos;t have to.
+            </p>
+
+            {/* Invisible spacer to maintain height */}
+            <p className="text-primary-gray text-left font-primary text-[20px] font-normal leading-normal invisible">
+              {currentContent === "workers"
+                ? "Customized solutions for people looking for work opportunities in Dubai. From Construction to Tourism, from Hospitality to Manufacturing, we all all sectors."
+                : "From sourcing skilled workers across Asia to handling documentation, visas, and relocation—FindStaff takes care of the entire hiring process, so you don't have to."}
+            </p>
+          </div>
 
           <div className="flex items-center gap-4">
             <p
@@ -185,16 +224,51 @@ export default function OurServices() {
         </div>
       </div>
 
-      {/* Cards grid without animation */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-        {currentData.map((service) => (
-          <OurServiceCard
-            key={service.id}
-            title={service.title}
-            description={service.description}
-            imageUrl={service.imageUrl}
-          />
-        ))}
+      {/* Cards grid with crossfade animation */}
+      <div className="w-full relative">
+        {/* Workers cards */}
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
+            currentContent === "workers" ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {workersData.map((service) => (
+            <OurServiceCard
+              key={service.id}
+              title={service.title}
+              description={service.description}
+              imageUrl={service.imageUrl}
+            />
+          ))}
+        </div>
+
+        {/* Companies cards */}
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
+            currentContent === "companies" ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {companiesData.map((service) => (
+            <OurServiceCard
+              key={service.id}
+              title={service.title}
+              description={service.description}
+              imageUrl={service.imageUrl}
+            />
+          ))}
+        </div>
+
+        {/* Invisible spacer grid to maintain height */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full invisible">
+          {currentData.map((service) => (
+            <OurServiceCard
+              key={service.id}
+              title={service.title}
+              description={service.description}
+              imageUrl={service.imageUrl}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

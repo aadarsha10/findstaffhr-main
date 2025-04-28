@@ -22,13 +22,14 @@ const CustomButton = ({ children, className }: CustomButtonProps) => {
   return (
     <Button
       className={cn(
-        "group/btn  bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-200",
+        "bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group",
         className
       )}
+      variant="withArrow"
       withAnimatedArrow
       arrowSize={24}
       arrowColor="#64748B"
-      arrowContainerClassName=" flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
+      arrowContainerClassName="flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
     >
       <span className="min-w-[95px]">{children}</span>
     </Button>

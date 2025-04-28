@@ -86,10 +86,10 @@ export default function IndustriesWeServe() {
   return (
     <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
       <div className="w-full flex flex-col items-start mb-16">
-        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-[20px] tracking-wider leading-tight font-semibold">
+        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
           Industries We Serve
         </p>
-        <div className="text-primary text-start space-x-2 text-[54px] tracking-wider leading-tight font-normal">
+        <div className="text-primary text-start space-x-2 text-5xl tracking-wider leading-tight font-normal">
           <p className="relative group flex flex-col w-fit font-semibold px-4 overflow-hidden">
             <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
               Connecting Great Talent
@@ -97,14 +97,14 @@ export default function IndustriesWeServe() {
             <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
           </p>{" "}
           {/* Title without animation */}
-          <span className="inline-block font-primary text-[54px] font-normal leading-normal">
+          <span className="inline-block font-primary text-5xl font-normal leading-normal">
             with the Right Opportunities
           </span>
         </div>
 
         <div className="flex justify-between items-center mt-6">
           {/* Description without animation */}
-          <p className="text-primary-gray  text-left font-primary text-[20px] font-normal leading-normal">
+          <p className="text-primary-gray  text-left font-primary text-xl font-normal leading-normal">
             From fast-growing businesses in Dubai to skilled individuals across
             Asia—FindStaff bridges the gap between demand and talent across key
             industries. Whether you&apos;re hiring or job hunting, we&apos;re

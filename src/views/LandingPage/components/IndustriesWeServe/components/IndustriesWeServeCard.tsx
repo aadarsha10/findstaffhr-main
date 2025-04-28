@@ -22,13 +22,13 @@ const CustomButton = ({ children, className }: CustomButtonProps) => {
   return (
     <Button
       className={cn(
-        "group/btn  bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-200",
+        "group/btn bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-200",
         className
       )}
       withAnimatedArrow
       arrowSize={24}
       arrowColor="#64748B"
-      arrowContainerClassName=" flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
+      arrowContainerClassName="ml-3 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
     >
       <span className="min-w-[95px]">{children}</span>
     </Button>
@@ -45,7 +45,7 @@ export default function IndustriesWeServeCard({
 
   return (
     <div
-      className={`relative h-full rounded-[24px] p-[2px] transition-all duration-500 ease-in-out ${
+      className={`relative h-full rounded-[24px] p-[2px] transition-all duration-300 ease-in-out ${
         isHovered
           ? "bg-gradient-to-b from-[#E9EEF3] to-[#06C53C]"
           : "bg-transparent border border-gray-200"
@@ -63,9 +63,7 @@ export default function IndustriesWeServeCard({
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
         <div
-          className={`p-6 flex flex-col justify-between transition-all duration-500 ease-in-out ${
-            isHovered ? "h-[280px]" : "h-[200px]"
-          }`}
+          className={`p-6 flex flex-col justify-between transition-all duration-300 ease-in-out h-[280px]`}
         >
           <div className="flex flex-col h-[180px]">
             <h3

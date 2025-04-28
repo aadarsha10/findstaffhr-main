@@ -9,7 +9,7 @@ export default function BestSuitableJob() {
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center py-24 w-full">
       <div className="w-full flex flex-col items-center mb-16">
-        <p className="text-primary text-center space-x-2  text-[54px] tracking-wider leading-tight font-normal">
+        <p className="text-primary text-center space-x-2  text-5xl tracking-wider leading-tight font-normal">
           Finding you{" "}
           <span className="relative group font-semibold px-4 overflow-hidden">
             <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
@@ -20,7 +20,7 @@ export default function BestSuitableJob() {
           with <br />
           skill assessment & preference
         </p>
-        <p className="text-primary-gray max-w-[874px] mt-6  text-center font-primary text-[20px] font-normal leading-normal">
+        <p className="text-primary-gray max-w-[874px] mt-6  text-center font-primary text-xl font-normal leading-normal">
           We match your skills and preferences to the roles that fit you best —
           helping you choose with utmost trust, clarity and confidence.
         </p>

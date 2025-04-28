@@ -13,7 +13,7 @@ export default function HeroSection() {
       }}
     >
       <div className="relative z-10 px-4 flex flex-col items-center justify-items-start mt-5">
-        <p className="text-primary text-center space-x-2  text-[54px] tracking-wider leading-tight font-normal">
+        <p className="text-primary text-center space-x-2  text-5xl tracking-wider leading-tight font-normal">
           Bringing{" "}
           <span className="relative group font-semibold px-4 overflow-hidden">
             <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
@@ -24,7 +24,7 @@ export default function HeroSection() {
           to power <br />
           Dubai&apos;s Growth
         </p>
-        <p className="text-primary-gray max-w-[874px] mt-6  text-center font-primary text-[20px] font-normal leading-normal">
+        <p className="text-primary-gray max-w-[874px] mt-6  text-center font-primary text-xl font-normal leading-normal">
           We&apos;re an trusted recruitment agency that handle all your visa,
           and relocation support—tailored for Dubai&apos;s fast-paced
           industries.

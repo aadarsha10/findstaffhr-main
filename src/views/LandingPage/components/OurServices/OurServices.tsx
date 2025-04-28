@@ -121,10 +121,10 @@ export default function OurServices() {
   return (
     <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
       <div className="w-full flex flex-col items-start mb-16">
-        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-[20px] tracking-wider leading-tight font-semibold">
+        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
           Our services
         </p>
-        <div className="text-primary text-start space-x-2 text-[54px] tracking-wider leading-tight font-normal">
+        <div className="text-primary text-start space-x-2 text-5xl tracking-wider leading-tight font-normal">
           <p className="relative group flex flex-col w-fit font-semibold px-4 overflow-hidden">
             <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
               End-to-End Solutions
@@ -158,7 +158,7 @@ export default function OurServices() {
           <div className="relative max-w-[831px]">
             {/* Workers description */}
             <p
-              className={`text-primary-gray text-left font-primary text-[20px] font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
+              className={`text-primary-gray text-left font-primary text-xl font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
                 currentContent === "workers" ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -169,7 +169,7 @@ export default function OurServices() {
 
             {/* Companies description */}
             <p
-              className={`text-primary-gray text-left font-primary text-[20px] font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
+              className={`text-primary-gray text-left font-primary text-xl font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
                 currentContent === "companies" ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -179,7 +179,7 @@ export default function OurServices() {
             </p>
 
             {/* Invisible spacer to maintain height */}
-            <p className="text-primary-gray text-left font-primary text-[20px] font-normal leading-normal invisible">
+            <p className="text-primary-gray text-left font-primary text-xl font-normal leading-normal invisible">
               {currentContent === "workers"
                 ? "Customized solutions for people looking for work opportunities in Dubai. From Construction to Tourism, from Hospitality to Manufacturing, we all all sectors."
                 : "From sourcing skilled workers across Asia to handling documentation, visas, and relocation—FindStaff takes care of the entire hiring process, so you don't have to."}
@@ -188,7 +188,7 @@ export default function OurServices() {
 
           <div className="flex items-center gap-4">
             <p
-              className={`min-w-[106px] text-[18px] font-primary font-normal leading-normal ${
+              className={`min-w-[106px] text-[18px] font-primary font-normal leading-normal transition-all duration-500 ease-in-out ${
                 isForWorkers ? "text-primary-gray font-normal" : "text-gray-300"
               }`}
             >
@@ -205,14 +205,14 @@ export default function OurServices() {
                 <div
                   className={`w-6 h-6 flex-shrink-0 aspect-square rounded-full ${
                     isForWorkers
-                      ? "bg-[#334155] translate-x-0"
-                      : "bg-secondary-green translate-x-[39px]"
+                      ? "bg-[#334155] translate-x-0 transition-all duration-500 ease-in-out"
+                      : "bg-secondary-green translate-x-[39px] transition-all duration-500 ease-in-out"
                   }`}
                 ></div>
               </div>
             </button>
             <p
-              className={`min-w-[136px] text-[18px] font-primary leading-normal ${
+              className={`min-w-[136px] text-[18px] font-primary leading-normal transition-all duration-500 ease-in-out ${
                 !isForWorkers
                   ? "text-secondary-green font-semibold"
                   : "text-gray-300"

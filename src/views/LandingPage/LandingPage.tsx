@@ -4,6 +4,7 @@ import TrustedBy from "./components/TrustedBy/TrustedBy";
 import BestSuitableJob from "./components/BestSuitableJob/BestSuitableJob";
 import OurServices from "./components/OurServices/OurServices";
 import IndustriesWeServe from "./components/IndustriesWeServe/IndustriesWeServe";
+import HowItWorksSection from "./components/HowItWorks/HowItWorksSection";
 
 export default function LandingPage() {
   return (
@@ -13,6 +14,7 @@ export default function LandingPage() {
       <BestSuitableJob />
       <OurServices />
       <IndustriesWeServe />
+      <HowItWorksSection />
     </div>
   );
 }

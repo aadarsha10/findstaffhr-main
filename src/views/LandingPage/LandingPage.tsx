@@ -7,7 +7,7 @@ import IndustriesWeServe from "./components/IndustriesWeServe/IndustriesWeServe"
 import HowItWorksSection from "./components/HowItWorks/HowItWorksSection";
 import Testomonials from "./components/Testomonials/Testomonials";
 import GotQuestion from "./components/GotQuestion/GotQuestion";
-
+import CompaniesAndEmployeeCards from "./components/CompaniesAndEmployee/CompaniesAndEmployeeCards";
 export default function LandingPage() {
   return (
     <div className="flex flex-col  py-16">
@@ -19,6 +19,7 @@ export default function LandingPage() {
       <HowItWorksSection />
       <Testomonials />
       <GotQuestion />
+      <CompaniesAndEmployeeCards />
     </div>
   );
 }

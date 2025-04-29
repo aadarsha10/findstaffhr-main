@@ -30,7 +30,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ faq, isExpanded, onToggle }) => (
           rotate: isExpanded ? 45 : 0,
           color: isExpanded ? "#55B947" : "#000",
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.5 }}
         className="flex-shrink-0"
       >
         <Plus size={20} />
@@ -43,7 +43,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ faq, isExpanded, onToggle }) => (
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="overflow-hidden w-full"
         >
           <p className="text-primary-gray mt-4 font-primary font-light text-sm md:text-base bg-gray-100 p-3 md:p-4 rounded">

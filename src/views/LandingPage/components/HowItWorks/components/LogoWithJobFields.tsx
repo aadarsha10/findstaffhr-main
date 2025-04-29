@@ -19,11 +19,11 @@ export default function LogoWithJobFields() {
       <Image
         src={Line1}
         alt="Line 1"
-        className="absolute top-6 left-0 transform -translate-x-full -translate-y-full z-0 group-hover:scale-[1.2] transition-transform duration-300"
+        className="absolute top-6 left-0 transform -translate-x-full -translate-y-full z-0 group-hover:scale-[1.2] transition-transform duration-500"
         width={60}
         height={60}
       />
-      <p className="absolute -top-4 -left-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-t from-secondary-green to-white/75 rounded-xl px-3 py-2 text-white rotate-[5deg] shadow-2xl group-hover:scale-[1.2] transition-transform duration-300">
+      <p className="absolute -top-4 -left-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-t from-secondary-green to-white/75 rounded-xl px-3 py-2 text-white rotate-[5deg] shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
         Construction
       </p>
 
@@ -31,11 +31,11 @@ export default function LogoWithJobFields() {
       <Image
         src={Line2}
         alt="Line 2"
-        className="absolute top-6 right-0 transform translate-x-full -translate-y-full z-0 group-hover:scale-[1.2] transition-transform duration-300"
+        className="absolute top-6 right-0 transform translate-x-full -translate-y-full z-0 group-hover:scale-[1.2] transition-transform duration-500"
         width={60}
         height={60}
       />
-      <p className="absolute -top-4 -right-32 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-t from-[#E11D48] to-white/75 rounded-xl px-3 py-2 text-white -rotate-[5deg] shadow-2xl group-hover:scale-[1.2] transition-transform duration-300">
+      <p className="absolute -top-4 -right-32 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-t from-[#E11D48] to-white/75 rounded-xl px-3 py-2 text-white -rotate-[5deg] shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
         Domestic & Care Service
       </p>
 
@@ -43,11 +43,11 @@ export default function LogoWithJobFields() {
       <Image
         src={Line3}
         alt="Line 3"
-        className="absolute bottom-10 left-12 transform -translate-x-full translate-y-full scale-x-[-1] z-0 group-hover:scale-x-[-1.2] transition-transform duration-300"
+        className="absolute bottom-10 left-12 transform -translate-x-full translate-y-full scale-x-[-1] z-0 group-hover:scale-x-[-1.2] transition-transform duration-500"
         width={110}
         height={110}
       />
-      <p className="absolute -bottom-[105px] -left-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-b from-[#D97706] to-white/75 rounded-xl px-3 py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-300">
+      <p className="absolute -bottom-[105px] -left-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-b from-[#D97706] to-white/75 rounded-xl px-3 py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
         Tourism
       </p>
 
@@ -55,11 +55,11 @@ export default function LogoWithJobFields() {
       <Image
         src={Line4}
         alt="Line 4"
-        className="absolute bottom-12 right-12 transform translate-x-full translate-y-full scale-x-[-1] z-0 group-hover:scale-x-[-1.2] transition-transform duration-300"
+        className="absolute bottom-12 right-12 transform translate-x-full translate-y-full scale-x-[-1] z-0 group-hover:scale-x-[-1.2] transition-transform duration-500"
         width={110}
         height={100}
       />
-      <p className="absolute -bottom-[105px] -right-32 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-b from-[#9333EA] to-white/65 rounded-xl px-3 py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-300 rotate-[5deg]">
+      <p className="absolute -bottom-[105px] -right-32 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-sm font-normal leading-normal bg-gradient-to-b from-[#9333EA] to-white/65 rounded-xl px-3 py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-500 rotate-[5deg]">
         Hospitality
       </p>
     </div>

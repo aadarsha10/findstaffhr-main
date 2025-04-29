@@ -14,18 +14,33 @@ export default function LogoWithJobFields() {
   const [isHovered, setIsHovered] = useState(false);
   const [currentTopVector, setCurrentTopVector] = useState(Vector3);
   const [currentBottomVector, setCurrentBottomVector] = useState(Vector4);
+  const [topOpacity, setTopOpacity] = useState(1);
+  const [bottomOpacity, setBottomOpacity] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovered) {
-        setCurrentTopVector((prev: StaticImageData) =>
-          prev === Vector3 ? Vector5 : Vector3
-        );
-        setCurrentBottomVector((prev: StaticImageData) =>
-          prev === Vector4 ? Vector6 : Vector4
-        );
+        // Fade out current images
+        setTopOpacity(0);
+        setBottomOpacity(0);
+
+        // Change images after fade out completes
+        setTimeout(() => {
+          setCurrentTopVector((prev: StaticImageData) =>
+            prev === Vector3 ? Vector5 : Vector3
+          );
+          setCurrentBottomVector((prev: StaticImageData) =>
+            prev === Vector4 ? Vector6 : Vector4
+          );
+
+          // Fade in new images
+          setTimeout(() => {
+            setTopOpacity(1);
+            setBottomOpacity(1);
+          }, 50);
+        }, 300);
       }
-    }, 1000); // Change every 2 seconds
+    }, 1000); // Change every second
 
     return () => clearInterval(interval);
   }, [isHovered]);
@@ -38,6 +53,8 @@ export default function LogoWithJobFields() {
         setIsHovered(false);
         setCurrentTopVector(Vector3);
         setCurrentBottomVector(Vector4);
+        setTopOpacity(1);
+        setBottomOpacity(1);
       }}
     >
       {/* Logo in separate div with higher z-index */}
@@ -47,14 +64,22 @@ export default function LogoWithJobFields() {
           src={isHovered ? Vector2 : currentTopVector}
           alt="Avatar"
           width={260}
-          className="absolute -top-3 min-w-[180px] -left-11 z-10 transition-opacity duration-500"
+          style={{
+            opacity: isHovered ? 1 : topOpacity,
+            transition: "opacity 300ms ease-in-out",
+          }}
+          className="absolute -top-3 min-w-[175px] -left-10 z-10"
           height={260}
         />
         <Image
           src={isHovered ? Vector1 : currentBottomVector}
           alt="Avatar"
           width={260}
-          className="absolute -bottom-3 min-w-[180px] -left-11 z-10 transition-opacity duration-500"
+          style={{
+            opacity: isHovered ? 1 : bottomOpacity,
+            transition: "opacity 300ms ease-in-out",
+          }}
+          className="absolute -bottom-3 min-w-[175px] -left-10 z-10"
           height={260}
         />
         <p className="absolute top-1 -left-36 text-primary-gray text-sm font-primary font-normal leading-normal bg-secondary-green rounded-xl px-3 py-2 text-white shadow-xl">

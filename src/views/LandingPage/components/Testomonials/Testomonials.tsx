@@ -7,7 +7,7 @@ export default function Testomonials() {
 
   // Handle toggle click
   const handleToggle = () => {
-    setIsForCompanies(!isForCompanies);
+    setIsForCompanies((prev) => !prev);
   };
   return (
     <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
@@ -26,12 +26,12 @@ export default function Testomonials() {
           Valued by Workers.
         </p>
         <p className="text-primary-gray max-w-[874px] mt-6 text-center font-primary text-xl font-normal leading-normal">
-          We’re proud to have helped businesses grow and individuals achieve
-          life-changing opportunities. Here’s what they have to say about
-          working with FindStaff.
+          We&apos;re proud to have helped businesses grow and individuals
+          achieve life-changing opportunities. Here&apos;s what they have to say
+          about working with FindStaff.
         </p>
       </header>
-      <section className="w-full flex flex-col items-center py-16">
+      <section className="w-full flex flex-col items-center pt-16">
         <div className="flex items-center gap-4">
           <p
             className={`min-w-[106px] text-[18px] font-primary font-normal leading-normal transition-all duration-500 ease-in-out ${
@@ -67,11 +67,11 @@ export default function Testomonials() {
             Employees
           </p>
         </div>
+
+        <div className="w-full mt-10">
+          <TestomonialSlide isForCompanies={isForCompanies} />
+        </div>
       </section>
-      <body>
-        {/* testominials slide */}
-        <TestomonialSlide />
-      </body>
     </div>
   );
 }

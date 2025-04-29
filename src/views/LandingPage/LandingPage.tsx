@@ -6,6 +6,7 @@ import OurServices from "./components/OurServices/OurServices";
 import IndustriesWeServe from "./components/IndustriesWeServe/IndustriesWeServe";
 import HowItWorksSection from "./components/HowItWorks/HowItWorksSection";
 import Testomonials from "./components/Testomonials/Testomonials";
+import GotQuestion from "./components/GotQuestion/GotQuestion";
 
 export default function LandingPage() {
   return (
@@ -17,6 +18,7 @@ export default function LandingPage() {
       <IndustriesWeServe />
       <HowItWorksSection />
       <Testomonials />
+      <GotQuestion />
     </div>
   );
 }

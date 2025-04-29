@@ -22,13 +22,13 @@ const CustomButton = ({ children, className }: CustomButtonProps) => {
   return (
     <Button
       className={cn(
-        "group/btn bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-200",
+        "group/btn bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-100",
         className
       )}
       withAnimatedArrow
       arrowSize={24}
       arrowColor="#64748B"
-      arrowContainerClassName="ml-3 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
+      arrowContainerClassName="ml-3 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden group-hover/btn:after:translate-x-full after:absolute after:top-0 after:left-[-100%] after:h-full after:w-full after:bg-white/30 after:skew-x-[45deg] after:transition-transform after:duration-500"
     >
       <span className="min-w-[95px]">{children}</span>
     </Button>
@@ -63,7 +63,7 @@ export default function IndustriesWeServeCard({
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
         <div
-          className={`p-6 flex flex-col justify-between transition-all duration-300 ease-in-out h-[280px]`}
+          className={`p-6 flex flex-col justify-between transition-all duration-300 ease-in-out`}
         >
           <div className="flex flex-col h-[180px]">
             <h3

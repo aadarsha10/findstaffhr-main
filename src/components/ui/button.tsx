@@ -25,6 +25,8 @@ const buttonVariants = cva(
           "bg-tertiary-green flex items-center justify-center text-primary-foreground rounded-[999px] shadow-xs",
         withoutArrow:
           "bg-quaternary-green flex items-center justify-center text-primary-green rounded-[999px] shadow-xs",
+        withArrowPurple:
+          "bg-primary-purple flex items-center justify-center text-primary-foreground rounded-[999px] shadow-xs",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

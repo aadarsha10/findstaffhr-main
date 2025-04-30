@@ -86,7 +86,7 @@ export default function TrustedBy() {
     >
       <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
         <div className="w-full">
-          <p className="text-[#020617] font-primary text-start text-xl tracking-wide leading-tight font-normal">
+          <p className="text-[#020617] font-primary text-start text-xl tracking-wide leading-tight font-normal mb-4 md:mb-0">
             Trusted By
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function TrustedBy() {
             </div>
           </div>
 
-          <div className="w-full h-20 flex gap-10 items-center md:justify-end justify-center">
+          <div className="w-full h-20 flex gap-10 items-center md:justify-end justify-center mt-4 md:mt-0">
             <div className="flex items-center justify-center ">
               <div className="w-12 h-12 -mr-4 rounded-full flex items-center justify-center overflow-hidden">
                 <Image

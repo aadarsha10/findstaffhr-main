@@ -4,7 +4,7 @@ import Image from "next/image";
 import serviceCall from "@/assets/LandingPage/GotAnswers/service-call.svg";
 import { motion } from "framer-motion";
 import FaqItem, { Faq } from "./components/FaqItem";
-import HighlightText from "@/services/highlightText";
+import HighlightText from "@/services/HighlightText";
 
 // Array of FAQs
 const faqs: Faq[] = [

@@ -47,7 +47,7 @@ export default function LogoWithJobFields() {
 
   return (
     <div
-      className="absolute inline-flex flex-col items-center gap-10 group"
+      className="absolute inline-flex flex-col items-center gap-8 md:gap-10 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -58,8 +58,15 @@ export default function LogoWithJobFields() {
       }}
     >
       {/* Logo in separate div with higher z-index */}
-      <div className="relative z-50 h-full w-full p-2 rounded-2xl border border-black/[0.08] bg-white shadow-[0_1px_4px_0_rgba(0,0,0,0.2),0_1px_4px_0_rgba(0,0,0,0.1)] overflow-visible">
-        <Image src={Logo} alt="Logo" width={80} height={35} />
+      <div className="relative z-50 h-full w-full p-1.5 md:p-2 rounded-xl md:rounded-2xl border border-black/[0.08] bg-white shadow-[0_1px_4px_0_rgba(0,0,0,0.2),0_1px_4px_0_rgba(0,0,0,0.1)] overflow-visible">
+        <Image 
+          src={Logo} 
+          alt="Logo" 
+          width={80} 
+          height={35} 
+          className="w-[60px] md:w-[80px] h-auto"
+          sizes="(max-width: 768px) 60px, 80px"
+        />
         <Image
           src={isHovered ? Vector2 : currentTopVector}
           alt="Avatar"
@@ -68,8 +75,9 @@ export default function LogoWithJobFields() {
             opacity: isHovered ? 1 : topOpacity,
             transition: "opacity 300ms ease-in-out",
           }}
-          className="absolute -top-3 min-w-[175px] -left-10 z-10"
+          className="absolute -top-3 min-w-[130px] md:min-w-[175px] -left-7 md:-left-10 z-10"
           height={260}
+          sizes="(max-width: 768px) 130px, 175px"
         />
         <Image
           src={isHovered ? Vector1 : currentBottomVector}
@@ -79,13 +87,14 @@ export default function LogoWithJobFields() {
             opacity: isHovered ? 1 : bottomOpacity,
             transition: "opacity 300ms ease-in-out",
           }}
-          className="absolute -bottom-3 min-w-[175px] -left-10 z-10"
+          className="absolute -bottom-3 min-w-[130px] md:min-w-[175px] -left-7 md:-left-10 z-10"
           height={260}
+          sizes="(max-width: 768px) 130px, 175px"
         />
-        <p className="absolute top-1 -left-36 text-primary-gray text-sm font-primary font-normal leading-normal bg-secondary-green rounded-xl px-3 py-2 text-white shadow-xl">
+        <p className="absolute top-1 -left-24 md:-left-36 text-primary-gray text-xs md:text-sm font-primary font-normal leading-normal bg-secondary-green rounded-lg md:rounded-xl px-2 md:px-3 py-1 md:py-2 text-white shadow-xl">
           Employee
         </p>
-        <p className="absolute bottom-0 -right-40 text-primary-gray text-sm font-primary font-normal leading-normal bg-[#9333EA] rounded-xl px-3 py-2 text-white shadow-xl">
+        <p className="absolute bottom-0 -right-28 md:-right-40 text-primary-gray text-xs md:text-sm font-primary font-normal leading-normal bg-[#9333EA] rounded-lg md:rounded-xl px-2 md:px-3 py-1 md:py-2 text-white shadow-xl">
           Organization
         </p>
       </div>

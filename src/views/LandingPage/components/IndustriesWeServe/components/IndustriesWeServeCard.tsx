@@ -9,7 +9,7 @@ interface IndustriesWeServeCardProps {
   title: string;
   description: string;
   imageUrl: string;
-  jobs: string[];
+  jobs: Array<string>;
 }
 
 // Custom Button component for industry cards
@@ -22,15 +22,17 @@ const CustomButton = ({ children, className }: CustomButtonProps) => {
   return (
     <Button
       className={cn(
-        "group/btn bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-200",
+        "group/btn bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[150px] md:w-[160px] pl-[14px]  pr-[4px] py-2 hover:bg-gray-100 ",
         className
       )}
       withAnimatedArrow
       arrowSize={24}
       arrowColor="#64748B"
-      arrowContainerClassName="ml-3 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
+      arrowContainerClassName=" -ml-3.5 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
     >
-      <span className="min-w-[95px]">{children}</span>
+      <span className=" w-full text-[12px] md:text-sm md:min-w-[95px]">
+        {children}
+      </span>
     </Button>
   );
 };
@@ -63,11 +65,11 @@ export default function IndustriesWeServeCard({
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
         <div
-          className={`p-6 flex flex-col justify-between transition-all duration-300 ease-in-out ${
-            isHovered ? "h-[280px]" : "h-[220px]"
+          className={`p-6 flex flex-col  transition-all duration-300 ease-in-out ${
+            isHovered ? "h-[280px]" : "h-[230px]"
           }`}
         >
-          <div className="flex flex-col h-[180px]">
+          <div className="flex flex-grow flex-col ">
             <h3
               className={`font-primary text-lg font-semibold mb-2 transition-colors duration-300 ease-in-out ${
                 isHovered ? "text-[#06C53C]" : ""
@@ -78,7 +80,7 @@ export default function IndustriesWeServeCard({
             <p className="text-[#334155] font-primary text-sm mb-4 font-normal">
               {description}
             </p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2   ">
               {jobs.map((job) => (
                 <p
                   key={job}

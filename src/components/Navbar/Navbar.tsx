@@ -18,17 +18,10 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  
   const pathname = usePathname();
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -40,10 +33,9 @@ export default function Navbar() {
 
   return (
     <div
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"
-      }`}
-      data-navbar
+      className=" w-full  bg-white"
+      
+     
     >
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between w-full py-6">

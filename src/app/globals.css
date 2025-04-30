@@ -144,3 +144,37 @@
     @apply border-border outline-ring/50;}
   body {
     @apply bg-background text-foreground;}}
+
+/* Remove the old classes and add these Tailwind animations */
+@layer utilities {
+  /* Background animation keyframes */
+  @keyframes highlight-bg {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* Text color animation keyframes - synchronized with background */
+  @keyframes highlight-text {
+    0% {
+      color: currentColor;
+    }
+    90%, 100% {
+      color: white;
+    }
+  }
+
+  /* Apply animations */
+  .animate-highlight-bg {
+    animation: highlight-bg var(--highlight-duration, 700ms) cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    animation-delay: var(--highlight-delay, 700ms);
+  }
+
+  .animate-highlight-text {
+    animation: highlight-text var(--highlight-duration, 700ms) cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    animation-delay: var(--highlight-delay, 700ms);
+  }
+}

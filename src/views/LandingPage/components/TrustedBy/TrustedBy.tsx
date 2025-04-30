@@ -84,14 +84,14 @@ export default function TrustedBy() {
         minHeight: "246px",
       }}
     >
-      <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center mt-12 w-full">
+      <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
         <div className="w-full">
           <p className="text-[#020617] font-primary text-start text-xl tracking-wide leading-tight font-normal">
             Trusted By
           </p>
         </div>
 
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex flex-col md:flex-row gap-4 items-center justify-center">
           <div
             className="trusted-slider w-full overflow-hidden relative"
             style={{
@@ -125,7 +125,7 @@ export default function TrustedBy() {
             </div>
           </div>
 
-          <div className="w-full h-20 flex gap-10 items-center justify-end">
+          <div className="w-full h-20 flex gap-10 items-center md:justify-end justify-center">
             <div className="flex items-center justify-center ">
               <div className="w-12 h-12 -mr-4 rounded-full flex items-center justify-center overflow-hidden">
                 <Image

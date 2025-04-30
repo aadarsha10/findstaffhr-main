@@ -6,6 +6,7 @@ import LogoWithJobFields from "./components/LogoWithJobFields";
 import FrameImage from "./components/FrameImage";
 import MultipleCards from "./components/MultipleCards";
 import EmployeeWithOrganization from "./components/EmployeeWithOrganization";
+import HighlightText from "@/services/HighlightText";
 
 export default function HowItWorksSection() {
   const [isForWorkers, setIsForWorkers] = useState(true);
@@ -16,31 +17,33 @@ export default function HowItWorksSection() {
   };
 
   return (
-    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
+    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-12 md:py-24 w-full">
       <header className="w-full flex flex-col items-center">
-        <p className="text-tertiary-green mb-1 font-primary text-center space-x-2 text-xl tracking-wider leading-tight font-semibold">
+        <h2 className="text-tertiary-green mb-1 font-primary text-center space-x-2 text-base md:text-xl tracking-wider leading-tight font-semibold">
           How It Works
-        </p>
-        <p className="text-primary text-center space-x-2 text-5xl tracking-wider leading-tight font-normal">
-          <span className="relative group font-semibold px-4 overflow-hidden">
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
-              Simplifying Hiring
-            </span>
-            <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
-          </span>{" "}
+        </h2>
+        <h1 className="text-primary text-center space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
+          <HighlightText
+            className="font-semibold px-2 md:px-4 text-start"
+            highlightColor="bg-tertiary-green"
+            duration={700}
+            delayAnimation={700}
+          >
+            Simplifying Hiring
+          </HighlightText>{" "}
           <br />
           For your Long term sustainability
-        </p>
-        <p className="text-primary-gray max-w-[874px] mt-6 text-center font-primary text-xl font-normal leading-normal">
+        </h1>
+        <p className="text-primary-gray max-w-[874px] mt-4 md:mt-6 text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal">
           At FindStaff, we help you land the job that matches your skills and
           goals. You&apos;ll discover opportunities that truly fit & take the
           next step in your career with confidence.
         </p>
       </header>
-      <section className="w-full flex flex-col items-center py-16">
-        <div className="flex items-center gap-4">
+      <section className="w-full flex flex-col items-center py-8 md:py-16">
+        <div className="flex items-center gap-2 md:gap-4">
           <p
-            className={`min-w-[106px] text-[18px] font-primary font-normal leading-normal transition-all duration-500 ease-in-out ${
+            className={`min-w-[80px] md:min-w-[106px] text-sm md:text-[18px] font-primary font-normal leading-normal transition-all duration-500 ease-in-out ${
               isForWorkers ? "text-primary-gray font-normal" : "text-gray-300"
             }`}
           >
@@ -48,23 +51,23 @@ export default function HowItWorksSection() {
           </p>
           <button onClick={handleToggle}>
             <div
-              className={`flex w-[75px] p-[6px] items-center gap-[7.5px] rounded-[749.25px] ${
+              className={`flex w-[60px] md:w-[75px] p-[4px] md:p-[6px] items-center gap-[5px] md:gap-[7.5px] rounded-[749.25px] ${
                 !isForWorkers
                   ? "bg-[rgba(98,177,40,0.12)]"
                   : "bg-[rgba(51,65,85,0.12)]"
               }`}
             >
               <div
-                className={`w-6 h-6 flex-shrink-0 aspect-square rounded-full ${
+                className={`w-5 h-5 md:w-6 md:h-6 flex-shrink-0 aspect-square rounded-full ${
                   isForWorkers
                     ? "bg-[#334155] translate-x-0 transition-all duration-500 ease-in-out"
-                    : "bg-secondary-green translate-x-[39px] transition-all duration-500 ease-in-out"
+                    : "bg-secondary-green translate-x-[30px] md:translate-x-[39px] transition-all duration-500 ease-in-out"
                 }`}
               ></div>
             </div>
           </button>
           <p
-            className={`min-w-[136px] text-[18px] font-primary leading-normal transition-all duration-500 ease-in-out ${
+            className={`min-w-[100px] md:min-w-[136px] text-sm md:text-[18px] font-primary leading-normal transition-all duration-500 ease-in-out ${
               !isForWorkers
                 ? "text-secondary-green font-semibold"
                 : "text-gray-300"
@@ -75,14 +78,14 @@ export default function HowItWorksSection() {
         </div>
       </section>
 
-      <div className="w-full flex flex-col gap-6 justify-center items-center">
-        <section className="w-full flex flex-col md:flex-row justify-center items-stretch gap-6">
-          <div className="w-full md:w-2/5 border border-gray-200 rounded-2xl overflow-hidden flex flex-col">
-            <div className="w-full h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-2xl relative">
+      <div className="w-full flex flex-col gap-4 md:gap-6 justify-center items-center">
+        <section className="w-full flex flex-col md:flex-row justify-center items-stretch gap-4 md:gap-6">
+          <div className="w-full md:w-2/5 border border-gray-200 rounded-xl md:rounded-2xl overflow-hidden flex flex-col">
+            <div className="w-full h-[200px] md:h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-xl md:rounded-t-2xl relative">
               <Image
                 src={bg1}
                 alt="Background image"
-                className="rounded-t-2xl"
+                className="rounded-t-xl md:rounded-t-2xl"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 priority
@@ -90,23 +93,23 @@ export default function HowItWorksSection() {
               />
               <LogoWithJobFields />
             </div>
-            <div className="w-full flex flex-col p-6 flex-grow">
-              <p className="font-primary text-xl font-semibold mb-1">
+            <div className="w-full flex flex-col p-4 md:p-6 flex-grow">
+              <p className="font-primary text-lg md:text-xl font-semibold mb-1">
                 Tell us your job requirements
               </p>
-              <p className="font-primary text-primary-gray text-sm font-normal">
+              <p className="font-primary text-primary-gray text-xs md:text-sm font-normal">
                 Share your skills, experience, and what kind of job you&apos;re
                 looking for. We take the time to understand your goals and to
                 find the right match for your career journey.
               </p>
             </div>
           </div>
-          <div className="w-full md:w-3/5 border border-gray-200 rounded-2xl overflow-hidden flex flex-col">
-            <div className="w-full h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-2xl relative">
+          <div className="w-full md:w-3/5 border border-gray-200 rounded-xl md:rounded-2xl overflow-hidden flex flex-col">
+            <div className="w-full h-[200px] md:h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-xl md:rounded-t-2xl relative">
               <Image
                 src={bg1}
                 alt="Background image"
-                className="rounded-t-2xl"
+                className="rounded-t-xl md:rounded-t-2xl"
                 fill
                 sizes="(max-width: 768px) 100vw, 60vw"
                 priority
@@ -114,11 +117,11 @@ export default function HowItWorksSection() {
               />
               <FrameImage />
             </div>
-            <div className="w-full flex flex-col p-6 flex-grow">
-              <p className="font-primary text-xl font-semibold mb-1">
-                We’ll find & recommend best Job opportunity
+            <div className="w-full flex flex-col p-4 md:p-6 flex-grow">
+              <p className="font-primary text-lg md:text-xl font-semibold mb-1">
+                We&apos;ll find & recommend best Job opportunity
               </p>
-              <p className="font-primary text-primary-gray max-w-[70%] text-sm font-normal">
+              <p className="font-primary text-primary-gray max-w-full md:max-w-[70%] text-xs md:text-sm font-normal">
                 Using your profile and preferences, we search through top job
                 openings and recommend the best fit — saving you time and
                 bringing you one step closer to your dream job.
@@ -126,13 +129,13 @@ export default function HowItWorksSection() {
             </div>
           </div>
         </section>
-        <section className="w-full flex flex-col md:flex-row justify-center items-stretch gap-6">
-          <div className="w-full md:w-3/5 border border-gray-200 rounded-2xl overflow-hidden flex flex-col">
-            <div className="w-full h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-2xl relative overflow-hidden">
+        <section className="w-full flex flex-col md:flex-row justify-center items-stretch gap-4 md:gap-6">
+          <div className="w-full md:w-3/5 border border-gray-200 rounded-xl md:rounded-2xl overflow-hidden flex flex-col">
+            <div className="w-full h-[200px] md:h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-xl md:rounded-t-2xl relative overflow-hidden">
               <Image
                 src={bg1}
                 alt="Background image"
-                className="rounded-t-2xl"
+                className="rounded-t-xl md:rounded-t-2xl"
                 fill
                 sizes="(max-width: 768px) 100vw, 60vw"
                 priority
@@ -140,23 +143,23 @@ export default function HowItWorksSection() {
               />
               <MultipleCards />
             </div>
-            <div className="w-full flex flex-col p-6 flex-grow">
-              <p className="font-primary text-xl font-semibold mb-1">
+            <div className="w-full flex flex-col p-4 md:p-6 flex-grow">
+              <p className="font-primary text-lg md:text-xl font-semibold mb-1">
                 We Handle all your Visas & Documentation
               </p>
-              <p className="font-primary text-primary-gray max-w-[70%] text-sm font-normal">
+              <p className="font-primary text-primary-gray max-w-full md:max-w-[70%] text-xs md:text-sm font-normal">
                 Our experts manage all the paperwork, from visa applications to
                 documentation. You can relax knowing every detail is taken care
                 of, quickly, correctly, and without stress.
               </p>
             </div>
           </div>
-          <div className="w-full md:w-2/5 border border-gray-200 rounded-2xl overflow-hidden flex flex-col">
-            <div className="w-full h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-2xl relative">
+          <div className="w-full md:w-2/5 border border-gray-200 rounded-xl md:rounded-2xl overflow-hidden flex flex-col">
+            <div className="w-full h-[200px] md:h-[270px] flex-shrink-0 flex justify-center items-center rounded-t-xl md:rounded-t-2xl relative">
               <Image
                 src={bg1}
                 alt="Background image"
-                className="rounded-t-2xl"
+                className="rounded-t-xl md:rounded-t-2xl"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 priority
@@ -164,11 +167,11 @@ export default function HowItWorksSection() {
               />
               <EmployeeWithOrganization />
             </div>
-            <div className="w-full flex flex-col p-6 flex-grow">
-              <p className="font-primary text-xl font-semibold mb-1">
+            <div className="w-full flex flex-col p-4 md:p-6 flex-grow">
+              <p className="font-primary text-lg md:text-xl font-semibold mb-1">
                 Relocation & Work starts
               </p>
-              <p className="font-primary text-primary-gray text-sm font-normal">
+              <p className="font-primary text-primary-gray text-xs md:text-sm font-normal">
                 We guide you through your move — from flights and housing to
                 settling in. With our full support, you can confidently relocate
                 and start working without any hassle.

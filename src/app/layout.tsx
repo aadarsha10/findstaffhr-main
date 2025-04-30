@@ -26,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${beVietnamPro.variable} antialiased`}>
+      <body 
+        className={`${beVietnamPro.variable} antialiased`} 
+        suppressHydrationWarning={true}
+      >
         <Navbar />
         {children}
         <Footer />

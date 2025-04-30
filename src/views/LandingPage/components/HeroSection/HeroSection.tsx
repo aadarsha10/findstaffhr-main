@@ -2,34 +2,37 @@
 
 import heroImage from "@/assets/LandingPage/HeroSection/HeroImage.svg";
 import { Button } from "@/components/ui/button";
+import HighlightText from "@/services/HighlightText";
 import NameDisplayCards from "./components/NameDisplayCards";
 
 export default function HeroSection() {
   return (
     <div
-      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-7xl px-4 md:px-6    flex flex-col items-center relative bg-cover bg-center"
+      className="w-full h-[calc(90vh-88px)] container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center relative bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage.src})`,
       }}
     >
-      <div className="relative z-10 px-4 flex flex-col items-center justify-items-start mt-5">
-        <p className="text-primary text-center space-x-2  text-5xl tracking-wider leading-tight font-normal">
+      <div className="relative z-10 px-4 flex flex-col items-center justify-items-start mt-5 w-full">
+        <h1 className="text-primary text-center tracking-wider leading-[1.15] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-5xl max-w-5xl mt-16 md:mt-0">
           Bringing{" "}
-          <span className="relative group font-semibold px-4 overflow-hidden">
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
-              Asia&apos;s Top Talent
-            </span>
-            <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
-          </span>{" "}
-          to power <br />
-          Dubai&apos;s Growth
-        </p>
-        <p className="text-primary-gray max-w-[874px] mt-6  text-center font-primary text-xl font-normal leading-normal">
+          <HighlightText
+            className="font-semibold px-1 sm:px-2 md:px-4"
+            highlightColor="bg-tertiary-green"
+            duration={700}
+            delayAnimation={700}
+          >
+            Asia&apos;s Top Talent
+          </HighlightText>{" "}
+          to power <span className="sm:hidden">Dubai&apos;s Growth</span>
+          <span className="hidden sm:inline">Dubai&apos;s Growth</span>
+        </h1>
+        <p className="text-primary-gray max-w-[874px]  mt-6 text-center font-primary text-base sm:text-lg md:text-xl font-normal leading-normal">
           We&apos;re an trusted recruitment agency that handle all your visa,
           and relocation support—tailored for Dubai&apos;s fast-paced
           industries.
         </p>
-        <div className="mt-10 flex gap-4 items-center">
+        <div className="mt-16  md:mt-10 flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto justify-center">
           <Button
             variant="withArrow"
             className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
@@ -40,13 +43,13 @@ export default function HeroSection() {
           </Button>
           <Button
             variant="withoutArrow"
-            className="h-14 w-auto px-4 py-3  relative overflow-hidden font-primary text-sm font-normal group"
+            className="h-14 w-[200px] px-4 py-3 relative overflow-hidden font-primary text-sm font-normal group"
           >
             <span>Talk to Our Team</span>
           </Button>
         </div>
       </div>
-      <div className="w-full h-full absolute inset-0">
+      <div className="w-full h-full hidden md:block absolute inset-0">
         <NameDisplayCards />
       </div>
     </div>

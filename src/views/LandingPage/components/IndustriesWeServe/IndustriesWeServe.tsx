@@ -6,6 +6,7 @@ import Industries3 from "@/assets/LandingPage/IndustriesWeServe/industries3.png"
 import Industries4 from "@/assets/LandingPage/IndustriesWeServe/industries4.png";
 import Industries5 from "@/assets/LandingPage/IndustriesWeServe/industries5.png";
 import Industries6 from "@/assets/LandingPage/IndustriesWeServe/industries6.png";
+import HighlightText from "@/services/HighlightText";
 
 export default function IndustriesWeServe() {
   const industriesData = [
@@ -19,7 +20,6 @@ export default function IndustriesWeServe() {
         "Housekeepers",
         "Front Desk Staff",
         "Kitchen Helpers",
-        "Baristas",
       ],
     },
     {
@@ -27,13 +27,7 @@ export default function IndustriesWeServe() {
       title: "Construction & Engineering",
       description: "Reliable manpower for your toughest projects",
       imageUrl: Industries2.src,
-      jobs: [
-        "Masons",
-        "Electricians",
-        "Plumbers",
-        "Steel Fixers",
-        "Construction Helpers",
-      ],
+      jobs: ["Masons", "Electricians", "Plumbers", "Steel Fixers"],
     },
     {
       id: 3,
@@ -43,7 +37,6 @@ export default function IndustriesWeServe() {
       jobs: [
         "Commercial Cleaners",
         "Office Janitors",
-        "Building Maintenance Staff",
         "Housekeepers",
         "Sanitation Workers",
       ],
@@ -53,13 +46,7 @@ export default function IndustriesWeServe() {
       title: "Logistics & Warehousing",
       description: "Organized, efficient, and on time",
       imageUrl: Industries4.src,
-      jobs: [
-        "Warehouse Assistants",
-        "Inventory Clerks",
-        "Loaders & Unloaders",
-        "Delivery Helpers",
-        "Forklift Operators",
-      ],
+      jobs: ["Assistants", "Clerks", " Helpers", "Forklift Operators"],
     },
     {
       id: 5,
@@ -71,7 +58,6 @@ export default function IndustriesWeServe() {
         "Kitchen Porters",
         "Cooks & Commis Chefsf",
         "Dishwashers",
-        "Bakery Assistants",
       ],
     },
     {
@@ -84,27 +70,32 @@ export default function IndustriesWeServe() {
   ];
 
   return (
-    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
-      <div className="w-full flex flex-col items-start mb-16">
-        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
+    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-12 md:py-24 w-full">
+      <div className="w-full flex flex-col items-start mb-8 md:mb-16">
+        <h2 className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-base md:text-xl tracking-wider leading-tight font-semibold">
           Industries We Serve
-        </p>
-        <div className="text-primary text-start space-x-2 text-5xl tracking-wider leading-tight font-normal">
-          <p className="relative group flex flex-col w-fit font-semibold px-4 overflow-hidden">
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
+        </h2>
+        <div className="text-primary text-start space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
+          <h1 className="relative group flex flex-col w-fit font-semibold overflow-hidden">
+            <HighlightText
+              className="font-semibold px-2 md:px-4"
+              highlightColor="bg-tertiary-green"
+              duration={700}
+              delayAnimation={700}
+            >
               Connecting Great Talent
-            </span>
+            </HighlightText>{" "}
             <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
-          </p>{" "}
+          </h1>{" "}
           {/* Title without animation */}
-          <span className="inline-block font-primary text-5xl font-normal leading-normal">
+          <span className="inline-block font-primary text-3xl md:text-4xl lg:text-5xl font-normal leading-normal">
             with the Right Opportunities
           </span>
         </div>
 
-        <div className="flex justify-between items-center mt-6">
+        <div className="flex justify-between items-center mt-4 md:mt-6">
           {/* Description without animation */}
-          <p className="text-primary-gray  text-left font-primary text-xl font-normal leading-normal">
+          <p className="text-primary-gray text-left font-primary text-base md:text-lg lg:text-xl font-normal leading-normal">
             From fast-growing businesses in Dubai to skilled individuals across
             Asia—FindStaff bridges the gap between demand and talent across key
             industries. Whether you&apos;re hiring or job hunting, we&apos;re

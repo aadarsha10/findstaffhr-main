@@ -4,6 +4,7 @@ import Image from "next/image";
 import serviceCall from "@/assets/LandingPage/GotAnswers/service-call.svg";
 import { motion } from "framer-motion";
 import FaqItem, { Faq } from "./components/FaqItem";
+import HighlightText from "@/services/HighlightText";
 
 // Array of FAQs
 const faqs: Faq[] = [
@@ -54,17 +55,19 @@ export default function GotQuestion() {
           layout
         >
           <header className="w-full flex flex-col items-center md:items-start">
-            <p className="text-tertiary-green mb-1 font-primary text-center md:text-start space-x-2 text-lg md:text-xl tracking-wider leading-tight font-semibold">
+            <h2 className="text-tertiary-green mb-1 font-primary text-center md:text-start space-x-2 text-lg md:text-xl tracking-wider leading-tight font-semibold">
               Got Questions?
-            </p>
-            <p className="text-primary text-center md:text-start space-x-2 text-3xl md:text-5xl tracking-wider leading-tight font-normal">
-              <span className="relative group font-semibold px-4 overflow-hidden">
-                <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
-                  We&apos;ve Got Answers
-                </span>
-                <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
-              </span>{" "}
-            </p>
+            </h2>
+            <h1 className="text-primary text-center md:text-start space-x-2 text-3xl md:text-5xl tracking-wider leading-tight font-normal">
+              <HighlightText
+                className="font-semibold px-4 text-start"
+                highlightColor="bg-tertiary-green"
+                duration={700}
+                delayAnimation={700}
+              >
+                We&apos;ve Got Answers
+              </HighlightText>
+            </h1>
             <p className="text-primary-gray max-w-[874px] mt-2 text-center md:text-start font-primary text-sm md:text-base font-normal leading-normal">
               Everything You Need to Know
             </p>

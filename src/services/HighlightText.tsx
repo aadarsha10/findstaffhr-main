@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 
 interface HighlightTextProps {
   children: ReactNode;
@@ -13,7 +13,7 @@ interface HighlightTextProps {
 }
 
 /**
- * HighlightText component that animates text highlighting on render
+ * HighlightText component that animates text highlighting when it enters the viewport
  *
  * @example
  * <HighlightText>Important text</HighlightText>
@@ -33,6 +33,42 @@ export function HighlightText({
   delayAnimation = 700, // Default delay
   duration = 700, // Default duration
 }: HighlightTextProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Use the first entry (our element)
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Unobserve after animation is triggered to prevent re-triggering
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        }
+      },
+      {
+        root: null, // Use the viewport as root
+        rootMargin: "0px", // No margin
+        threshold: 0.1, // Trigger when 10% is visible (more responsive than higher values)
+      }
+    );
+
+    // Start observing the element
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    // Cleanup function to unobserve when component unmounts
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   // Set animation variables
   const animationCSS = {
     "--highlight-delay": `${delayAnimation}ms`,
@@ -41,7 +77,8 @@ export function HighlightText({
 
   return (
     <span
-      className={cn("relative inline-block overflow-hidden ", className)}
+      ref={ref}
+      className={cn("relative inline-block overflow-hidden", className)}
       style={animationCSS}
     >
       {/* Background element with animation */}
@@ -49,13 +86,17 @@ export function HighlightText({
         className={cn(
           "absolute inset-0 w-0 origin-left z-0",
           highlightColor,
-          "animate-highlight-bg"
+          isVisible ? "animate-highlight-bg" : ""
         )}
       />
 
       {/* Text element that changes color simultaneously with background */}
       <span
-        className={cn("relative z-10 animate-highlight-text", textClassName)}
+        className={cn(
+          "relative z-10",
+          isVisible ? "animate-highlight-text" : "",
+          textClassName
+        )}
       >
         {children}
       </span>

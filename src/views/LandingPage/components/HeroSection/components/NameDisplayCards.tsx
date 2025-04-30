@@ -27,31 +27,31 @@ const NameCard: React.FC<NameCardProps> = ({
   logoSrc,
 }) => {
   const positionClasses = {
-    "top-left": "absolute top-0 -left-20",
-    "top-right": "absolute top-0 -right-20",
-    "bottom-left": "absolute bottom-96 -left-20",
-    "bottom-right": "absolute bottom-96 -right-20",
+    "top-left": "absolute -top-6 md:top-0 left-2 md:-left-20",
+    "top-right": "absolute -top-6 md:top-0 right-2 md:-right-20",
+    "bottom-left": "absolute top-[400px] md:top-[450px]  left-2 md:-left-20",
+    "bottom-right": "absolute top-[400px] md:top-[450px]  right-2 md:-right-20",
   };
 
   const avatarPositionClasses = {
-    "top-left": "absolute -bottom-12 -right-12",
-    "top-right": "absolute -bottom-12 -left-12",
-    "bottom-left": "absolute -top-12 -right-12",
-    "bottom-right": "absolute -top-12 -left-12",
+    "top-left": "absolute -bottom-8 md:-bottom-12 -right-8 md:-right-12",
+    "top-right": "absolute  -bottom-8 md:-bottom-12 -left-8 md:-left-12",
+    "bottom-left": "absolute -top-8 md:-top-12 -right-8 md:-right-12",
+    "bottom-right": "absolute  -top-8 md:-top-12 -left-8 md:-left-12",
   };
 
   const logoPositionClasses = {
-    "top-left": "absolute -bottom-20 -right-20",
-    "top-right": "absolute -bottom-20 -left-20",
-    "bottom-left": "absolute -top-20 -right-20",
-    "bottom-right": "absolute -top-20 -left-20",
+    "top-left": "absolute -bottom-14 md:-bottom-20 -right-14 md:-right-20",
+    "top-right": "absolute  -bottom-14 md:-bottom-20 -left-14 md:-left-20",
+    "bottom-left": "absolute -top-14 md:-top-20 -right-14 md:-right-20",
+    "bottom-right": "absolute  -top-14 md:-top-20 -left-14 md:-left-20",
   };
 
   return (
     <div className={`${positionClasses[position]}`}>
       {/* Name Card */}
       <div
-        className={`inline-flex p-3 flex-col items-start rounded-xl border-2 border-white shadow-lg ${bgColorClass}`}
+        className={`inline-flex p-1 md:p-3 flex-col items-start rounded-xl border-2 border-white shadow-lg ${bgColorClass}`}
         style={{ transform: `rotate(${rotation}deg)` }}
       >
         <div className="flex items-center gap-2">
@@ -66,7 +66,7 @@ const NameCard: React.FC<NameCardProps> = ({
 
       {/* Avatar */}
       <div
-        className={`${avatarPositionClasses[position]} w-[42px] h-[42px] rounded-full border-2 border-white bg-gray-300 bg-center bg-cover bg-no-repeat overflow-hidden`}
+        className={`${avatarPositionClasses[position]} w-[32px] h-[32px] md:w-[42px] md:h-[42px] rounded-full border-2 border-white bg-gray-300 bg-center bg-cover bg-no-repeat overflow-hidden`}
         style={{
           transform: `rotate(${rotation * 0.8}deg)`,
           backgroundImage: `url(${avatarUrl})`,
@@ -76,7 +76,9 @@ const NameCard: React.FC<NameCardProps> = ({
       </div>
 
       {/* arrow */}
-      <div className={`${logoPositionClasses[position]} w-10 h-10`}>
+      <div
+        className={`${logoPositionClasses[position]} w-8 h-8 md:w-10 md:h-10`}
+      >
         <Image src={logoSrc} alt="Logo" width={40} height={40} />
       </div>
     </div>

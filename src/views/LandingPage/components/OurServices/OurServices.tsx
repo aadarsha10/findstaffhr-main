@@ -9,6 +9,7 @@ import service3 from "@/assets/LandingPage/OurServices/service3.png";
 import service4 from "@/assets/LandingPage/OurServices/service4.png";
 import service5 from "@/assets/LandingPage/OurServices/service5.png";
 import service6 from "@/assets/LandingPage/OurServices/service6.png";
+import HighlightText from "@/services/highlightText";
 
 export default function OurServices() {
   const [isForWorkers, setIsForWorkers] = useState(true);
@@ -121,16 +122,20 @@ export default function OurServices() {
   return (
     <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
       <div className="w-full flex flex-col items-start mb-16">
-        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
+        <h2 className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
           Our services
-        </p>
+        </h2>
         <div className="text-primary text-start space-x-2 text-5xl tracking-wider leading-tight font-normal">
-          <p className="relative group flex flex-col w-fit font-semibold px-4 overflow-hidden">
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
+          <h1 className="relative group flex flex-col w-fit font-semibold  overflow-hidden">
+            <HighlightText
+              className="font-semibold px-4 text-start"
+              highlightColor="bg-tertiary-green"
+              duration={700}
+              delayAnimation={700}
+            >
               End-to-End Solutions
-            </span>
-            <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
-          </p>{" "}
+            </HighlightText>{" "}
+          </h1>{" "}
           {/* Title with crossfade animation */}
           <span className=" relative min-w-[300px]">
             {/* Workers text */}

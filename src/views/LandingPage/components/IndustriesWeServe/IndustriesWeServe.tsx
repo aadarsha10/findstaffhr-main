@@ -6,7 +6,7 @@ import Industries3 from "@/assets/LandingPage/IndustriesWeServe/industries3.png"
 import Industries4 from "@/assets/LandingPage/IndustriesWeServe/industries4.png";
 import Industries5 from "@/assets/LandingPage/IndustriesWeServe/industries5.png";
 import Industries6 from "@/assets/LandingPage/IndustriesWeServe/industries6.png";
-
+import HighlightText from "@/services/highlightText";
 export default function IndustriesWeServe() {
   const industriesData = [
     {
@@ -86,16 +86,21 @@ export default function IndustriesWeServe() {
   return (
     <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
       <div className="w-full flex flex-col items-start mb-16">
-        <p className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
+        <h2 className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
           Industries We Serve
-        </p>
+        </h2>
         <div className="text-primary text-start space-x-2 text-5xl tracking-wider leading-tight font-normal">
-          <p className="relative group flex flex-col w-fit font-semibold px-4 overflow-hidden">
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500 ease-in-out">
+          <h1 className="relative group flex flex-col w-fit font-semibold  overflow-hidden">
+            <HighlightText
+              className="font-semibold px-4"
+              highlightColor="bg-tertiary-green"
+              duration={700}
+              delayAnimation={700}
+            >
               Connecting Great Talent
-            </span>
+            </HighlightText>{" "}
             <span className="absolute inset-0 w-0 bg-tertiary-green group-hover:w-full transition-all duration-500 ease-in-out left-0 right-auto -z-10"></span>
-          </p>{" "}
+          </h1>{" "}
           {/* Title without animation */}
           <span className="inline-block font-primary text-5xl font-normal leading-normal">
             with the Right Opportunities

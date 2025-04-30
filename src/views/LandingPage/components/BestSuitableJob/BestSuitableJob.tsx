@@ -23,7 +23,7 @@ export default function BestSuitableJob() {
           with <br />
           skill assessment & preference
         </h1>
-        <p className="text-primary-gray max-w-[874px] mt-4 md:mt-6 text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal px-2">
+        <p className="text-primary-gray md:max-w-[874px] mt-4 md:mt-6 text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal px-2">
           We match your skills and preferences to the roles that fit you best —
           helping you choose with utmost trust, clarity and confidence.
         </p>

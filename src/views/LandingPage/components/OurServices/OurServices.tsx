@@ -9,7 +9,7 @@ import service3 from "@/assets/LandingPage/OurServices/service3.png";
 import service4 from "@/assets/LandingPage/OurServices/service4.png";
 import service5 from "@/assets/LandingPage/OurServices/service5.png";
 import service6 from "@/assets/LandingPage/OurServices/service6.png";
-import HighlightText from "@/services/highlightText";
+import HighlightText from "@/services/HighlightText";
 
 export default function OurServices() {
   const [isForWorkers, setIsForWorkers] = useState(true);
@@ -120,15 +120,15 @@ export default function OurServices() {
     currentContent === "workers" ? workersData : companiesData;
 
   return (
-    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-24 w-full">
-      <div className="w-full flex flex-col items-start mb-16">
-        <h2 className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-xl tracking-wider leading-tight font-semibold">
+    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-12 md:py-24 w-full">
+      <div className="w-full flex flex-col items-start mb-8 md:mb-16">
+        <h2 className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-base md:text-xl tracking-wider leading-tight font-semibold">
           Our services
         </h2>
-        <div className="text-primary text-start space-x-2 text-5xl tracking-wider leading-tight font-normal">
-          <h1 className="relative group flex flex-col w-fit font-semibold  overflow-hidden">
+        <div className="text-primary text-start space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
+          <h1 className="relative group flex flex-col w-fit font-semibold overflow-hidden">
             <HighlightText
-              className="font-semibold px-4 text-start"
+              className="font-semibold px-2 md:px-4 text-start"
               highlightColor="bg-tertiary-green"
               duration={700}
               delayAnimation={700}
@@ -137,10 +137,10 @@ export default function OurServices() {
             </HighlightText>{" "}
           </h1>{" "}
           {/* Title with crossfade animation */}
-          <span className=" relative min-w-[300px]">
+          <p className="relative mt-2 md:mt-0 h-8 sm:h-auto">
             {/* Workers text */}
             <span
-              className={`absolute top-0 left-0 whitespace-nowrap transition-opacity duration-500 ease-in-out ${
+              className={`absolute top-0 left-0 whitespace-normal sm:whitespace-nowrap  text-3xl md:text-4xl lg:text-5xltransition-opacity duration-500 ease-in-out max-w-[300px] sm:max-w-[300px] ${
                 currentContent === "workers" ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -149,21 +149,21 @@ export default function OurServices() {
 
             {/* Companies text */}
             <span
-              className={`absolute top-0 left-0 whitespace-nowrap transition-opacity duration-500 ease-in-out ${
+              className={`absolute top-0 left-0 whitespace-normal sm:whitespace-nowrap text-3xl md:text-4xl lg:text-5xltransition-opacity duration-500 ease-in-out max-w-[300px] sm:max-w-[300px] ${
                 currentContent === "companies" ? "opacity-100" : "opacity-0"
               }`}
             >
               for Dubai Businesses
             </span>
-          </span>
+          </p>
         </div>
 
-        <div className="flex justify-between items-center mt-20">
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 md:mt-20 w-full">
           {/* Description with crossfade animation */}
-          <div className="relative max-w-[831px]">
+          <div className="relative max-w-full md:max-w-[831px] mb-6 md:mb-0">
             {/* Workers description */}
             <p
-              className={`text-primary-gray text-left font-primary text-xl font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
+              className={`text-primary-gray text-left font-primary text-base md:text-lg lg:text-xl font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
                 currentContent === "workers" ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -174,7 +174,7 @@ export default function OurServices() {
 
             {/* Companies description */}
             <p
-              className={`text-primary-gray text-left font-primary text-xl font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
+              className={`text-primary-gray text-left font-primary text-base md:text-lg lg:text-xl font-normal leading-normal absolute transition-opacity duration-500 ease-in-out ${
                 currentContent === "companies" ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -184,16 +184,16 @@ export default function OurServices() {
             </p>
 
             {/* Invisible spacer to maintain height */}
-            <p className="text-primary-gray text-left font-primary text-xl font-normal leading-normal invisible">
+            <p className="text-primary-gray text-left font-primary text-base md:text-lg lg:text-xl font-normal leading-normal invisible">
               {currentContent === "workers"
                 ? "Customized solutions for people looking for work opportunities in Dubai. From Construction to Tourism, from Hospitality to Manufacturing, we all all sectors."
                 : "From sourcing skilled workers across Asia to handling documentation, visas, and relocation—FindStaff takes care of the entire hiring process, so you don't have to."}
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4 mt-2 md:mt-0">
             <p
-              className={`min-w-[106px] text-[18px] font-primary font-normal leading-normal transition-all duration-500 ease-in-out ${
+              className={`min-w-[80px] md:min-w-[106px] text-sm md:text-[18px] font-primary font-normal leading-normal transition-all duration-500 ease-in-out ${
                 isForWorkers ? "text-primary-gray font-normal" : "text-gray-300"
               }`}
             >
@@ -201,23 +201,23 @@ export default function OurServices() {
             </p>
             <button onClick={handleToggle}>
               <div
-                className={`flex w-[75px] p-[6px] items-center gap-[7.5px] rounded-[749.25px] ${
+                className={`flex w-[60px] md:w-[75px] p-[5px] md:p-[6px] items-center gap-[7.5px] rounded-[749.25px] ${
                   !isForWorkers
                     ? "bg-[rgba(98,177,40,0.12)]"
                     : "bg-[rgba(51,65,85,0.12)]"
                 }`}
               >
                 <div
-                  className={`w-6 h-6 flex-shrink-0 aspect-square rounded-full ${
+                  className={`w-5 h-5 md:w-6 md:h-6 flex-shrink-0 aspect-square rounded-full ${
                     isForWorkers
                       ? "bg-[#334155] translate-x-0 transition-all duration-500 ease-in-out"
-                      : "bg-secondary-green translate-x-[39px] transition-all duration-500 ease-in-out"
+                      : "bg-secondary-green translate-x-[29px] md:translate-x-[39px] transition-all duration-500 ease-in-out"
                   }`}
                 ></div>
               </div>
             </button>
             <p
-              className={`min-w-[136px] text-[18px] font-primary leading-normal transition-all duration-500 ease-in-out ${
+              className={`min-w-[100px] md:min-w-[136px] text-sm md:text-[18px] font-primary leading-normal transition-all duration-500 ease-in-out ${
                 !isForWorkers
                   ? "text-secondary-green font-semibold"
                   : "text-gray-300"
@@ -233,7 +233,7 @@ export default function OurServices() {
       <div className="w-full relative">
         {/* Workers cards */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
             currentContent === "workers" ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -249,7 +249,7 @@ export default function OurServices() {
 
         {/* Companies cards */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
             currentContent === "companies" ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -264,7 +264,7 @@ export default function OurServices() {
         </div>
 
         {/* Invisible spacer grid to maintain height */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full invisible">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full invisible">
           {currentData.map((service) => (
             <OurServiceCard
               key={service.id}

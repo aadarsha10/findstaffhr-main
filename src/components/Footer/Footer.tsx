@@ -34,16 +34,16 @@ const sectorLinks = [
 const contactInfo = [
   {
     heading: null,
-    items: ["FindStaff Middle East", "Business Bay, Dubai, UAE"],
+    items: ["Aarohi HR Solutions (P) Ltd.", "Basundhara-3, Kathmandu"],
   },
   {
-    heading: "Phone / WhatsApp",
-    items: ["+971 584565285", "+30 694 813 9454 (Greece-based support)"],
+    heading: "Phone / Address",
+    items: ["+977 1 4961807", "Basundhara-3, Kathmandu"],
   },
-  { heading: "Email", items: ["info@findstaff.edu"] },
+  { heading: "Email", items: ["info@aarohihrsolutions.com"] },
   {
     heading: "Working Hours",
-    items: ["Monday to Friday | 9:00 AM – 6:00 PM (GST)"],
+    items: ["Sunday to Friday | 9:00 AM – 6:00 PM (NST)"],
   },
 ];
 

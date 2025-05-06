@@ -11,9 +11,9 @@ import { usePathname } from "next/navigation";
 // Define the navigation items to avoid repetition
 const navItems = [
   { title: "Home", href: "/" },
-  { title: "Our Services", href: "/" },
-  { title: "Sectors", href: "/" },
-  { title: "How it works", href: "/" },
+  { title: "Our Services", href: "/ourservices" },
+  { title: "Licenses", href: "/licenses" },
+  { title: "About Us", href: "/aboutus" },
 ];
 
 export default function Navbar() {

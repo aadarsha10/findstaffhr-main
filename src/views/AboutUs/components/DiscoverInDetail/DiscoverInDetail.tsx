@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 import React from "react";
 
 // Quarter-circle group component with isolated animation
@@ -8,7 +8,7 @@ const QuarterCircleGroup = () => {
       <div className="absolute top-0 right-0 w-56 h-56">
         <div
           className="quarter-circle-animation"
-          style={{ transformOrigin: "top right" }}
+          style={{transformOrigin: "top right"}}
         >
           {/* Largest quarter-circle */}
           <div
@@ -36,13 +36,13 @@ export default function DiscoverInDetail() {
         <div className="flex-1 flex flex-col md:flex-row items-center justify-between relative z-10">
           <div className="flex flex-col max-w-2xl items-start justify-center gap-2">
             <h1 className="text-[#020617] text-[36px] font-bold">
-              Discover Findstaff in Detail
+              Discover Aarohi HR Solutions in Detail
             </h1>
             <p className="text-[#334155] text-base font-normal leading-tight">
               Learn more about our recruitment process, global talent network,
               and end-to-end support services. Our brochure provides a complete
-              overview of how Findstaff helps businesses hire smarter and faster
-              across borders.
+              overview of how Aarohi HR Solutions helps businesses hire smarter
+              and faster across borders.
             </p>
           </div>
           <div className="flex items-center justify-end mt-4 md:mt-0">

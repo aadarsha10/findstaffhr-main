@@ -1,12 +1,6 @@
 "use client";
 
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useMemo,
-  useCallback,
-} from "react";
+import React, {useState, useEffect, useRef, useMemo, useCallback} from "react";
 import BackgroundSvg from "@/assets/LandingPage/TrustedBy/Background.svg";
 
 import Image from "next/image";
@@ -165,7 +159,7 @@ export default function TrustedBy({
                         className="object-contain h-auto w-auto grayscale"
                         width={70}
                         height={70}
-                        style={{ maxWidth: "100%", maxHeight: "100%" }}
+                        style={{maxWidth: "100%", maxHeight: "100%"}}
                       />
                     </div>
                   </div>

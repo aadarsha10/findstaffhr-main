@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { memo, useEffect } from "react";
+import React, {memo, useEffect} from "react";
 import tickBadge from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge.svg";
 import tickBadgePurple from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge2.svg";
-import { Button } from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 import Link from "next/link";
-import { StaticImageData } from "next/image";
+import {StaticImageData} from "next/image";
 
 // Define types for our card data
 interface CardData {
@@ -28,11 +28,14 @@ interface CardProps {
 }
 
 // Quarter-circle group component with isolated animation
-const QuarterCircleGroup = ({ isCompanies }: { isCompanies: boolean }) => {
+const QuarterCircleGroup = ({isCompanies}: {isCompanies: boolean}) => {
   return (
     <div className="absolute top-0 right-0 pointer-events-none z-0">
       <div className="absolute top-0 right-0 w-56 h-56">
-        <div className="quarter-circle-animation" style={{ transformOrigin: 'top right' }}>
+        <div
+          className="quarter-circle-animation"
+          style={{transformOrigin: "top right"}}
+        >
           {/* Largest quarter-circle */}
           <div
             className={`absolute -top-16 -right-16 w-68 h-68 rounded-bl-full ${
@@ -58,7 +61,13 @@ const QuarterCircleGroup = ({ isCompanies }: { isCompanies: boolean }) => {
 };
 
 // Benefits list component - extracted for reusability
-const BenefitsList = ({ benefits, checkIcon }: { benefits: string[], checkIcon: StaticImageData }) => (
+const BenefitsList = ({
+  benefits,
+  checkIcon,
+}: {
+  benefits: string[];
+  checkIcon: StaticImageData;
+}) => (
   <>
     {benefits.map((benefit: string, index: number) => (
       <div key={index} className="flex items-start md:items-center gap-2">
@@ -81,7 +90,7 @@ const cardData: CardData[] = [
     type: "companies",
     title: "For Companies",
     titleColor: "text-secondary-green",
-    heading: "Need Reliable Staff for Your Business in Dubai?",
+    heading: "Need Reliable Staff for Your Business in Global?",
     description:
       "We make hiring skilled, compliant, and job-ready workers from Asia easy—so you can focus on growing your business.",
     bgColor: "bg-quaternary-green/70",
@@ -101,9 +110,9 @@ const cardData: CardData[] = [
     type: "employees",
     title: "For Employees",
     titleColor: "text-primary-purple",
-    heading: "Looking for Job Opportunities in Dubai?",
+    heading: "Looking for Job Opportunities in Global?",
     description:
-      "We connect hard-working individuals from Asia with trusted employers in Dubai. We'll support you through every step of the journey.",
+      "We connect hard-working individuals from Asia with trusted employers in Global. We'll support you through every step of the journey.",
     bgColor: "bg-secondary-purple/70",
     circleColor: "bg-primary-purple",
     isCompanies: false,
@@ -120,10 +129,10 @@ const cardData: CardData[] = [
 ];
 
 // Reusable card component
-const Card = memo(({ data }: CardProps) => (
+const Card = memo(({data}: CardProps) => (
   <div
     className="card-container w-full md:w-1/2 flex flex-col gap-4 md:gap-6 items-center md:items-start rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm transition-all duration-300 hover:scale-[1.01] relative overflow-hidden"
-    style={{ background: `var(--${data.type}-bg-color)` }}
+    style={{background: `var(--${data.type}-bg-color)`}}
   >
     {/* Quarter-circle animation elements - isolated from content */}
     <QuarterCircleGroup isCompanies={data.isCompanies} />
@@ -186,14 +195,14 @@ const CompaniesAndEmployeeCards = memo(function CompaniesAndEmployeeCards() {
         --employees-bg-color: var(--secondary-purple-70, rgba(243, 232, 255, 0.7));
       }
     `;
-    
+
     document.head.appendChild(styleSheet);
-    
+
     return () => {
       document.head.removeChild(styleSheet);
     };
   }, []);
-  
+
   return (
     <section className="w-full py-8 md:py-16 lg:py-24">
       <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full font-primary">

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import type {Metadata} from "next";
+import {DM_Sans} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -15,8 +15,8 @@ const dmSans = DM_Sans({
 // metadata
 
 export const metadata: Metadata = {
-  title: "Find Staff ",
-  description: "Find the right staff for your business in Dubai",
+  title: "Aarohi HR Solutions ",
+  description: "Find the right staff for your business in Global",
 };
 
 export default function RootLayout({

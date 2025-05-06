@@ -1,33 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Instagram, Facebook } from "lucide-react";
-import FindStaff from "../../assets/Footer/Find-staff.svg";
+import {Linkedin, Instagram, Facebook} from "lucide-react";
+// import FindStaff from "../../assets/Footer/Find-staff.svg";
+import MainLogo from "@/assets/Navbar/mainLogo.png";
 import Vector from "../../assets/Footer/Vector.svg";
-import Logo2 from "../../assets/Footer/Logo2.svg";
+import Logo2 from "../../assets/Footer/logo2.png";
 
 // Social media links data
 const socialLinks = [
-  { icon: Linkedin, href: "#", ariaLabel: "LinkedIn" },
-  { icon: Instagram, href: "#", ariaLabel: "Instagram" },
-  { icon: Facebook, href: "#", ariaLabel: "Facebook" },
+  {icon: Linkedin, href: "#", ariaLabel: "LinkedIn"},
+  {icon: Instagram, href: "#", ariaLabel: "Instagram"},
+  {icon: Facebook, href: "#", ariaLabel: "Facebook"},
 ];
 
 // Company links data
 const companyLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About us" },
-  { href: "/services", label: "Our Services" },
+  {href: "/", label: "Home"},
+  {href: "/about", label: "About us"},
+  {href: "/services", label: "Our Services"},
 ];
 
 // Sectors links data
 const sectorLinks = [
-  { href: "/construction", label: "Construction & Engineering" },
-  { href: "/hospitality", label: "Hospitality" },
-  { href: "/tourism", label: "Tourism" },
-  { href: "/domestic", label: "Domestic & Care Services" },
-  { href: "/logistics", label: "Logistics & Warehousing" },
-  { href: "/retail", label: "Retail & Customer Service" },
-  { href: "/manufacturing", label: "Manufacturing & Industrial" },
+  {href: "/construction", label: "Construction & Engineering"},
+  {href: "/hospitality", label: "Hospitality"},
+  {href: "/tourism", label: "Tourism"},
+  {href: "/domestic", label: "Domestic & Care Services"},
+  {href: "/logistics", label: "Logistics & Warehousing"},
+  {href: "/retail", label: "Retail & Customer Service"},
+  {href: "/manufacturing", label: "Manufacturing & Industrial"},
 ];
 
 // Contact information
@@ -40,7 +41,7 @@ const contactInfo = [
     heading: "Phone / Address",
     items: ["+977 1 4961807", "Basundhara-3, Kathmandu"],
   },
-  { heading: "Email", items: ["info@aarohihrsolutions.com"] },
+  {heading: "Email", items: ["info@aarohihrsolutions.com"]},
   {
     heading: "Working Hours",
     items: ["Sunday to Friday | 9:00 AM – 6:00 PM (NST)"],
@@ -59,7 +60,7 @@ export default function Footer() {
           alt="Background Design"
           width={1200}
           height={142}
-          style={{ width: "100%", height: "auto" }}
+          style={{width: "100%", height: "auto"}}
           priority={false}
         />
       </div>
@@ -72,18 +73,18 @@ export default function Footer() {
             <div className="flex flex-col items-start">
               <Image
                 src={Logo2}
-                alt="FindStaff Logo"
-                width={184}
-                height={60}
-                className="w-[120px] md:w-[184px] h-auto"
+                alt="Aarohi HR Solutions Logo"
+                width={194}
+                height={90}
+                className="w-[120px] md:w-[194px] h-auto"
               />
-              
+
               <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
                 Hire reliable, pre-screened talent from Asia with full
                 recruitment, visa, and relocation support - tailored for
-                Dubai&apos;s fast-paced industries.
+                Global&apos;s fast-paced industries.
               </p>
-              
+
               <div className="flex gap-4 mt-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -149,7 +150,9 @@ export default function Footer() {
                   {contactInfo.map((section, index) => (
                     <div key={index} className="mb-2">
                       {section.heading && (
-                        <p className="font-bold text-gray-100">{section.heading}</p>
+                        <p className="font-bold text-gray-100">
+                          {section.heading}
+                        </p>
                       )}
                       {section.items.map((item, itemIndex) => (
                         <p key={itemIndex} className="text-gray-200">
@@ -167,17 +170,17 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="mt-16 md:mt-32">
           <div className="w-full mx-auto mb-6 md:mb-8">
-            <Image
+            {/* <Image
               src={FindStaff}
-              alt="FindStaff"
+              alt="Aarohi HR Solutions"
               width={1200}
               height={48}
-              style={{ width: "100%", height: "auto" }}
+              style={{width: "100%", height: "auto"}}
               className="opacity-90"
-            />
+            /> */}
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center font-semibold gap-3 md:gap-0 text-[10px] md:text-xs text-white">
-            <p>All rights reserved © {currentYear} FindStaff</p>
+            <p>All rights reserved © {currentYear} Aarohi HR Solutions</p>
             <span className="order-3 md:order-2">Crafted by Dobaato</span>
             <div className="flex gap-2 order-2 md:order-3">
               <Link

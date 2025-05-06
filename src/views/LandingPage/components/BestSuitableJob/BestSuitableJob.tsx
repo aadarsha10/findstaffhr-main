@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import OverlayImage1 from "@/assets/LandingPage/BestSuitableJob/overlay1.svg";
 import OverlayImage2 from "@/assets/LandingPage/BestSuitableJob/overlay2.svg";
 import HighlightText from "@/services/HighlightText";
@@ -55,7 +55,7 @@ export default function BestSuitableJob() {
                   className="text-base md:text-xl lg:text-[24px] bg-[#F59E0B] group-hover:bg-tertiary-green px-3 md:px-4 py-1 md:py-2 rounded-full font-primary font-normal text-center shadow-sm transition-all duration-700 ease-in-out min-w-max"
                 >
                   <span className="flex items-center whitespace-nowrap transition-all duration-700 ease-in-out">
-                    Without FindStaff
+                    Without Aarohi HR Solutions
                     <span className="max-w-0 overflow-hidden group-hover:max-w-[120px] transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                       &nbsp;- click me
                     </span>
@@ -63,7 +63,7 @@ export default function BestSuitableJob() {
                 </button>
               </div>
               <span className="text-[10px] md:text-[12px] font-primary text-white max-w-[200px] md:max-w-[241px] text-center font-normal leading-normal">
-                Find out how Find Staff helps you organize your flow
+                Find out how Aarohi HR Solutions helps you organize your flow
               </span>
             </div>
           )}
@@ -76,7 +76,7 @@ export default function BestSuitableJob() {
                 className="py-1 md:py-2 px-3 md:px-4 -mt-3 md:-mt-5 text-white rounded-full group-hover:bg-[#F59E0B] transition-all duration-700 ease-in-out flex items-center justify-center shadow-md z-10 bg-tertiary-green group-hover:px-8 md:group-hover:px-12 min-w-max"
               >
                 <span className="flex text-base md:text-xl lg:text-[24px] font-primary font-normal items-center whitespace-nowrap transition-all duration-700 ease-in-out">
-                  With FindStaff
+                  With Aarohi HR Solutions
                   <span className="max-w-0 overflow-hidden group-hover:max-w-[120px] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
                     &nbsp;- click me
                   </span>

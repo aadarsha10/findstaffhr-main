@@ -1,27 +1,26 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import Logo from "@/assets/Navbar/Logo.svg";
-import { Button } from "../ui/button";
-import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { usePathname } from "next/navigation";
+import {Button} from "../ui/button";
+import {Menu} from "lucide-react";
+import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import {usePathname} from "next/navigation";
+import MainLogo from "@/assets/Navbar/mainLogo.png";
 
 // Define the navigation items to avoid repetition
 const navItems = [
-  { title: "Home", href: "/" },
-  { title: "Our Services", href: "/ourservices" },
-  { title: "Licenses", href: "/licenses" },
-  { title: "About Us", href: "/aboutus" },
+  {title: "Home", href: "/"},
+  {title: "Our Services", href: "/ourservices"},
+  {title: "Licenses", href: "/licenses"},
+  {title: "About Us", href: "/aboutus"},
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  
-  const pathname = usePathname();
 
-  
+  const pathname = usePathname();
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -32,15 +31,11 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div
-      className=" w-full  bg-white"
-      
-     
-    >
+    <div className=" w-full  bg-white">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between w-full py-6">
           <Link href="/" className="z-40">
-            <Image src={Logo} alt="logo" width={166} height={54} priority />
+            <Image src={MainLogo} alt="logo" width={166} height={54} priority />
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,16 +55,16 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <Link href={"/contactus"} className="hidden md:block ">
             <Button
               variant="withArrow"
-              className="h-14 w-[180px] pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+              className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
               withAnimatedArrow
               arrowSize={28}
             >
-              <span>Contact Us</span>
+              <span>Contact Us </span>
             </Button>
-          </div>
+          </Link>
 
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -97,7 +92,7 @@ export default function Navbar() {
                 ))}
                 <Button
                   variant="withArrow"
-                  className="h-14 w-[180px] mt-4 pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group "
+                  className=" h-14 w-[180px] mt-4 pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group "
                   withAnimatedArrow
                   arrowSize={28}
                   onClick={() => setIsOpen(false)}

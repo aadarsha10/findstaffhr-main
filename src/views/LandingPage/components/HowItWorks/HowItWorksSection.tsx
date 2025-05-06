@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import bg1 from "../../../../assets/LandingPage/HowItWorks/bg1.png";
 import LogoWithJobFields from "./components/LogoWithJobFields";
 import FrameImage from "./components/FrameImage";
@@ -11,7 +11,9 @@ import GroupCards from "../../../../assets/LandingPage/WorkForceSuccess/GroupCar
 
 export default function HowItWorksSection() {
   const [isForWorkers, setIsForWorkers] = useState(true);
-  const [currentContent, setCurrentContent] = useState<"workers" | "companies">("workers");
+  const [currentContent, setCurrentContent] = useState<"workers" | "companies">(
+    "workers"
+  );
 
   // Handle toggle click
   const handleToggle = () => {
@@ -29,9 +31,11 @@ export default function HowItWorksSection() {
           {/* Title with crossfade animation */}
           <div className="relative">
             {/* Workers title */}
-            <h1 className={`w-full text-center transition-opacity duration-500 ease-in-out ${
-              currentContent === "workers" ? "opacity-100" : "opacity-0"
-            }`}>
+            <h1
+              className={`w-full text-center transition-opacity duration-500 ease-in-out ${
+                currentContent === "workers" ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <span className="whitespace-nowrap w-full inline-block text-center">
                 A Clear Path to
               </span>
@@ -45,11 +49,13 @@ export default function HowItWorksSection() {
                 Workforce Success
               </HighlightText>
             </h1>
-            
+
             {/* Companies title */}
-            <h1 className={`w-full text-center absolute top-0 left-0 right-0 transition-opacity duration-500 ease-in-out ${
-              currentContent === "companies" ? "opacity-100" : "opacity-0"
-            }`}>
+            <h1
+              className={`w-full text-center absolute top-0 left-0 right-0 transition-opacity duration-500 ease-in-out ${
+                currentContent === "companies" ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <HighlightText
                 className="font-semibold px-2 md:px-4 text-center"
                 highlightColor="bg-tertiary-green"
@@ -59,7 +65,6 @@ export default function HowItWorksSection() {
                 Simplifying Hiring
               </HighlightText>{" "}
               <br />
-             
             </h1>
             {currentContent === "companies" && (
               <p className="whitespace-nowrap text-primary-gray text-center font-primary text-xl lg:text-5xl font-normal leading-normal transition-opacity duration-500 ease-in-out absolute bottom-0 left-0 right-0 md:bottom-0 md:-left-36 ">
@@ -68,30 +73,40 @@ export default function HowItWorksSection() {
             )}
           </div>
         </div>
-        
+
         {/* Description with crossfade animation */}
         <div className="relative max-w-[874px] mt-4 md:mt-6">
           {/* Workers description */}
-          <p className={`text-primary-gray text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal transition-opacity duration-500 ease-in-out absolute inset-0 ${
-            currentContent === "workers" ? "opacity-100" : "opacity-0"
-          }`}>
-            From demand letters to deployment — our step-by-step recruitment process ensures a smooth, transparent, and efficient hiring experience.
+          <p
+            className={`text-primary-gray text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal transition-opacity duration-500 ease-in-out absolute inset-0 ${
+              currentContent === "workers" ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            From demand letters to deployment — our step-by-step recruitment
+            process ensures a smooth, transparent, and efficient hiring
+            experience.
           </p>
 
           {/* Companies description */}
-          <p className={`text-primary-gray text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal transition-opacity duration-500 ease-in-out absolute inset-0 ${
-            currentContent === "companies" ? "opacity-100" : "opacity-0"
-          }`}>
-            At FindStaff, we help you land the job that matches your skills and goals. You&apos;ll discover opportunities that truly fit & take the next step in your career with confidence.
+          <p
+            className={`text-primary-gray text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal transition-opacity duration-500 ease-in-out absolute inset-0 ${
+              currentContent === "companies" ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            At Aarohi HR Solutions, we help you land the job that matches your
+            skills and goals. You&apos;ll discover opportunities that truly fit
+            & take the next step in your career with confidence.
           </p>
-          
+
           {/* Invisible spacer */}
           <p className="text-primary-gray text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal invisible">
-            From demand letters to deployment — our step-by-step recruitment process ensures a smooth, transparent, and efficient hiring experience.
+            From demand letters to deployment — our step-by-step recruitment
+            process ensures a smooth, transparent, and efficient hiring
+            experience.
           </p>
         </div>
       </header>
-      
+
       <section className="w-full flex flex-col items-center py-8 md:py-16">
         <div className="flex items-center gap-2 md:gap-4">
           <p
@@ -132,7 +147,7 @@ export default function HowItWorksSection() {
 
       <div className="w-full flex flex-col gap-4 md:gap-6 justify-center items-center relative">
         {/* Workers view - GroupCards SVG */}
-        <div 
+        <div
           className={`w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
             currentContent === "workers" ? "opacity-100" : "opacity-0"
           }`}
@@ -148,7 +163,7 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Companies view - Original card layout */}
-        <div 
+        <div
           className={`w-full absolute inset-0 transition-opacity duration-500 ease-in-out ${
             currentContent === "companies" ? "opacity-100" : "opacity-0"
           }`}
@@ -163,7 +178,7 @@ export default function HowItWorksSection() {
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{objectFit: "cover", objectPosition: "center"}}
                 />
                 <LogoWithJobFields />
               </div>
@@ -172,9 +187,9 @@ export default function HowItWorksSection() {
                   Tell us your job requirements
                 </p>
                 <p className="font-primary text-primary-gray text-xs md:text-sm font-normal">
-                  Share your skills, experience, and what kind of job you&apos;re
-                  looking for. We take the time to understand your goals and to
-                  find the right match for your career journey.
+                  Share your skills, experience, and what kind of job
+                  you&apos;re looking for. We take the time to understand your
+                  goals and to find the right match for your career journey.
                 </p>
               </div>
             </div>
@@ -187,7 +202,7 @@ export default function HowItWorksSection() {
                   fill
                   sizes="(max-width: 768px) 100vw, 60vw"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{objectFit: "cover", objectPosition: "center"}}
                 />
                 <FrameImage />
               </div>
@@ -213,7 +228,7 @@ export default function HowItWorksSection() {
                   fill
                   sizes="(max-width: 768px) 100vw, 60vw"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{objectFit: "cover", objectPosition: "center"}}
                 />
                 <MultipleCards />
               </div>
@@ -222,9 +237,9 @@ export default function HowItWorksSection() {
                   We Handle all your Visas & Documentation
                 </p>
                 <p className="font-primary text-primary-gray max-w-full md:max-w-[70%] text-xs md:text-sm font-normal">
-                  Our experts manage all the paperwork, from visa applications to
-                  documentation. You can relax knowing every detail is taken care
-                  of, quickly, correctly, and without stress.
+                  Our experts manage all the paperwork, from visa applications
+                  to documentation. You can relax knowing every detail is taken
+                  care of, quickly, correctly, and without stress.
                 </p>
               </div>
             </div>
@@ -237,7 +252,7 @@ export default function HowItWorksSection() {
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{objectFit: "cover", objectPosition: "center"}}
                 />
                 <EmployeeWithOrganization />
               </div>
@@ -247,14 +262,14 @@ export default function HowItWorksSection() {
                 </p>
                 <p className="font-primary text-primary-gray text-xs md:text-sm font-normal">
                   We guide you through your move — from flights and housing to
-                  settling in. With our full support, you can confidently relocate
-                  and start working without any hassle.
+                  settling in. With our full support, you can confidently
+                  relocate and start working without any hassle.
                 </p>
               </div>
             </div>
           </section>
         </div>
-        
+
         {/* Invisible spacer to maintain height */}
         <div className="w-full invisible">
           {currentContent === "workers" ? (

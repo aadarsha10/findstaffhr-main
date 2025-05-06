@@ -32,7 +32,7 @@ export default function IndustriesWeServe() {
     {
       id: 3,
       title: "Cleaning & Facility Management",
-      description: "Keeping Dubai spotless and operational",
+      description: "Keeping Global spotless and operational",
       imageUrl: Industries3.src,
       jobs: [
         "Commercial Cleaners",
@@ -51,7 +51,7 @@ export default function IndustriesWeServe() {
     {
       id: 5,
       title: "Hotels, F&B Service",
-      description: "Serving up excellence across Dubai",
+      description: "Serving up excellence across Global",
       imageUrl: Industries5.src,
       jobs: [
         "Restaurant Staff",
@@ -63,7 +63,7 @@ export default function IndustriesWeServe() {
     {
       id: 6,
       title: "Kitchen & Pastry",
-      description: "Keeping Dubai spotless and operational",
+      description: "Keeping Global spotless and operational",
       imageUrl: Industries6.src,
       jobs: ["Chef", "Helpers", "Movers", "Commis Sushi", "Sushi Chef"],
     },
@@ -96,10 +96,10 @@ export default function IndustriesWeServe() {
         <div className="flex justify-between items-center mt-4 md:mt-6">
           {/* Description without animation */}
           <p className="text-primary-gray text-left font-primary text-base md:text-lg lg:text-xl font-normal leading-normal">
-            From fast-growing businesses in Dubai to skilled individuals across
-            Asia—FindStaff bridges the gap between demand and talent across key
-            industries. Whether you&apos;re hiring or job hunting, we&apos;re
-            here to help you move forward.
+            From fast-growing businesses in Global to skilled individuals across
+            Asia—Aarohi HR Solutions bridges the gap between demand and talent
+            across key industries. Whether you&apos;re hiring or job hunting,
+            we&apos;re here to help you move forward.
           </p>
         </div>
       </div>

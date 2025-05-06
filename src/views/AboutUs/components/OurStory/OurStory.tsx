@@ -16,7 +16,7 @@ export default function OurStory() {
             duration={700}
             delayAnimation={700}
           >
-            Dubai
+            Global
           </HighlightText>{" "}
           <br />
           <span className="sm:hidden mt-2">
@@ -29,11 +29,12 @@ export default function OurStory() {
           </span>
         </h1>
         <p className="text-primary-gray   mt-6 text-start font-primary text-base sm:text-lg md:text-xl font-normal leading-normal">
-          FindStaff began in Greece with a mission to connect hardworking
-          individuals with global opportunities. <br /> Today, we bridge the gap
-          between skilled workers from Asia and growing businesses in Dubai.
-          Through ethical recruitment and transparent relocation, we’re
-          empowering lives and supporting industries — one placement at a time.
+          Aarohi HR Solutions began in Greece with a mission to connect
+          hardworking individuals with global opportunities. <br /> Today, we
+          bridge the gap between skilled workers from Asia and growing
+          businesses in Global. Through ethical recruitment and transparent
+          relocation, we’re empowering lives and supporting industries — one
+          placement at a time.
         </p>
       </header>
       <section className="w-full h-full flex items-center justify-center">

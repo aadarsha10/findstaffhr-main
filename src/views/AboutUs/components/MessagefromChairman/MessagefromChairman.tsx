@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Chairman from "@/assets/AboutUs/chairman.svg";
+import Chairman from "@/assets/AboutUs/chairman.jpg";
 import CurvArrow from "@/assets/AboutUs/curveArrow.svg";
 import HighlightText from "@/services/HighlightText";
 
@@ -25,9 +25,9 @@ export default function MessagefromChairman() {
           </h1>
           <div className="flex max-w-2xl flex-col items-start justify-start ">
             <p className="text-[#334155] text-start text-base">
-              At Findstaff, our mission is to bridge the gap between skilled
-              talent and global opportunities. Over the years, we have remained
-              committed to delivering ethical, efficient, and reliable
+              At Aarohi HR Solutions, our mission is to bridge the gap between
+              skilled talent and global opportunities. Over the years, we have
+              remained committed to delivering ethical, efficient, and reliable
               recruitment solutions that empower both businesses and
               individuals.
             </p>
@@ -38,18 +38,22 @@ export default function MessagefromChairman() {
               building futures.
             </p>
             <p className="text-[#334155] text-start text-base mt-4">
-              Thank you for choosing Findstaff. We look forward to being a part
-              of your journey.
+              Thank you for choosing Aarohi HR Solutions. We look forward to
+              being a part of your journey.
             </p>
             <p className="text-[#334155] text-start text-base mt-4">
-              Fab Senchuri
+              Arjun Thapa
               <br />
-              Chairman, Findstaff
+              Chairman, Aarohi HR Solutions
             </p>
           </div>
         </section>
         <section className="w-full md:w-2/5  flex justify-start items-start relative mt-8 md:mt-0 ">
-          <Image src={Chairman} alt="Chairman" className="w-full h-full " />
+          <Image
+            src={Chairman}
+            alt="Chairman"
+            className="w-full h-full rounded-full object-cover object-center shadow-lg"
+          />
           <Image
             src={CurvArrow}
             alt="CurvArrow"

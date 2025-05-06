@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import TestomonialSlide from "./Components/TestomonialSlide";
 import HighlightText from "@/services/HighlightText";
 
@@ -31,7 +31,7 @@ export default function Testomonials() {
         <p className="text-primary-gray max-w-[874px] mt-4 md:mt-6 text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal">
           We&apos;re proud to have helped businesses grow and individuals
           achieve life-changing opportunities. Here&apos;s what they have to say
-          about working with FindStaff.
+          about working with Aarohi HR Solutions.
         </p>
       </header>
       <section className="w-full flex flex-col items-center pt-8 md:pt-16">

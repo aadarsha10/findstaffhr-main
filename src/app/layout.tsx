@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
+import type {Metadata} from "next";
+import {DM_Sans} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
 // fonts
 
-const beVietnamPro = Be_Vietnam_Pro({
-  variable: "--font-be-vietnam-pro",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -15,8 +15,8 @@ const beVietnamPro = Be_Vietnam_Pro({
 // metadata
 
 export const metadata: Metadata = {
-  title: "Find Staff ",
-  description: "Find the right staff for your business in Dubai",
+  title: "Aarohi HR Solutions ",
+  description: "Find the right staff for your business in Global",
 };
 
 export default function RootLayout({
@@ -26,8 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
-        className={`${beVietnamPro.variable} antialiased`} 
+      <body
+        className={`${dmSans.variable} antialiased font-primary`}
         suppressHydrationWarning={true}
       >
         <Navbar />

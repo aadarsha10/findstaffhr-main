@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import OurServiceCard from "./components/OurServiceCard";
 
 // Import service images
@@ -51,7 +51,7 @@ export default function OurServices() {
       id: 5,
       title: "Relocation & Travel Coordination",
       description:
-        "Flight booking, accommodation support, and smooth worker arrival in Dubai.",
+        "Flight booking, accommodation support, and smooth worker arrival in Global.",
       imageUrl: service6.src,
     },
     {
@@ -97,7 +97,7 @@ export default function OurServices() {
       id: 5,
       title: "Worker Transportation",
       description:
-        "Coordinated transportation from home country to Dubai with all logistics handled.",
+        "Coordinated transportation from home country to Global with all logistics handled.",
       imageUrl: service5.src,
     },
     {
@@ -153,7 +153,7 @@ export default function OurServices() {
                 currentContent === "companies" ? "opacity-100" : "opacity-0"
               }`}
             >
-              for Dubai Businesses
+              for Global Businesses
             </span>
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function OurServices() {
               }`}
             >
               Customized solutions for people looking for work opportunities in
-              Dubai. From Construction to Tourism, from Hospitality to
+              Global. From Construction to Tourism, from Hospitality to
               Manufacturing, we all all sectors.
             </p>
 
@@ -179,15 +179,15 @@ export default function OurServices() {
               }`}
             >
               From sourcing skilled workers across Asia to handling
-              documentation, visas, and relocation—FindStaff takes care of the
-              entire hiring process, so you don&apos;t have to.
+              documentation, visas, and relocation—Aarohi HR Solutions takes
+              care of the entire hiring process, so you don&apos;t have to.
             </p>
 
             {/* Invisible spacer to maintain height */}
             <p className="text-primary-gray text-left font-primary text-base md:text-lg lg:text-xl font-normal leading-normal invisible">
               {currentContent === "workers"
-                ? "Customized solutions for people looking for work opportunities in Dubai. From Construction to Tourism, from Hospitality to Manufacturing, we all all sectors."
-                : "From sourcing skilled workers across Asia to handling documentation, visas, and relocation—FindStaff takes care of the entire hiring process, so you don't have to."}
+                ? "Customized solutions for people looking for work opportunities in Global. From Construction to Tourism, from Hospitality to Manufacturing, we all all sectors."
+                : "From sourcing skilled workers across Asia to handling documentation, visas, and relocation—Aarohi HR Solutions takes care of the entire hiring process, so you don't have to."}
             </p>
           </div>
 

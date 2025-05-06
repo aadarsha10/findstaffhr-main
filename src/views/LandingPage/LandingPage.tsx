@@ -8,12 +8,18 @@ import HowItWorksSection from "./components/HowItWorks/HowItWorksSection";
 import Testomonials from "./components/Testomonials/Testomonials";
 import GotQuestion from "./components/GotQuestion/GotQuestion";
 import CompaniesAndEmployeeCards from "./components/CompaniesAndEmployee/CompaniesAndEmployeeCards";
+import OurNumbersFigure from "./components/OurNumbersFigure/OurNumbersFigure";
 export default function LandingPage() {
   return (
     <div className="flex flex-col  py-16">
       <HeroSection />
-      <TrustedBy />
+      <TrustedBy
+        heading={"Trusted by"}
+        headerStyle={"text-start"}
+        className=""
+      />
       <BestSuitableJob />
+      <OurNumbersFigure />
       <OurServices />
       <IndustriesWeServe />
       <HowItWorksSection />

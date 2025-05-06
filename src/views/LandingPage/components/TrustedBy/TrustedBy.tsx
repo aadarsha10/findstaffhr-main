@@ -1,17 +1,8 @@
 "use client";
 
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useMemo,
-  useCallback,
-} from "react";
+import React, {useState, useEffect, useRef, useMemo, useCallback} from "react";
 import BackgroundSvg from "@/assets/LandingPage/TrustedBy/Background.svg";
-import Ellipse1 from "@/assets/LandingPage/TrustedBy/Ellipse1.svg";
-import Ellipse2 from "@/assets/LandingPage/TrustedBy/Ellipse2.svg";
-import Ellipse3 from "@/assets/LandingPage/TrustedBy/Ellipse3.svg";
-import Ellipse4 from "@/assets/LandingPage/TrustedBy/Ellipse4.svg";
+
 import Image from "next/image";
 
 // Import all slider SVGs
@@ -21,47 +12,66 @@ import slider3 from "@/assets/LandingPage/TrustedBy/slider3.png";
 import slider4 from "@/assets/LandingPage/TrustedBy/slider4.png";
 import slider5 from "@/assets/LandingPage/TrustedBy/slider5.png";
 
-export default function TrustedBy() {
+interface TrustedByProps {
+  heading: string;
+  headerStyle: string;
+  showBackground?: boolean;
+  className: string;
+}
+
+export default function TrustedBy({
+  heading,
+  headerStyle,
+  showBackground = true,
+  className,
+}: TrustedByProps) {
   const sliderImages = useMemo(
     () => [slider1, slider2, slider3, slider4, slider5],
     []
   );
 
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
   const [translateX, setTranslateX] = useState(0);
   // @ts-expect-error - known issue with requestAnimationFrame ID typing
   const animationRef = useRef<number>();
+  const [itemWidth, setItemWidth] = useState(0);
 
   const updateSliderPosition = useCallback((): void => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    // Calculate the maximum scroll distance once slider is loaded
-    const maxScroll = slider.scrollWidth / 2;
-    const speed = 3.5; // pixels per frame - increased speed
+    // Speed of animation (pixels per frame) - slightly faster for better visibility
+    const speed = 0.8;
 
-    // Update position based on direction
-    let newTranslateX = translateX + speed * direction;
+    // Move continuously to the left (negative direction)
+    let newTranslateX = translateX - speed;
 
-    // Check if we need to change direction
-    if (newTranslateX >= 0) {
-      // Reached right edge (start position)
-      newTranslateX = 0;
-      setDirection(-1);
-    } else if (newTranslateX <= -maxScroll) {
-      // Reached left edge (full scroll to left)
-      newTranslateX = -maxScroll;
-      setDirection(1);
+    // If we've moved one full set of images to the left, reset position to create infinite loop effect
+    const singleSetWidth = itemWidth * sliderImages.length;
+    if (singleSetWidth > 0 && Math.abs(newTranslateX) >= singleSetWidth) {
+      // Reset by the width of one full set to create seamless loop
+      newTranslateX += singleSetWidth;
     }
 
     setTranslateX(newTranslateX);
     slider.style.transform = `translateX(${newTranslateX}px)`;
 
     animationRef.current = requestAnimationFrame(updateSliderPosition);
-  }, [direction, translateX]);
+  }, [translateX, itemWidth, sliderImages]);
 
   useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider) {
+      // Calculate the width of a single item (including gap)
+      const firstItem = slider.querySelector(".slider-item");
+      if (firstItem) {
+        // Get the width of the item plus the gap (10px from the gap-10 class)
+        const calculatedItemWidth =
+          firstItem.getBoundingClientRect().width + 40; // 40px for the gap
+        setItemWidth(calculatedItemWidth);
+      }
+    }
+
     // Start animation
     animationRef.current = requestAnimationFrame(updateSliderPosition);
 
@@ -73,21 +83,47 @@ export default function TrustedBy() {
     };
   }, [updateSliderPosition]);
 
-  return (
-    <div
-      className="flex flex-col relative w-full -mt-10"
-      style={{
+  // Add a resize observer to recalculate dimensions if window size changes
+  useEffect(() => {
+    const handleResize = () => {
+      const slider = sliderRef.current;
+      if (slider) {
+        const firstItem = slider.querySelector(".slider-item");
+        if (firstItem) {
+          const calculatedItemWidth =
+            firstItem.getBoundingClientRect().width + 40;
+          setItemWidth(calculatedItemWidth);
+        }
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const backgroundStyles = showBackground
+    ? {
         backgroundImage: `url(${BackgroundSvg.src})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top",
         backgroundSize: "auto",
         minHeight: "246px",
-      }}
+      }
+    : {
+        minHeight: "180px", // Smaller height when no background
+      };
+
+  return (
+    <div
+      className={`flex flex-col relative w-full -mt-10 ${className}`}
+      style={backgroundStyles}
     >
       <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
         <div className="w-full">
-          <p className="text-[#020617] font-primary text-start text-xl tracking-wide leading-tight font-normal mb-4 md:mb-0">
-            Trusted By
+          <p
+            className={`text-[#020617] font-primary ${headerStyle}  text-xl tracking-wide leading-tight font-normal mb-4`}
+          >
+            {heading}
           </p>
         </div>
 
@@ -105,69 +141,25 @@ export default function TrustedBy() {
               ref={sliderRef}
               className="slider-track flex items-center gap-10 transition-none"
             >
-              {/* Double the images to create a seamless loop */}
-              {[...sliderImages, ...sliderImages].map((image, index) => (
-                <div key={index} className="slider-item flex-shrink-0">
-                  <div className="flex items-center justify-center h-16">
-                    <Image
-                      src={image.src}
-                      alt={`Trusted partner ${
-                        (index % sliderImages.length) + 1
-                      }`}
-                      className="object-contain h-auto w-auto grayscale"
-                      width={70}
-                      height={70}
-                      style={{ maxWidth: "100%", maxHeight: "100%" }}
-                    />
+              {/* Triple the images to create a more seamless continuous loop */}
+              {[...sliderImages, ...sliderImages, ...sliderImages].map(
+                (image, index) => (
+                  <div key={index} className="slider-item flex-shrink-0">
+                    <div className="flex items-center justify-center h-16">
+                      <Image
+                        src={image.src}
+                        alt={`Trusted partner ${
+                          (index % sliderImages.length) + 1
+                        }`}
+                        className="object-contain h-auto w-auto grayscale"
+                        width={70}
+                        height={70}
+                        style={{maxWidth: "100%", maxHeight: "100%"}}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="w-full h-20 flex gap-10 items-center md:justify-end justify-center mt-4 md:mt-0">
-            <div className="flex items-center justify-center ">
-              <div className="w-12 h-12 -mr-4 rounded-full flex items-center justify-center overflow-hidden">
-                <Image
-                  src={Ellipse1.src}
-                  alt="Ellipse 1"
-                  width={48}
-                  height={48}
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 -mr-4 rounded-full flex items-center justify-center overflow-hidden">
-                <Image
-                  src={Ellipse2.src}
-                  alt="Ellipse 2"
-                  width={48}
-                  height={48}
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 -mr-4 rounded-full flex items-center justify-center overflow-hidden">
-                <Image
-                  src={Ellipse3.src}
-                  alt="Ellipse 3"
-                  width={48}
-                  height={48}
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 -mr-4 rounded-full flex items-center justify-center overflow-hidden">
-                <Image
-                  src={Ellipse4.src}
-                  alt="Ellipse 4"
-                  width={48}
-                  height={48}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div>
-              <span className=" text-sm text-[#020617] font-primary font-normal">
-                3,000+ Hires <br /> & Placements
-              </span>
+                )
+              )}
             </div>
           </div>
         </div>

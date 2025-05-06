@@ -1,18 +1,18 @@
 "use client";
-import React, { useState, useCallback } from "react";
+import React, {useState, useCallback} from "react";
 import Image from "next/image";
 import serviceCall from "@/assets/LandingPage/GotAnswers/service-call.svg";
-import { motion } from "framer-motion";
-import FaqItem, { Faq } from "./components/FaqItem";
+import {motion} from "framer-motion";
+import FaqItem, {Faq} from "./components/FaqItem";
 import HighlightText from "@/services/HighlightText";
 
 // Array of FAQs
 const faqs: Faq[] = [
   {
     id: 1,
-    question: "How does FindStaff help with international hiring?",
+    question: "How does Aarohi HR Solutions help with international hiring?",
     answer:
-      "FindStaff streamlines international hiring by handling candidate sourcing, vetting, visa processing, and relocation logistics. We have a global network of skilled workers and manage the entire process from start to finish.",
+      "Aarohi HR Solutions streamlines international hiring by handling candidate sourcing, vetting, visa processing, and relocation logistics. We have a global network of skilled workers and manage the entire process from start to finish.",
   },
   {
     id: 2,

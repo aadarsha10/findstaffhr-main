@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { useEffect, useRef, useState, ReactNode } from "react";
+import {cn} from "@/lib/utils";
+import {useEffect, useRef, useState, ReactNode} from "react";
 
 interface HighlightTextProps {
   children: ReactNode;
@@ -56,15 +56,18 @@ export function HighlightText({
       }
     );
 
+    // Store the current value of the ref
+    const currentRef = ref.current;
+
     // Start observing the element
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     // Cleanup function to unobserve when component unmounts
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

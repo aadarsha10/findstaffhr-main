@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Linkedin, Instagram, Facebook} from "lucide-react";
 // import FindStaff from "../../assets/Footer/Find-staff.svg";
-import MainLogo from "@/assets/Navbar/mainLogo.png";
+// import MainLogo from "@/assets/Navbar/mainLogo.png";
 import Vector from "../../assets/Footer/Vector.svg";
 import Logo2 from "../../assets/Footer/logo2.png";
 

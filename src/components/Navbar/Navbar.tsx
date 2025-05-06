@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, {useState, useEffect} from "react";
-import Logo from "@/assets/Navbar/Logo.svg";
+// import Logo from "@/assets/Navbar/Logo.svg";
 import {Button} from "../ui/button";
 import {Menu} from "lucide-react";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";

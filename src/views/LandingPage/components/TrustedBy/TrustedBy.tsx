@@ -34,7 +34,6 @@ export default function TrustedBy({
   const [translateX, setTranslateX] = useState(0);
   // @ts-expect-error - known issue with requestAnimationFrame ID typing
   const animationRef = useRef<number>();
-  const [sliderWidth, setSliderWidth] = useState(0);
   const [itemWidth, setItemWidth] = useState(0);
 
   const updateSliderPosition = useCallback((): void => {
@@ -71,9 +70,6 @@ export default function TrustedBy({
           firstItem.getBoundingClientRect().width + 40; // 40px for the gap
         setItemWidth(calculatedItemWidth);
       }
-
-      // Get total slider width
-      setSliderWidth(slider.scrollWidth);
     }
 
     // Start animation
@@ -98,7 +94,6 @@ export default function TrustedBy({
             firstItem.getBoundingClientRect().width + 40;
           setItemWidth(calculatedItemWidth);
         }
-        setSliderWidth(slider.scrollWidth);
       }
     };
 

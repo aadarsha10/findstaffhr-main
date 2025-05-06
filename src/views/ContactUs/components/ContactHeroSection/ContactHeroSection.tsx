@@ -1,4 +1,3 @@
-import HighlightText from "@/services/HighlightText";
 import Image from "next/image";
 import React from "react";
 import Tower from "@/assets/ContactUs/tower.svg";
@@ -16,8 +15,8 @@ export default function ContactHeroSection() {
               Reach Out to Our Team
             </h1>
             <p>
-              We&apos;re here to help—whether you're hiring or job hunting in
-              Dubai. Reach us through the details below.
+              We&apos;re here to help—whether you&apos;re hiring or job hunting
+              in Dubai. Reach us through the details below.
             </p>
             <Image
               src={Tower}
@@ -68,8 +67,8 @@ export default function ContactHeroSection() {
                 Reach Out to Our Team
               </h1>
               <p>
-                We&apos;re here to help—whether you're hiring or job hunting in
-                Dubai. Reach us through the details below.
+                We&apos;re here to help—whether you&apos;re hiring or job
+                hunting in Dubai. Reach us through the details below.
               </p>
             </div>
           </div>

@@ -36,8 +36,19 @@ export default function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
-  // Track active link
-  const isActive = (href: string) => pathname === href || pathname?.startsWith(href + '/');
+  // Improved active link detection
+  const isActive = (href: string) => {
+    // Check exact match
+    if (pathname === href) return true;
+    
+    // Check if it's a parent path (for subpages)
+    if (href !== '/' && pathname?.startsWith(href + '/')) return true;
+    
+    // Special case for dropdown items in parent sections
+    if (href.includes('/ourservices/') && pathname?.startsWith('/ourservices')) return true;
+    
+    return false;
+  };
 
   // Clean up timeout on unmount
   useEffect(() => {
@@ -47,6 +58,18 @@ export default function Navbar() {
       }
     };
   }, []);
+
+  // Function to handle dropdown navigation without closing dropdown
+  const handleDropdownLinkClick = (e: React.MouseEvent, href: string) => {
+    if (pathname === href) {
+      // If already on the page, prevent default to avoid page reload
+      e.preventDefault();
+    }
+    // Keep dropdown open for a short time even after clicking
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
 
   return (
     <div className="w-full bg-white">
@@ -73,7 +96,7 @@ export default function Navbar() {
                   onMouseLeave={() => {
                     timeoutRef.current = setTimeout(() => {
                       setActiveDropdown(null);
-                    }, 200);
+                    }, 300);
                   }}
                 >
                   <Link
@@ -87,7 +110,7 @@ export default function Navbar() {
                     {item.title} <ChevronDown className="ml-1 h-4 w-4" />
                   </Link>
                   <div 
-                    className={`absolute top-full left-0 w-[180px] pt-2 bg-white shadow-md rounded-md overflow-hidden transition-all duration-300 ease-in-out ${
+                    className={`absolute z-50 top-full left-0 w-[180px] pt-2 bg-white shadow-md rounded-md overflow-hidden transition-all duration-300 ease-in-out ${
                       activeDropdown === item.title 
                         ? "opacity-100 visible translate-y-0" 
                         : "opacity-0 invisible translate-y-1"
@@ -102,7 +125,7 @@ export default function Navbar() {
                     onMouseLeave={() => {
                       timeoutRef.current = setTimeout(() => {
                         setActiveDropdown(null);
-                      }, 200);
+                      }, 300);
                     }}
                   >
                     <div className="py-1">
@@ -113,6 +136,7 @@ export default function Navbar() {
                           className={`block w-full px-4 py-2 hover:bg-gray-50 transition-colors ${
                             isActive(dropdownItem.href) ? "text-primary font-medium" : ""
                           }`}
+                          onClick={(e) => handleDropdownLinkClick(e, dropdownItem.href)}
                         >
                           {dropdownItem.title}
                         </Link>

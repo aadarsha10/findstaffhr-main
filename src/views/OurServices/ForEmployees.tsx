@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./components/Hero";
+import Hero from "../../components/atom/Hero";
 import Card, { CardData } from "./components/Card";
 import employee1 from "@/assets/Services-assets/ForEmployee/employee1.png";
 import employee2 from "@/assets/Services-assets/ForEmployee/employee2.png";
@@ -29,37 +29,51 @@ const companiesData: CardData[] = [
       "Cultural Fit",
     ],
     image: employee1,
-    reversed: false,
+    reversed: true,
   },
   {
     id: "2",
-    title: "International Recruitment",
+    title: "Candidate Vetting & Skill Assessment",
     description:
-      "We connect skilled Asian workers to verified jobs in Dubai with a safe, transparent process from start to finish.",
+      "We ensure that only the most qualified candidates make it through to you. Our thorough vetting process and skill assessments help identify top talent that matches your specific requirements.",
     benefits: [
-      "Legal, ethical job placements",
-      "Verified Dubai employers",
-      "Help with visas & documents",
-      "Support at every step",
+      "In-Depth Screening",
+      "Cultural Fit Assessment",
+      "Reduced Hiring Risks",
+      
     ],
     image: employee2,
-    reversed: true,
+    reversed: false,
   },
   {
     id: "3",
     title: "Visa & Work Permit Processing",
     description:
-      "We handle your visa and work permit process from start to finish, making sure everything is legal, fast, and stress-free.",
+      "We simplify the complex process of obtaining visas and work permits, ensuring your international hires can begin work without delays.",
     benefits: [
-      "Complete visa application support",
-      "Legal documentation handled",
-      "Fast and transparent process",
+      "Seamless Processing",
+      "Expert Guidance",
+      "Compliance Assurance",
     ],
     image: company3,
-    reversed: false,
+    reversed: true,
   },
   {
     id: "4",
+    title: "Relocation & Travel Coordination",
+    description:
+      "We assist candidates with every aspect of relocation, from travel arrangements to settling into their new role and location.",
+    benefits: [
+      "Travel Arrangements",
+      "Relocation Support",
+      "Ongoing Support",
+    ],
+    image: company5,
+    reversed: false,
+  },
+
+  {
+    id: "5",
     title: "Employer Document Preparation",
     description:
       "We help you gather and prepare all the documents your future employer needs, ensuring nothing delays your job placement.",
@@ -68,22 +82,8 @@ const companiesData: CardData[] = [
       "Guidance on contract signing",
       "Ensures faster processing",
     ],
-    image: company5,
-    reversed: true,
-  },
-
-  {
-    id: "5",
-    title: "Relocation & Travel Coordination",
-    description:
-      "From flights to accommodation, we coordinate your move to Dubai so you arrive prepared, stress-free, and ready to start work.",
-    benefits: [
-      "Flight booking and itinerary support",
-      "Arrival coordination and pickup",
-      "Temporary accommodation guidance",
-    ],
     image: company4,
-    reversed: false,
+    reversed: true,
   },
 
   {
@@ -98,7 +98,7 @@ const companiesData: CardData[] = [
       "Local Assistance",
     ],
     image: company6,
-    reversed: true,
+    reversed: false,
   },
 ];
 

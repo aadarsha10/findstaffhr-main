@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./components/Hero";
+import Hero from "../../components/atom/Hero";
 import Card, { CardData } from "./components/Card";
 import company1 from "@/assets/Services-assets/ForCompanies/company1.png";
 import company2 from "@/assets/Services-assets/ForCompanies/company2.png";

@@ -41,7 +41,7 @@ export default function HeroSection() {
         </h1>
         <p className="text-primary-gray max-w-[874px]  mt-6 text-center font-primary text-base sm:text-lg md:text-xl font-normal leading-normal">
           We&apos;re an trusted recruitment agency that handle all your visa,
-          and relocation support—tailored for Global&apos;s fast-paced
+          and relocation support—tailored for global fast-paced
           industries.
         </p>
         <div className="mt-16  md:mt-10 flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto justify-center">

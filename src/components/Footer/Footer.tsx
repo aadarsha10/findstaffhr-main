@@ -85,7 +85,7 @@ export default function Footer() {
               <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
                 Hire reliable, pre-screened talent from Asia with full
                 recruitment, visa, and relocation support - tailored for
-                Global&apos;s fast-paced industries.
+                global fast-paced industries.
               </p>
 
              

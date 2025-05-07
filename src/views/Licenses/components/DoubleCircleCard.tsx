@@ -1,16 +1,14 @@
 "use client";
-import Image from "next/image";
-import React, {memo, useEffect, useMemo} from "react";
+import React, { memo, useEffect, useMemo } from "react";
 import tickBadge from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge.svg";
 import tickBadgePurple from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge2.svg";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {StaticImageData} from "next/image";
+import { StaticImageData } from "next/image";
 
 // Define types for our card data
 interface CardData {
   type: string;
-  title: string;
   titleColor: string;
   heading: string;
   description: string;
@@ -20,7 +18,6 @@ interface CardData {
   checkIcon: StaticImageData;
   buttonVariant: "withArrow" | "withArrowPurple" | "withoutArrow" | "default";
   linkHref: string;
-  benefits: string[];
 }
 
 interface CardProps {
@@ -28,13 +25,13 @@ interface CardProps {
 }
 
 // Quarter-circle group component with isolated animation
-const QuarterCircleGroup = memo(({isCompanies}: {isCompanies: boolean}) => {
+const QuarterCircleGroup = memo(({ isCompanies }: { isCompanies: boolean }) => {
   return (
     <div className="absolute top-0 right-0 pointer-events-none z-0">
       <div className="absolute top-0 right-0 w-56 h-56">
         <div
           className="quarter-circle-animation"
-          style={{transformOrigin: "top right"}}
+          style={{ transformOrigin: "top right" }}
         >
           {/* Largest quarter-circle */}
           <div
@@ -62,98 +59,51 @@ const QuarterCircleGroup = memo(({isCompanies}: {isCompanies: boolean}) => {
 
 QuarterCircleGroup.displayName = "QuarterCircleGroup";
 
-// Benefits list component - extracted for reusability
-const BenefitsList = memo(({
-  benefits,
-  checkIcon,
-}: {
-  benefits: string[];
-  checkIcon: StaticImageData;
-}) => (
-  <>
-    {benefits.map((benefit: string, index: number) => (
-      <div key={index} className="flex items-start md:items-center gap-2">
-        <Image
-          src={checkIcon}
-          alt="check"
-          width={24}
-          height={24}
-          className="flex-shrink-0 mt-0.5 md:mt-0"
-        />
-        <span className="text-sm md:text-base">{benefit}</span>
-      </div>
-    ))}
-  </>
-));
-
-BenefitsList.displayName = "BenefitsList";
-
 // Card data for reusability
 const cardData: CardData[] = [
   {
     type: "companies",
-    title: "For Companies",
     titleColor: "text-secondary-green",
-    heading: "Need Reliable Staff for Your Business in Global?",
+    heading: "Learn More About Us",
     description:
-      "We make hiring skilled, compliant, and job-ready workers from Asia easy—so you can focus on growing your business.",
+      "Get our brochure for a clear overview of our services and recruitment process.",
     bgColor: "bg-quaternary-green/70",
     circleColor: "bg-secondary-green",
     isCompanies: true,
     checkIcon: tickBadge,
     buttonVariant: "withArrow",
     linkHref: "/for-companies",
-    benefits: [
-      "Industry-specific hiring (hospitality, construction, logistics, etc.)",
-      "Pre-vetted, experienced workers",
-      "Full visa & relocation handled by us",
-      "Fast turnaround, zero red tape",
-    ],
   },
   {
     type: "employees",
-    title: "For Employees",
     titleColor: "text-primary-purple",
-    heading: "Looking for Job Opportunities in Global?",
+    heading: "Quick Look at Our Services",
     description:
-      "We connect hard-working individuals from Asia with trusted employers in Global. We'll support you through every step of the journey.",
+      "Download our flyer for a quick snapshot of our services and industries we serve.",
     bgColor: "bg-secondary-purple/70",
     circleColor: "bg-primary-purple",
     isCompanies: false,
     checkIcon: tickBadgePurple,
     buttonVariant: "withArrowPurple",
     linkHref: "/for-employees",
-    benefits: [
-      "Legitimate job offers with valid contracts",
-      "Full visa and relocation assistance",
-      "Safe travel and reliable employers",
-      "No hidden fees or shady agents",
-    ],
   },
 ];
 
 // Reusable card component
-const Card = memo(({data}: CardProps) => (
+const Card = memo(({ data }: CardProps) => (
   <div
-    className="card-container group w-full md:w-1/2 flex flex-col gap-4 md:gap-6 items-center md:items-start rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm transition-colors duration-300 relative overflow-hidden"
-    style={{background: `var(--${data.type}-bg-color)`}}
+    className="card-container group w-full md:w-1/2 flex flex-col gap-4 md:gap-6 items-center md:items-start rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm transition-colors duration-300 relative overflow-hidden "
+    style={{ background: `var(--${data.type}-bg-color)` }}
   >
     {/* Quarter-circle animation elements - isolated from content */}
     <QuarterCircleGroup isCompanies={data.isCompanies} />
 
     {/* Content container */}
-    <div className="flex flex-col gap-2 relative z-10">
-      <h2
-        className={`text-lg md:text-xl ${data.titleColor} font-primary font-semibold`}
-      >
-        {data.title}
-      </h2>
+    <div className="flex flex-col gap-2 relative z-10 w-full">
       <h1 
-        className={`card-heading text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-primary font-semibold leading-tight mb-2 transition-colors duration-300 text-primary-black ${
-          data.isCompanies 
-            ? "group-hover:text-secondary-green" 
-            : "group-hover:text-primary-purple"
-        }`}
+        className={`card-heading text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-primary font-semibold leading-tight mb-2 transition-colors duration-300 ${
+          data.isCompanies ? "group-hover:text-secondary-green" : "group-hover:text-primary-purple"
+        } text-primary-black`}
       >
         {data.heading}
       </h1>
@@ -161,15 +111,14 @@ const Card = memo(({data}: CardProps) => (
         {data.description}
       </p>
     </div>
-    <div className="flex flex-col gap-3 md:gap-4 text-primary-gray w-full relative z-10">
-      <BenefitsList benefits={data.benefits} checkIcon={data.checkIcon} />
+    <div className="flex flex-col gap-3 md:gap-4 text-primary-gray w-full relative z-10 mt-auto">
       <Link href={data.linkHref} className="mt-2 md:mt-4 self-start transform transition-transform duration-300 hover:scale-[1.02] focus:scale-[1.02]">
         <Button
           variant={data.buttonVariant}
-          className="h-12 md:h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+          className="h-12 md:h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal"
           withAnimatedArrow
           arrowSize={24}
-          arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden button-arrow-container"
+          arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden"
         >
           <span>Find your Sector</span>
         </Button>
@@ -202,16 +151,14 @@ const injectGlobalStyles = () => {
       --companies-bg-color: var(--quaternary-green-70, rgba(236, 253, 245, 0.7));
       --employees-bg-color: var(--secondary-purple-70, rgba(243, 232, 255, 0.7));
     }
-    
-   
   `;
   document.head.appendChild(styleElement);
   return styleElement;
 };
 
 // Main component with memo for performance optimization
-const CompaniesAndEmployeeCards = memo(function CompaniesAndEmployeeCards() {
-  // Add CSS for animation only on the client-side
+const DoubleCircleCard = memo(function DoubleCircleCard() {
+  // Add CSS for animation only once on the client-side
   useEffect(() => {
     const styleSheet = injectGlobalStyles();
     return () => {
@@ -227,8 +174,8 @@ const CompaniesAndEmployeeCards = memo(function CompaniesAndEmployeeCards() {
 
   return (
     <section className="w-full py-8 md:py-16 lg:py-24">
-      <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full font-primary">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-16 items-stretch">
+      <div className="container mx-auto max-w-5xl px-4 md:px-6 w-full font-primary">
+        <div className="flex flex-col md:flex-row gap-6 items-stretch">
           {cardElements}
         </div>
       </div>
@@ -236,4 +183,4 @@ const CompaniesAndEmployeeCards = memo(function CompaniesAndEmployeeCards() {
   );
 });
 
-export default CompaniesAndEmployeeCards;
+export default DoubleCircleCard;

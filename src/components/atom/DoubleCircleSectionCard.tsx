@@ -54,13 +54,13 @@ const SecondCircleGroup = () => {
   );
 };
 
-interface DoubleCIrcleCardProps {
+interface DoubleCircleSectionCardProps {
   heading: string;
   paragraph: string;
   buttonText: string;
 }
 
-export default function DoubleCIrcleCard({ heading = "Still Have Questions?", paragraph = "We're just a call or message away. Whether you're a business or a job seeker, our team is here to make the process simple, legal, and stress-free.", buttonText = "Talk to Our Team" }: DoubleCIrcleCardProps) {
+export default function DoubleCircleSectionCard({ heading = "Still Have Questions?", paragraph = "We're just a call or message away. Whether you're a business or a job seeker, our team is here to make the process simple, legal, and stress-free.", buttonText = "Talk to Our Team" }: DoubleCircleSectionCardProps) {
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6 py-24 font-primary">
       <div className="bg-[#06C53C14] rounded-[24px] shadow-sm p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">

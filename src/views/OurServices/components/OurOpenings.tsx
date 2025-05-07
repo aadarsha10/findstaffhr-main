@@ -8,8 +8,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-import { Globe, Clock, DollarSign, Users } from "lucide-react";
+
 import Job from "@/assets/Services-assets/job.png";
+import Global from "@/assets/Services-assets/global.svg";
+import Money from "@/assets/Services-assets/money-3.svg";
+import Clock from "@/assets/Services-assets/clock.svg";
+import People from "@/assets/Services-assets/people.svg";
+
 import Image from "next/image";
 
 // Job opening data
@@ -78,7 +83,7 @@ export default function OurOpenings() {
     <div className="container mx-auto max-w-7xl items-center justify-center px-4 md:px-6 pt-16 font-primary">
       <header className="w-full flex flex-col items-start mb-8 md:mb-16">
         <h2 className="text-tertiary-green mb-1 font-primary text-start text-base md:text-xl leading-tight font-semibold">
-          Our services
+          Our Openings
         </h2>
         <h1 className="text-primary text-start text-3xl md:text-4xl lg:text-5xl leading-tight font-normal mb-4">
           Explore Opportunities
@@ -145,25 +150,26 @@ export default function OurOpenings() {
                   {job.company}
                 </h3>
                 <div className="flex items-center gap-2">
-                  <Globe className="h-5 w-5 text-gray-500" />
+                  <Image src={Global} alt="global" className="h-5 w-5 text-gray-500" />
                   <span className="text-[#475569] text-base font-normal ">
                     {job.location}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <DollarSign className="h-5 w-5 text-gray-500" />
+                  <Image src={Money} alt="money" className="h-5 w-5 text-gray-500" />
                   <span className="text-[#475569] text-base font-normal ">
                     {job.salary}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-gray-500" />
+                <Image src={Clock} alt="people" className="h-5 w-5 text-gray-500" />
+                  
                   <span className="text-[#475569] text-base font-normal ">
                     {job.type}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="h-5 w-5 text-gray-500" />
+                  <Image src={People} alt="people" className="h-5 w-5 text-gray-500" />
                   <span className="text-[#475569] text-base font-normal ">
                     {job.employees}
                   </span>

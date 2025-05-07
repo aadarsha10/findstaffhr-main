@@ -7,7 +7,7 @@ import company3 from "@/assets/Services-assets/ForCompanies/company3.png";
 import company4 from "@/assets/Services-assets/ForCompanies/company4.png";
 import company5 from "@/assets/Services-assets/ForCompanies/company5.png";
 import company6 from "@/assets/Services-assets/ForCompanies/company6.png";
-import DoubleCIrcleCard from "@/components/atom/DoubleCIrcleCard";
+import DoubleCIrcleCard from "@/components/atom/DoubleCircleSectionCard";
 import OurOpenings from "./components/OurOpenings";
 
 // Hero data
@@ -107,6 +107,7 @@ export default function ForCompanies() {
   return (
     <>
       <Hero 
+        beforehighlight={""}
         highlightText={heroData.highlightText}
         subtitle={heroData.subtitle}
         description={heroData.description}

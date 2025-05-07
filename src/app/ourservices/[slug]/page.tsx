@@ -3,14 +3,10 @@ import ForCompanies from "@/views/OurServices/ForCompanies";
 import ForEmployees from "@/views/OurServices/ForEmployees";
 import { notFound } from "next/navigation";
 
-interface OurServicesSlugPageProps {
-  params: {
-    slug: string;
-  };
-}
+type Params = Promise<{ slug: string }>;
 
-const OurServicesSlugPage = ({ params }: OurServicesSlugPageProps) => {
-  const { slug } = params;
+const OurServicesSlugPage = async ({ params }: { params: Params }) => {
+  const { slug } = await params;
 
   // Render the appropriate component based on the slug
   switch (slug) {

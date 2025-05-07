@@ -22,6 +22,7 @@ const navItems = [
   },
   {title: "Licenses", href: "/licenses"},
   {title: "About Us", href: "/aboutus"},
+  {title: "Jobs", href: "/jobs"},
 ];
 
 export default function Navbar() {

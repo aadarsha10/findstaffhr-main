@@ -7,7 +7,7 @@ import company3 from "@/assets/Services-assets/ForCompanies/company3.png";
 import company4 from "@/assets/Services-assets/ForCompanies/company4.png";
 import company5 from "@/assets/Services-assets/ForCompanies/company5.png";
 import company6 from "@/assets/Services-assets/ForCompanies/company6.png";
-import DoubleCIrcleCard from "@/components/atom/DoubleCIrcleCard";
+import DoubleCIrcleCard from "@/components/atom/DoubleCircleSectionCard";
 // Hero data
 const heroData = {
   highlightText: "End-to-End Solutions",
@@ -108,8 +108,7 @@ export default function ForEmployees() {
       <Hero 
         highlightText={heroData.highlightText}
         subtitle={heroData.subtitle}
-        description={heroData.description}
-      />
+        description={heroData.description} beforehighlight={""}      />
 
         {companiesData.map((cardData) => (
           <Card key={cardData.id} cardData={cardData} />

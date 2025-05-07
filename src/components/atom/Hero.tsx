@@ -4,12 +4,13 @@ import bottomImage from "@/assets/Services-assets/bottomImage.svg";
 import HighlightText from '@/services/HighlightText';
 
 interface HeroProps {
+  beforehighlight: string;
   highlightText: string;
   subtitle: string;
   description: string;
 }
 
-export default function Hero({ highlightText, subtitle, description }: HeroProps) {
+export default function Hero({ beforehighlight, highlightText, subtitle, description }: HeroProps) {
   return (
     <div
       className="h-auto w-full relative"
@@ -24,7 +25,8 @@ export default function Hero({ highlightText, subtitle, description }: HeroProps
             Our services
           </h2>
           <div className="text-primary text-center space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
-            <h1 className="relative group flex flex-col items-center w-full font-semibold overflow-hidden">
+            <h1 className="relative group flex  items-center w-full font-semibold overflow-hidden">
+              <span className=' font-normal text-primary-gray'>{beforehighlight}</span> 
               <HighlightText
                 className="font-semibold px-2 md:px-4 text-center mx-auto"
                 highlightColor="bg-tertiary-green"

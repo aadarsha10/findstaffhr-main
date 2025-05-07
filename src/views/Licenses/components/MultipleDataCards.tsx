@@ -119,7 +119,7 @@ export default function MultipleCards() {
             <div className="w-full">
               <h3 className="text-[#0F172A]  text-2xl font-medium mb-1">Your Rights</h3>
               <p className="text-[#334155]  text-base leading-[150%] mb-2">
-              You have the right to access, update, or delete your personal information at any time. If you wish to exercise these rights, please contact us at [contact email].
+              You have the right to access, update, or delete your personal information at any time. If you wish to exercise these rights, please contact us at info@findstaffhr.com.
               </p>
             </div>
             <div className="w-full">

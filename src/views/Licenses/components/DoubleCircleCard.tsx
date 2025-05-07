@@ -120,7 +120,7 @@ const Card = memo(({ data }: CardProps) => (
           arrowSize={24}
           arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden"
         >
-          <span>Find your Sector</span>
+          <span>{data.isCompanies ? "View Company Info" : "View Employee Info"}</span>
         </Button>
       </Link>
     </div>

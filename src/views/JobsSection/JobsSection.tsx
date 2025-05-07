@@ -8,6 +8,7 @@ export default function JobsSection() {
   return (
     <>
       <Hero
+        smallHeading="Jobs"
       beforehighlight={"Expore"}
         highlightText="Opportunites in Dubai"
         subtitle="with Trusted Employers"

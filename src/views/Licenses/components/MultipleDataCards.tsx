@@ -35,7 +35,7 @@ export default function MultipleCards() {
           <div className="flex flex-col items-start w-full">
             <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Introduction:</h2>
             <p className="text-[#0F172A]  text-base leading-[150%] mb-6">
-              At FindStaff, we are committed to protecting your privacy and ensuring that your personal information is handled securely and responsibly. This Privacy Policy outlines the types of information we collect, how we use it, and your rights regarding your personal data.
+              At Aarohi HR Solutions, we are committed to protecting your privacy and ensuring that your personal information is handled securely and responsibly. This Privacy Policy outlines the types of information we collect, how we use it, and your rights regarding your personal data.
             </p>
             <div className="w-full">
               <h3 className="text-[#0F172A]  text-2xl font-medium mb-1">Information We Collect:</h3>

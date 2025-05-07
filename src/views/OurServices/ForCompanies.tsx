@@ -107,6 +107,7 @@ export default function ForCompanies() {
   return (
     <>
       <Hero 
+        smallHeading="Our Services"
         beforehighlight={""}
         highlightText={heroData.highlightText}
         subtitle={heroData.subtitle}

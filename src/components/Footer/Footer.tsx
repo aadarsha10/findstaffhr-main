@@ -194,14 +194,14 @@ export default function Footer() {
             <span className="order-3 md:order-2">Crafted by Dobaato</span>
             <div className="flex gap-2 order-2 md:order-3">
               <Link
-                href="/privacy"
+                href="/licenses"
                 className="hover:text-gray-200 transition-colors"
               >
                 Privacy Policy
               </Link>
               <span>|</span>
               <Link
-                href="/terms"
+                href="/licenses"
                 className="hover:text-gray-200 transition-colors"
               >
                 Terms & Conditions

@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 // import Logo from "@/assets/Navbar/Logo.svg";
 import {Button} from "../ui/button";
-import {Menu} from "lucide-react";
+import {Menu, ChevronDown} from "lucide-react";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {usePathname} from "next/navigation";
 import MainLogo from "@/assets/Navbar/mainLogo.png";
@@ -12,13 +12,22 @@ import MainLogo from "@/assets/Navbar/mainLogo.png";
 // Define the navigation items to avoid repetition
 const navItems = [
   {title: "Home", href: "/"},
-  {title: "Our Services", href: "/ourservices"},
+  {
+    title: "Our Services",
+    href: "",
+    dropdown: [
+      {title: "For Companies", href: "/ourservices/companies"},
+      {title: "For Employees", href: "/ourservices/employees"},
+    ],
+  },
   {title: "Licenses", href: "/licenses"},
   {title: "About Us", href: "/aboutus"},
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const pathname = usePathname();
 
@@ -28,10 +37,19 @@ export default function Navbar() {
   }, [pathname]);
 
   // Track active link
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) => pathname === href || pathname?.startsWith(href + '/');
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div className=" w-full  bg-white">
+    <div className="w-full bg-white">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between w-full py-6">
           <Link href="/" className="z-40">
@@ -41,17 +59,80 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center font-primary text-sm font-normal gap-[10px]">
             {navItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className={`px-3 py-2 transition-colors ${
-                  isActive(item.href)
-                    ? "text-primary font-medium"
-                    : "hover:text-primary"
-                }`}
-              >
-                {item.title}
-              </Link>
+              item.dropdown ? (
+                <div 
+                  key={item.title}
+                  className="relative group"
+                  onMouseEnter={() => {
+                    if (timeoutRef.current) {
+                      clearTimeout(timeoutRef.current);
+                      timeoutRef.current = null;
+                    }
+                    setActiveDropdown(item.title);
+                  }}
+                  onMouseLeave={() => {
+                    timeoutRef.current = setTimeout(() => {
+                      setActiveDropdown(null);
+                    }, 200);
+                  }}
+                >
+                  <Link
+                    href={item.href}
+                    className={`flex items-center px-3 py-2 transition-colors ${
+                      isActive(item.href)
+                        ? "text-primary font-medium"
+                        : "hover:text-primary"
+                    }`}
+                  >
+                    {item.title} <ChevronDown className="ml-1 h-4 w-4" />
+                  </Link>
+                  <div 
+                    className={`absolute top-full left-0 w-[180px] pt-2 bg-white shadow-md rounded-md overflow-hidden transition-all duration-300 ease-in-out ${
+                      activeDropdown === item.title 
+                        ? "opacity-100 visible translate-y-0" 
+                        : "opacity-0 invisible translate-y-1"
+                    }`}
+                    onMouseEnter={() => {
+                      if (timeoutRef.current) {
+                        clearTimeout(timeoutRef.current);
+                        timeoutRef.current = null;
+                      }
+                      setActiveDropdown(item.title);
+                    }}
+                    onMouseLeave={() => {
+                      timeoutRef.current = setTimeout(() => {
+                        setActiveDropdown(null);
+                      }, 200);
+                    }}
+                  >
+                    <div className="py-1">
+                      {item.dropdown.map((dropdownItem) => (
+                        <Link 
+                          key={dropdownItem.title}
+                          href={dropdownItem.href}
+                          className={`block w-full px-4 py-2 hover:bg-gray-50 transition-colors ${
+                            isActive(dropdownItem.href) ? "text-primary font-medium" : ""
+                          }`}
+                        >
+                          {dropdownItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className={`px-3 py-2 transition-colors ${
+                    isActive(item.href)
+                      ? "text-primary font-medium"
+                      : "hover:text-primary"
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              )
             ))}
           </div>
 
@@ -79,16 +160,40 @@ export default function Navbar() {
             >
               <nav className="flex flex-col gap-6 mt-8">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className={`text-lg font-primary py-2 border-b border-gray-100 transition-colors ${
-                      isActive(item.href) ? "text-primary font-medium" : ""
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
+                  item.dropdown ? (
+                    <div key={item.title} className="flex flex-col">
+                      <span className={`text-lg font-primary py-2 border-b border-gray-100 transition-colors ${
+                        isActive(item.href) ? "text-primary font-medium" : ""
+                      }`}>
+                        {item.title}
+                      </span>
+                      <div className="ml-4 flex flex-col">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.title}
+                            href={dropdownItem.href}
+                            className={`text-lg font-primary py-2 border-b border-gray-100 transition-colors ${
+                              isActive(dropdownItem.href) ? "text-primary font-medium" : ""
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {dropdownItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className={`text-lg font-primary py-2 border-b border-gray-100 transition-colors ${
+                        isActive(item.href) ? "text-primary font-medium" : ""
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  )
                 ))}
                 <Button
                   variant="withArrow"

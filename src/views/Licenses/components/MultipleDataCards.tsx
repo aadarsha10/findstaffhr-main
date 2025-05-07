@@ -1,7 +1,9 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
-import EmploymentContract from "@/assets/Licenses/EmploymentContract.svg"
+
+import register from "@/assets/Licenses/registration.png"
+import license from "@/assets/Licenses/license.png"
 import TickBadge from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge.svg"
 
 export default function MultipleCards() {
@@ -142,9 +144,9 @@ export default function MultipleCards() {
             <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Employment Contracts</h2>
             <div className="flex justify-center w-full">
               <Image 
-                src={EmploymentContract} 
+                src={register} 
                 alt="Employment Contract" 
-                className="max-w-full h-auto object-contain"
+                className="max-w-full h-auto object-contain rounded-[24px] bg-lightgray bg-no-repeat bg-center bg-cover shadow-[-8px_8px_8px_0px_rgba(0,0,0,0.10)]"
                 width={625} 
                 height={833}
               />
@@ -157,9 +159,9 @@ export default function MultipleCards() {
             <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Employment Contracts</h2>
             <div className="flex justify-center w-full">
               <Image 
-                src={EmploymentContract} 
+                src={license} 
                 alt="License Document" 
-                className="max-w-full h-auto object-contain"
+                className="max-w-full h-auto object-contain rounded-[24px] bg-lightgray bg-no-repeat bg-center bg-cover shadow-[-8px_8px_8px_0px_rgba(0,0,0,0.10)]"
                 width={625} 
                 height={833}
               />

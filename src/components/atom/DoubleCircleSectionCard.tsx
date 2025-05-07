@@ -1,4 +1,5 @@
 import {Button} from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 // Quarter-circle group component with isolated animation
@@ -73,14 +74,16 @@ export default function DoubleCircleSectionCard({ heading = "Still Have Question
             <p className="text-[#334155] text-base font-normal leading-tight mb-4 text-center">
               {paragraph}
             </p>
+            <Link href="/contactus">
             <Button
               variant="withArrow"
-              className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+              className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
               withAnimatedArrow
               arrowSize={28}
             >
               {buttonText}
             </Button>
+            </Link>
           </div>
         </div>
         <SecondCircleGroup />

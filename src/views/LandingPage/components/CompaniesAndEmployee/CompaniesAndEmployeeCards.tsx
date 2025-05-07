@@ -102,7 +102,7 @@ const cardData: CardData[] = [
     isCompanies: true,
     checkIcon: tickBadge,
     buttonVariant: "withArrow",
-    linkHref: "/for-companies",
+    linkHref: "/contactus",
     benefits: [
       "Industry-specific hiring (hospitality, construction, logistics, etc.)",
       "Pre-vetted, experienced workers",
@@ -122,7 +122,7 @@ const cardData: CardData[] = [
     isCompanies: false,
     checkIcon: tickBadgePurple,
     buttonVariant: "withArrowPurple",
-    linkHref: "/for-employees",
+    linkHref: "/contactus",
     benefits: [
       "Legitimate job offers with valid contracts",
       "Full visa and relocation assistance",
@@ -166,7 +166,7 @@ const Card = memo(({data}: CardProps) => (
       <Link href={data.linkHref} className="mt-2 md:mt-4 self-start transform transition-transform duration-300 hover:scale-[1.02] focus:scale-[1.02]">
         <Button
           variant={data.buttonVariant}
-          className="h-12 md:h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+          className="h-12 md:h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover: cursor-pointer"
           withAnimatedArrow
           arrowSize={24}
           arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden button-arrow-container"
@@ -210,7 +210,7 @@ const injectGlobalStyles = () => {
 };
 
 // Main component with memo for performance optimization
-const CompaniesAndEmployeeCards = memo(function CompaniesAndEmployeeCards() {
+const  CompaniesAndEmployeeCards = memo(function CompaniesAndEmployeeCards() {
   // Add CSS for animation only on the client-side
   useEffect(() => {
     const styleSheet = injectGlobalStyles();

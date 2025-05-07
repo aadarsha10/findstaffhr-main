@@ -16,7 +16,7 @@ export default function HeroAboutSection() {
             duration={700}
             delayAnimation={700}
           >
-            Asia to Global
+            Asia to the World
           </HighlightText>{" "}
           <br />
           <span className="sm:hidden">Seamless Staffing Solutions</span>
@@ -24,7 +24,7 @@ export default function HeroAboutSection() {
         </h1>
         <p className="text-primary-gray max-w-[874px]  mt-6 text-center font-primary text-base sm:text-lg md:text-xl font-normal leading-normal">
           We connect skilled individuals from Asia with growing companies in
-          Global — making global employment accessible, reliable, and
+          the World — making global employment accessible, reliable, and
           life-changing.
         </p>
       </header>

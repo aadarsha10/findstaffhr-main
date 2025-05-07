@@ -72,7 +72,7 @@ const cardData: CardData[] = [
     isCompanies: true,
     checkIcon: tickBadge,
     buttonVariant: "withArrow",
-    linkHref: "/for-companies",
+    linkHref: "/aboutus",
   },
   {
     type: "employees",
@@ -85,7 +85,7 @@ const cardData: CardData[] = [
     isCompanies: false,
     checkIcon: tickBadgePurple,
     buttonVariant: "withArrowPurple",
-    linkHref: "/for-employees",
+    linkHref: "/ourservices/employees",
   },
 ];
 
@@ -115,12 +115,12 @@ const Card = memo(({ data }: CardProps) => (
       <Link href={data.linkHref} className="mt-2 md:mt-4 self-start transform transition-transform duration-300 hover:scale-[1.02] focus:scale-[1.02]">
         <Button
           variant={data.buttonVariant}
-          className="h-12 md:h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal"
+          className="h-12 md:h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal hover:cursor-pointer"
           withAnimatedArrow
           arrowSize={24}
           arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden"
         >
-          <span>Find your Sector</span>
+          <span>{data.isCompanies ? "Learn More" : "Our Services"}</span>
         </Button>
       </Link>
     </div>

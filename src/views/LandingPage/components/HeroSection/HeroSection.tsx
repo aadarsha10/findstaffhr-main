@@ -4,8 +4,20 @@ import heroImage from "@/assets/LandingPage/HeroSection/HeroImage.svg";
 import {Button} from "@/components/ui/button";
 import HighlightText from "@/services/HighlightText";
 import NameDisplayCards from "./components/NameDisplayCards";
+import Link from "next/link";
 
 export default function HeroSection() {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div
       className="w-full h-[calc(90vh-88px)] container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center relative bg-cover bg-center"
@@ -24,29 +36,34 @@ export default function HeroSection() {
           >
             Asia&apos;s Top Talent
           </HighlightText>{" "}
-          to power <span className="sm:hidden">Global&apos;s Growth</span>
-          <span className="hidden sm:inline">Global&apos;s Growth</span>
+          to power <span className="sm:hidden">Global Growth</span>
+          <span className="hidden sm:inline">Global Growth</span>
         </h1>
         <p className="text-primary-gray max-w-[874px]  mt-6 text-center font-primary text-base sm:text-lg md:text-xl font-normal leading-normal">
           We&apos;re an trusted recruitment agency that handle all your visa,
-          and relocation support—tailored for Global&apos;s fast-paced
+          and relocation support—tailored for global fast-paced
           industries.
         </p>
         <div className="mt-16  md:mt-10 flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto justify-center">
-          <Button
+         <Link href="#industriesWeServe" onClick={(e) => scrollToSection(e, 'industriesWeServe')}>
+         <Button
             variant="withArrow"
-            className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+            className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
             withAnimatedArrow
             arrowSize={28}
           >
             <span>Find your Sector</span>
           </Button>
+          </Link>
+          <Link href="/contactus">
           <Button
             variant="withoutArrow"
-            className="h-14 w-[200px] px-4 py-3 relative overflow-hidden font-primary text-sm font-normal group"
+            className="h-14 w-[200px] px-4 py-3 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
           >
             <span>Talk to Our Team</span>
           </Button>
+          </Link>
+
         </div>
       </div>
       <div className="w-full h-full hidden md:block absolute inset-0">

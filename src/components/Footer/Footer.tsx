@@ -16,19 +16,19 @@ const socialLinks = [
 // Company links data
 const companyLinks = [
   {href: "/", label: "Home"},
-  {href: "/about", label: "About us"},
-  {href: "/services", label: "Our Services"},
+  {href: "/aboutus", label: "About us"},
+  {href: "/ourservices/companies", label: "Our Services"},
 ];
 
 // Sectors links data
 const sectorLinks = [
-  {href: "/construction", label: "Construction & Engineering"},
-  {href: "/hospitality", label: "Hospitality"},
-  {href: "/tourism", label: "Tourism"},
-  {href: "/domestic", label: "Domestic & Care Services"},
-  {href: "/logistics", label: "Logistics & Warehousing"},
-  {href: "/retail", label: "Retail & Customer Service"},
-  {href: "/manufacturing", label: "Manufacturing & Industrial"},
+  {href: "", label: "Construction & Engineering"},
+  {href: "", label: "Hospitality"},
+  {href: "", label: "Tourism"},
+  {href: "", label: "Domestic & Care Services"},
+  {href: "", label: "Logistics & Warehousing"},
+  {href: "", label: "Retail & Customer Service"},
+  {href: "", label: "Manufacturing & Industrial"},
 ];
 
 // Contact information
@@ -52,7 +52,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D8A3C] relative min-h-[400px] font-primary md:min-h-[600px] rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-10 mb-10 mx-2 md:mx-10">
+    <footer className="bg-[#0D8A3C] relative min-h-[400px] font-primary md:min-h-[300px] rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-10 mb-10 mx-2 md:mx-10">
       {/* Background Vector */}
       <div className="absolute bottom-0 left-0 right-0 z-0">
         <Image
@@ -66,11 +66,12 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto relative z-10">
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
-          {/* Logo and description section */}
-          <div className="w-full lg:w-1/3">
+        {/* Main Content - Restructured */}
+        <div className="flex flex-col md:flex-row w-full gap-10 md:gap-16 lg:gap-20">
+          {/* Logo and description section - Now at top */}
+          <div className="w-full">
             <div className="flex flex-col items-start">
+              <Link href="/">
               <Image
                 src={Logo2}
                 alt="Aarohi HR Solutions Logo"
@@ -78,12 +79,18 @@ export default function Footer() {
                 height={90}
                 className="w-[120px] md:w-[194px] h-auto"
               />
+              </Link>
+
 
               <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
                 Hire reliable, pre-screened talent from Asia with full
                 recruitment, visa, and relocation support - tailored for
-                Global&apos;s fast-paced industries.
+                global fast-paced industries.
               </p>
+
+             
+              
+
 
               <div className="flex gap-4 mt-4">
                 {socialLinks.map((social, index) => (
@@ -97,12 +104,15 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
+              <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
+                Govt. Lic. No: 1244/074/075 <br /> Reg. No.: 165209/073/074
+              </p>
             </div>
           </div>
 
-          {/* Links grid section */}
-          <div className="w-full lg:w-2/3">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          {/* Links grid section - Now at bottom with increased gap */}
+          <div className="w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {/* Company */}
               <div>
                 <h3 className="text-sm md:text-base text-white font-bold mb-3">
@@ -130,19 +140,19 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {sectorLinks.map((link, index) => (
                     <li key={index}>
-                      <Link
-                        href={link.href}
+                      <div
+                        // href={link.href}
                         className="text-xs md:text-sm text-white hover:text-gray-200 transition-colors block"
                       >
                         {link.label}
-                      </Link>
+                      </div>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Contact */}
-              <div className="flex flex-col items-start ">
+              <div className="flex flex-col items-start">
                 <h3 className="text-sm md:text-base text-white font-bold mb-3">
                   Contact us
                 </h3>
@@ -184,14 +194,14 @@ export default function Footer() {
             <span className="order-3 md:order-2">Crafted by Dobaato</span>
             <div className="flex gap-2 order-2 md:order-3">
               <Link
-                href="/privacy"
+                href="/licenses"
                 className="hover:text-gray-200 transition-colors"
               >
                 Privacy Policy
               </Link>
               <span>|</span>
               <Link
-                href="/terms"
+                href="/licenses"
                 className="hover:text-gray-200 transition-colors"
               >
                 Terms & Conditions

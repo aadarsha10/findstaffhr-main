@@ -8,9 +8,10 @@ interface HeroProps {
   highlightText: string;
   subtitle: string;
   description: string;
+  smallHeading: string;
 }
 
-export default function Hero({ beforehighlight, highlightText, subtitle, description }: HeroProps) {
+export default function Hero({ beforehighlight, highlightText, subtitle, description, smallHeading }: HeroProps) {
   return (
     <div
       className="h-auto w-full relative"
@@ -22,7 +23,7 @@ export default function Hero({ beforehighlight, highlightText, subtitle, descrip
       <div className="container mx-auto max-w-7xl px-4 py-16 md:px-6 mb-24">
         <header className="w-full flex flex-col items-center text-center mb-8 md:mb-16">
           <h2 className="text-tertiary-green mb-1 font-primary text-center space-x-2 text-base md:text-xl tracking-wider leading-tight font-semibold">
-            Our services
+            {smallHeading}
           </h2>
           <div className="text-primary text-center space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
             <h1 className="relative group flex  items-center w-full font-semibold overflow-hidden">

@@ -1,7 +1,9 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
-import EmploymentContract from "@/assets/Licenses/EmploymentContract.svg"
+
+import register from "@/assets/Licenses/registration.png"
+import license from "@/assets/Licenses/license.png"
 import TickBadge from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge.svg"
 
 export default function MultipleCards() {
@@ -35,7 +37,7 @@ export default function MultipleCards() {
           <div className="flex flex-col items-start w-full">
             <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Introduction:</h2>
             <p className="text-[#0F172A]  text-base leading-[150%] mb-6">
-              At FindStaff, we are committed to protecting your privacy and ensuring that your personal information is handled securely and responsibly. This Privacy Policy outlines the types of information we collect, how we use it, and your rights regarding your personal data.
+              At Aarohi HR Solutions, we are committed to protecting your privacy and ensuring that your personal information is handled securely and responsibly. This Privacy Policy outlines the types of information we collect, how we use it, and your rights regarding your personal data.
             </p>
             <div className="w-full">
               <h3 className="text-[#0F172A]  text-2xl font-medium mb-1">Information We Collect:</h3>
@@ -119,7 +121,7 @@ export default function MultipleCards() {
             <div className="w-full">
               <h3 className="text-[#0F172A]  text-2xl font-medium mb-1">Your Rights</h3>
               <p className="text-[#334155]  text-base leading-[150%] mb-2">
-              You have the right to access, update, or delete your personal information at any time. If you wish to exercise these rights, please contact us at [contact email].
+              You have the right to access, update, or delete your personal information at any time. If you wish to exercise these rights, please contact us at info@findstaffhr.com.
               </p>
             </div>
             <div className="w-full">
@@ -142,9 +144,9 @@ export default function MultipleCards() {
             <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Employment Contracts</h2>
             <div className="flex justify-center w-full">
               <Image 
-                src={EmploymentContract} 
+                src={register} 
                 alt="Employment Contract" 
-                className="max-w-full h-auto object-contain"
+                className="max-w-full h-auto object-contain rounded-[24px] bg-lightgray bg-no-repeat bg-center bg-cover shadow-[-8px_8px_8px_0px_rgba(0,0,0,0.10)]"
                 width={625} 
                 height={833}
               />
@@ -157,9 +159,9 @@ export default function MultipleCards() {
             <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Employment Contracts</h2>
             <div className="flex justify-center w-full">
               <Image 
-                src={EmploymentContract} 
+                src={license} 
                 alt="License Document" 
-                className="max-w-full h-auto object-contain"
+                className="max-w-full h-auto object-contain rounded-[24px] bg-lightgray bg-no-repeat bg-center bg-cover shadow-[-8px_8px_8px_0px_rgba(0,0,0,0.10)]"
                 width={625} 
                 height={833}
               />

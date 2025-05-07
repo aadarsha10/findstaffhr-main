@@ -8,9 +8,10 @@ export default function Licenses() {
   return (
     <>
       <Hero
+        smallHeading="Licenses"
         highlightText="Our Legal Commitment"
         subtitle="Ensuring Safe and Transparent Services"
-        description="FindStaff is fully licensed and compliant with all relevant laws and regulations in Dubai, providing businesses and job seekers with trustworthy and legally sound staffing services." beforehighlight={""}      />
+        description="Aarohi HR Solutions is fully licensed and compliant with all relevant laws and regulations in Dubai, providing businesses and job seekers with trustworthy and legally sound staffing services." beforehighlight={""}      />
       <MultipleDataCards />
 
       <DoubleCircleCard />

@@ -70,7 +70,7 @@ export default function IndustriesWeServe() {
   ];
 
   return (
-    <div className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-12 md:py-24 w-full">
+    <div id="industriesWeServe" className="container mx-auto max-w-7xl justify-center px-4 md:px-6 flex flex-col items-center py-12 md:py-24 w-full">
       <div className="w-full flex flex-col items-start mb-8 md:mb-16">
         <h2 className="text-tertiary-green mb-1 font-primary text-start space-x-2 text-base md:text-xl tracking-wider leading-tight font-semibold">
           Industries We Serve

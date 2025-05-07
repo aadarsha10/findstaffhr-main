@@ -52,7 +52,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D8A3C] relative min-h-[400px] font-primary md:min-h-[600px] rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-10 mb-10 mx-2 md:mx-10">
+    <footer className="bg-[#0D8A3C] relative min-h-[400px] font-primary md:min-h-[300px] rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-10 mb-10 mx-2 md:mx-10">
       {/* Background Vector */}
       <div className="absolute bottom-0 left-0 right-0 z-0">
         <Image
@@ -66,10 +66,10 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto relative z-10">
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
-          {/* Logo and description section */}
-          <div className="w-full lg:w-1/3">
+        {/* Main Content - Restructured */}
+        <div className="flex flex-col md:flex-row w-full gap-10 md:gap-16 lg:gap-20">
+          {/* Logo and description section - Now at top */}
+          <div className="w-full">
             <div className="flex flex-col items-start">
               <Image
                 src={Logo2}
@@ -100,9 +100,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links grid section */}
-          <div className="w-full lg:w-2/3">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          {/* Links grid section - Now at bottom with increased gap */}
+          <div className="w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {/* Company */}
               <div>
                 <h3 className="text-sm md:text-base text-white font-bold mb-3">
@@ -142,7 +142,7 @@ export default function Footer() {
               </div>
 
               {/* Contact */}
-              <div className="flex flex-col items-start ">
+              <div className="flex flex-col items-start">
                 <h3 className="text-sm md:text-base text-white font-bold mb-3">
                   Contact us
                 </h3>

@@ -4,7 +4,7 @@ import Tower from "@/assets/ContactUs/tower.svg";
 
 export default function ContactHeroSection() {
   return (
-    <div className="bg-gradient-to-b from-white via-transparent to-secondary-green/10 h-[105vh] w-full">
+    <div className="bg-gradient-to-b from-white via-transparent to-secondary-green/10 h-screen w-full">
       <div className="container mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-0 flex flex-col md:flex-row items-center justify-between gap-8">
         <section className="flex flex-col items-start justify-center w-full md:w-1/2 text-left">
           <header className="flex flex-col items-start justify-items-start w-full">

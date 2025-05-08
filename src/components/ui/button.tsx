@@ -1,7 +1,10 @@
+"use client";
+
 import * as React from "react";
 import {Slot} from "@radix-ui/react-slot";
 import {cva, type VariantProps} from "class-variance-authority";
 import {ArrowUpRight} from "lucide-react";
+import gsap from "gsap";
 
 import {cn} from "@/lib/utils";
 
@@ -49,6 +52,8 @@ type ButtonProps = React.ComponentProps<"button"> &
     arrowSize?: number;
     arrowColor?: string;
     arrowContainerClassName?: string;
+    onAnimationComplete?: () => void;
+    StyleBg?: string;
   };
 
 function Button({
@@ -61,15 +66,86 @@ function Button({
   arrowColor = "#ffffff",
   arrowContainerClassName = "ml-3.5 flex p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden",
   children,
+  onAnimationComplete,
+  StyleBg,
   ...props
 }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
-
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const isAnimatingRef = React.useRef(false);
+  
+  const handleButtonClick = React.useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    // Don't prevent default anymore, let the button behave normally
+    
+    if (!buttonRef.current || isAnimatingRef.current) return;
+    
+    isAnimatingRef.current = true;
+    
+    const button = buttonRef.current;
+    const buttonRect = button.getBoundingClientRect();
+    
+    // Get the button center coordinates
+    const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+    const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+    
+    // Create a ripple effect with reduced area
+    const ripple = document.createElement('div');
+    ripple.style.position = 'fixed';
+    ripple.style.left = `${buttonCenterX}px`;
+    ripple.style.top = `${buttonCenterY}px`;
+    ripple.style.width = '5px';
+    ripple.style.height = '5px';
+    ripple.style.borderRadius = '50%';
+    ripple.style.backgroundColor = StyleBg || 'rgba(255, 255, 255, 0.5)';
+    ripple.style.transform = 'translate(-50%, -50%)';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.zIndex = '1000';
+    
+    // Add ripple to document body 
+    document.body.appendChild(ripple);
+    
+    // Animate the ripple
+    gsap.to(ripple, {
+      duration: 0.4,
+      scale: 70,
+      opacity: 0,
+      onComplete: () => {
+        // Remove ripple when animation completes
+        if (document.body.contains(ripple)) {
+          document.body.removeChild(ripple);
+        }
+        
+        // Call animation complete callback
+        if (onAnimationComplete) {
+          onAnimationComplete();
+        }
+        
+        // Call original onClick after animation completes
+        if (props.onClick) {
+          props.onClick(e);
+        }
+      }
+    });
+    
+    // Animate the button
+    gsap.to(button, {
+      duration: 0.1,
+      scale: 0.5,
+      yoyo: true,
+      repeat: 1,
+      onComplete: () => {
+        isAnimatingRef.current = false;
+      }
+    });
+  }, [props,  onAnimationComplete, StyleBg]);
+  
   return (
     <Comp
+      ref={buttonRef}
       data-slot="button"
-      className={cn(buttonVariants({variant, size, className}))}
+      className={cn(buttonVariants({variant, size, className}), "relative")}
       {...props}
+      onClick={handleButtonClick}
     >
       {children}
       {withAnimatedArrow && (

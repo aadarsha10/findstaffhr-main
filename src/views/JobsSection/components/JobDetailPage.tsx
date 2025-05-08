@@ -1,33 +1,23 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Global from "@/assets/Services-assets/global.svg";
 import Money from "@/assets/Services-assets/money-3.svg";
 import Clock from "@/assets/Services-assets/clock.svg";
 import People from "@/assets/Services-assets/people.svg";
-import { StaticImageData } from "next/image";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import jobsData from "@/data/jobsData";
-import DoubleCircleSectionCard from "@/components/atom/DoubleCircleSectionCard";
+import jobsData, { Job } from "@/data/jobsData";
+import JobApplicationModal from "@/components/JobApplicationModal";
 
-interface JobDetailProps {
-  id: number;
-  company: string;
-  location: string;
-  salary: string;
-  title: string;
-  employees: string;
-  imageUrl: StaticImageData;
-  description?: string;
-  responsibilities?: string[];
-  requirements?: string[];
-  PerksAndBenefits?: string[];
-}
+// Using Job interface directly from jobsData
+type JobDetailProps = Job;
 
 export default function JobDetailPage({ job }: { job: JobDetailProps }) {
   const similarJobs = jobsData.filter((j) => j.id !== job.id);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
+
 
   // Adding CSS to hide scrollbar but keep functionality
   React.useEffect(() => {
@@ -47,6 +37,14 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
       document.head.removeChild(style);
     };
   }, []);
+
+  const closeApplicationModal = () => {
+    setIsApplicationModalOpen(false);
+  };
+  
+  const openApplicationModal = () => {
+    setIsApplicationModalOpen(true);
+  };
 
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6 py-8 font-primary">
@@ -115,6 +113,8 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
                 className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
                 withAnimatedArrow
                 arrowSize={28}
+                onAnimationComplete={openApplicationModal}
+                StyleBg="#11BC41"
               >
                 <span>Apply Now</span>
               </Button>
@@ -264,10 +264,40 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
           </div>
         </div>
       </div>
-      <DoubleCircleSectionCard
-        heading="Ready to join our team?"
-        paragraph="Apply now and take the first step towards a rewarding career with us."
-        buttonText="Apply Now"
+      
+      {/* Custom implementation of DoubleCircleSectionCard with application button */}
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 py-24 font-primary">
+        <div className="bg-[#06C53C14] rounded-[24px] shadow-sm p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+          {/* Circle group elements can be added here if needed */}
+          <div className="flex-1 flex flex-col md:flex-row items-center justify-center relative z-10">
+            <div className="flex flex-col max-w-3xl items-center justify-center gap-2">
+              <h1 className="text-[#020617] text-[36px] font-normal text-center">
+                Ready to join our team?
+              </h1>
+              <p className="text-[#334155] text-base font-normal leading-tight mb-4 text-center">
+                Apply now and take the first step towards a rewarding career with us.
+              </p>
+              <Button
+              
+                variant="withArrow"
+                className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
+                withAnimatedArrow
+                arrowSize={28}
+                onAnimationComplete={openApplicationModal}
+                StyleBg="#11BC41"
+              >
+                Apply Now
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Job Application Modal */}
+      <JobApplicationModal 
+        isOpen={isApplicationModalOpen} 
+        onClose={closeApplicationModal} 
+        job={job}
       />
     </div>
   );

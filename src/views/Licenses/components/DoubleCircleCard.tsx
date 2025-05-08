@@ -119,6 +119,7 @@ const Card = memo(({ data }: CardProps) => (
           withAnimatedArrow
           arrowSize={24}
           arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden"
+          StyleBg={data.buttonVariant === "withArrow" ? "#11BC41" : "#6D28D9"}
         >
           <span>{data.isCompanies ? "Learn More" : "Our Services"}</span>
         </Button>

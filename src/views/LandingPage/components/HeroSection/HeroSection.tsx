@@ -51,6 +51,7 @@ export default function HeroSection() {
             className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
             withAnimatedArrow
             arrowSize={28}
+            StyleBg="#11BC41"
           >
             <span>Find your Sector</span>
           </Button>
@@ -59,6 +60,7 @@ export default function HeroSection() {
           <Button
             variant="withoutArrow"
             className="h-14 w-[200px] px-4 py-3 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
+            StyleBg="#E2F7E8"
           >
             <span>Talk to Our Team</span>
           </Button>

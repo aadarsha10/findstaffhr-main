@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Tower from "@/assets/ContactUs/tower.svg";
 import { Button } from "@/components/ui/button";
 import toast, { Toaster } from 'react-hot-toast';
-import { CheckCircle2, XCircle, X } from 'lucide-react';
+import { CheckCircle2, XCircle, X, AlertCircle } from 'lucide-react';
 
 // Custom toast function for success messages
 const successToast = (message: string) => {
@@ -84,7 +84,24 @@ export default function ContactHeroSection() {
     subject: '',
     message: ''
   });
+  const [errors, setErrors] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    if (!phone) return true; // Phone is optional
+    const regex = /^[0-9+\-\s()]{7,20}$/;
+    return regex.test(phone);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -92,13 +109,66 @@ export default function ContactHeroSection() {
       ...prev,
       [id]: value
     }));
+    
+    // Clear error when user types
+    if (errors[id as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [id]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {
+      fullName: '',
+      email: '',
+      phone: '',
+      message: ''
+    };
+
+    // Validate full name
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Full name is required';
+      isValid = false;
+    } else if (formData.fullName.trim().length < 2) {
+      newErrors.fullName = 'Full name must be at least 2 characters';
+      isValid = false;
+    }
+
+    // Validate email
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required';
+      isValid = false;
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+      isValid = false;
+    }
+
+    // Validate phone (optional field)
+    if (formData.phone && !validatePhone(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number';
+      isValid = false;
+    }
+
+    // Validate message
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+      isValid = false;
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.fullName || !formData.email || !formData.message) {
-      errorToast('Please fill in all required fields.');
+    if (!validateForm()) {
       return;
     }
     
@@ -220,9 +290,15 @@ export default function ContactHeroSection() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 rounded-full border border-[#E2E8F0] bg-white text-[#94A3B8] text-sm font-normal"
+                  className={`w-full px-4 py-3 rounded-full border ${errors.fullName ? 'border-red-500' : 'border-[#E2E8F0]'} bg-white text-[#94A3B8] text-sm font-normal`}
                   required
                 />
+                {errors.fullName && (
+                  <div className="flex items-center mt-1 text-red-500 text-xs">
+                    <AlertCircle className="h-3 w-3 mr-1" />
+                    <span>{errors.fullName}</span>
+                  </div>
+                )}
               </div>
               
               <div className="flex flex-col w-full">
@@ -235,9 +311,15 @@ export default function ContactHeroSection() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-3 rounded-full border border-[#E2E8F0] bg-white text-[#94A3B8] text-sm font-normal"
+                  className={`w-full px-4 py-3 rounded-full border ${errors.email ? 'border-red-500' : 'border-[#E2E8F0]'} bg-white text-[#94A3B8] text-sm font-normal`}
                   required
                 />
+                {errors.email && (
+                  <div className="flex items-center mt-1 text-red-500 text-xs">
+                    <AlertCircle className="h-3 w-3 mr-1" />
+                    <span>{errors.email}</span>
+                  </div>
+                )}
               </div>
               
               <div className="flex flex-col w-full">
@@ -250,8 +332,14 @@ export default function ContactHeroSection() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full px-4 py-3 rounded-full border border-[#E2E8F0] bg-white text-[#94A3B8] text-sm font-normal"
+                  className={`w-full px-4 py-3 rounded-full border ${errors.phone ? 'border-red-500' : 'border-[#E2E8F0]'} bg-white text-[#94A3B8] text-sm font-normal`}
                 />
+                {errors.phone && (
+                  <div className="flex items-center mt-1 text-red-500 text-xs">
+                    <AlertCircle className="h-3 w-3 mr-1" />
+                    <span>{errors.phone}</span>
+                  </div>
+                )}
               </div>
               
               <div className="flex flex-col w-full">
@@ -278,9 +366,15 @@ export default function ContactHeroSection() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Write your message here"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] bg-white text-[#94A3B8] text-sm font-normal"
+                  className={`w-full px-4 py-3 rounded-xl border ${errors.message ? 'border-red-500' : 'border-[#E2E8F0]'} bg-white text-[#94A3B8] text-sm font-normal`}
                   required
                 ></textarea>
+                {errors.message && (
+                  <div className="flex items-center mt-1 text-red-500 text-xs">
+                    <AlertCircle className="h-3 w-3 mr-1" />
+                    <span>{errors.message}</span>
+                  </div>
+                )}
               </div>
               
               <Button
@@ -290,6 +384,7 @@ export default function ContactHeroSection() {
                 withAnimatedArrow
                 arrowSize={28}
                 disabled={isSubmitting}
+                StyleBg="#11BC41"
               >
                 <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </Button>

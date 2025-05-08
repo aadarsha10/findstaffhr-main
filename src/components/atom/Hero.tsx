@@ -58,6 +58,11 @@ export default function Hero({ beforehighlight, highlightText, subtitle, descrip
           src={bottomImage}
           alt="Bottom decoration"
           className="w-full absolute bottom-0 left-0"
+          width={1280}
+          height={160}
+          quality={85}
+          priority
+          sizes="100vw"
         />
       </div>
     </div>

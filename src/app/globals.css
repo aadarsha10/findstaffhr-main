@@ -180,3 +180,34 @@
     will-change: color;
   }
 }
+
+/* Toast Animations */
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes leave {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+}
+
+.animate-enter {
+  animation: enter 0.35s ease-out;
+}
+
+.animate-leave {
+  animation: leave 0.35s ease-in forwards;
+}

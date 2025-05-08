@@ -33,7 +33,15 @@ export default function Card({ cardData }: CardProps) {
             <ul className="space-y-4">
               {cardData.benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Image src={tick} alt="Tick" className="w-5 h-5 mt-1" />
+                  <Image 
+                    src={tick} 
+                    alt="Tick" 
+                    className="w-5 h-5 mt-1" 
+                    width={20}
+                    height={20}
+                    quality={90}
+                    loading="lazy"
+                  />
                   <span className="text-[#334155]">{benefit}</span>
                 </li>
               ))}
@@ -42,12 +50,24 @@ export default function Card({ cardData }: CardProps) {
           <div className="w-full md:w-1/2">
             <div className="relative">
               <div className={`absolute -top-4 ${cardData.reversed ? '-right-4' : '-left-4'} z-10`}>
-                <Image src={greenDot} alt="Green Dot" />
+                <Image 
+                  src={greenDot} 
+                  alt="Green Dot" 
+                  width={24}
+                  height={24}
+                  quality={85}
+                  loading="lazy"
+                />
               </div>
               <Image 
                 src={cardData.image} 
                 alt={`${cardData.title} Image`} 
                 className="w-[530px] h-[379px] flex-shrink-0 rounded-[24px] object-cover"
+                width={530}
+                height={379}
+                sizes="(max-width: 768px) 100vw, 530px"
+                quality={90}
+                priority
               />
             </div>
           </div>

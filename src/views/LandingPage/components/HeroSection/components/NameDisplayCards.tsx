@@ -66,20 +66,36 @@ const NameCard: React.FC<NameCardProps> = ({
 
       {/* Avatar */}
       <div
-        className={`${avatarPositionClasses[position]} w-[32px] h-[32px] md:w-[42px] md:h-[42px] rounded-full border-2 border-white bg-gray-300 bg-center bg-cover bg-no-repeat overflow-hidden`}
+        className={`${avatarPositionClasses[position]} overflow-hidden`}
         style={{
           transform: `rotate(${rotation * 0.8}deg)`,
-          backgroundImage: `url(${avatarUrl})`,
         }}
       >
-        {/* Removing the Image component to use background-image instead */}
+        <Image 
+          src={avatarUrl}
+          alt={`${name}'s avatar`}
+          width={42}
+          height={42}
+          className="rounded-full border-2 border-white w-[32px] h-[32px] md:w-[42px] md:h-[42px] object-cover"
+          sizes="(max-width: 768px) 32px, 42px"
+          quality={85}
+          loading="lazy"
+        />
       </div>
 
       {/* arrow */}
       <div
         className={`${logoPositionClasses[position]} w-8 h-8 md:w-10 md:h-10`}
       >
-        <Image src={logoSrc} alt="Logo" width={40} height={40} />
+        <Image 
+          src={logoSrc} 
+          alt="Logo" 
+          width={40} 
+          height={40} 
+          quality={90}
+          loading="lazy"
+          sizes="(max-width: 768px) 32px, 40px"
+        />
       </div>
     </div>
   );

@@ -22,11 +22,11 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         withArrow:
-          "bg-tertiary-green flex items-center justify-center text-primary-foreground rounded-[999px] shadow-xs",
+          "bg-tertiary-green flex items-center justify-center text-primary-foreground rounded-[999px] shadow-xs hover:cursor-pointer",
         withoutArrow:
-          "bg-quaternary-green flex items-center justify-center text-primary-green rounded-[999px] shadow-xs",
+          "bg-quaternary-green flex items-center justify-center text-primary-green rounded-[999px] shadow-xs hover:cursor-pointer",
         withArrowPurple:
-          "bg-primary-purple flex items-center justify-center text-primary-foreground rounded-[999px] shadow-xs",
+          "bg-primary-purple flex items-center justify-center text-primary-foreground rounded-[999px] shadow-xs hover:cursor-pointer",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

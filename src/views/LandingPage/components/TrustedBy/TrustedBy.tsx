@@ -155,6 +155,9 @@ export default function TrustedBy({
                         width={70}
                         height={70}
                         style={{maxWidth: "100%", maxHeight: "100%"}}
+                        quality={80}
+                        loading={index < 5 ? "eager" : "lazy"}
+                        sizes="70px"
                       />
                     </div>
                   </div>

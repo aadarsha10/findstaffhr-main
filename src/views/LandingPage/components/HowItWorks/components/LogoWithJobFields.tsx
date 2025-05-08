@@ -19,6 +19,8 @@ export default function LogoWithJobFields() {
           height={35} 
           className="w-[80px] md:w-[120px] h-auto"
           sizes="(max-width: 768px) 80px, 120px"
+          priority
+          quality={95}
         />
       </div>
 
@@ -30,6 +32,8 @@ export default function LogoWithJobFields() {
         width={60}
         height={60}
         sizes="(max-width: 768px) 40px, 60px"
+        loading="lazy"
+        quality={85}
       />
       <p className="absolute -top-4 -left-20 md:-left-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-xs md:text-sm font-normal leading-normal bg-gradient-to-t from-secondary-green to-white/75 rounded-xl px-2 md:px-3 py-1 md:py-2 text-white rotate-[5deg] shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
         Construction
@@ -43,6 +47,8 @@ export default function LogoWithJobFields() {
         width={60}
         height={60}
         sizes="(max-width: 768px) 40px, 60px"
+        loading="lazy"
+        quality={85}
       />
       <p className="absolute -top-4 -right-24 md:-right-32 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-xs md:text-sm font-normal leading-normal bg-gradient-to-t from-[#E11D48] to-white/75 rounded-xl px-2 md:px-3 py-1 md:py-2 text-white -rotate-[5deg] shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
         Domestic & Care Service
@@ -56,6 +62,8 @@ export default function LogoWithJobFields() {
         width={110}
         height={110}
         sizes="(max-width: 768px) 70px, 110px"
+        loading="lazy"
+        quality={85}
       />
       <p className="absolute -bottom-[75px] md:-bottom-[105px] -left-24 md:-left-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-xs md:text-sm font-normal leading-normal bg-gradient-to-b from-[#D97706] to-white/75 rounded-xl px-2 md:px-3 py-1 md:py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
         Tourism
@@ -69,9 +77,11 @@ export default function LogoWithJobFields() {
         width={110}
         height={100}
         sizes="(max-width: 768px) 70px, 110px"
+        loading="lazy"
+        quality={85}
       />
-      <p className="absolute -bottom-[75px] md:-bottom-[105px] -right-24 md:-right-32 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-xs md:text-sm font-normal leading-normal bg-gradient-to-b from-[#9333EA] to-white/65 rounded-xl px-2 md:px-3 py-1 md:py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-500 rotate-[5deg]">
-        Hospitality
+      <p className="absolute -bottom-[75px] md:-bottom-[105px] -right-24 md:-right-28 transform -translate-x-[5%] -translate-y-[120%] z-50 text-primary-gray text-xs md:text-sm font-normal leading-normal bg-gradient-to-b from-[#0B2560] to-white/75 rounded-xl px-2 md:px-3 py-1 md:py-2 text-white shadow-2xl group-hover:scale-[1.2] transition-transform duration-500">
+        Engineering
       </p>
     </div>
   );

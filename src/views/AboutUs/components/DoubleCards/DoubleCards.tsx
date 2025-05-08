@@ -9,7 +9,7 @@ import React from "react";
 export default function DoubleCards() {
   return (
     <div className="container mx-auto max-w-6xl px-4 md:px-6 flex flex-col items-center py-24">
-      {/* <Image src={Cards} alt="" className="w-full h-full" /> */}
+
       <div className="w-full h-full relative flex flex-col md:flex-row items-center justify-between gap-52">
         <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-[532.954px] h-[337.75px] border border-dashed border-[#64748B] rounded-[90%]"></div>
         

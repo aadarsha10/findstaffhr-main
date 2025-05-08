@@ -59,6 +59,7 @@ export default function DiscoverInDetail() {
               withAnimatedArrow
               arrowSize={28}
               onClick={handleDownloadBrochure}
+              StyleBg="#11BC41"
             >
               Download Brochure
             </Button>

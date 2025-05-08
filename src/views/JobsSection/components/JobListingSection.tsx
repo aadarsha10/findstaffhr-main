@@ -81,6 +81,7 @@ export default function JobListingSection() {
                   className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
                   withAnimatedArrow
                   arrowSize={28}
+                  StyleBg="#11BC41"
                 >
                   <span>View Details</span>
                 </Button>

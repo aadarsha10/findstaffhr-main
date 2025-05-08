@@ -1,5 +1,8 @@
+"use client";
+
 import {Button} from "@/components/ui/button";
 import React from "react";
+import { saveAs } from 'file-saver';
 
 // Quarter-circle group component with isolated animation
 const QuarterCircleGroup = () => {
@@ -29,6 +32,10 @@ const QuarterCircleGroup = () => {
 };
 
 export default function DiscoverInDetail() {
+  const handleDownloadBrochure = () => {
+    saveAs("/AHRS_Company_Profile.pdf", "AHRS_Company_Profile.pdf");
+  };
+
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6 py-14 font-primary">
       <div className="bg-[#06C53C14] rounded-[24px] shadow-sm p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
@@ -51,6 +58,7 @@ export default function DiscoverInDetail() {
               className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
               withAnimatedArrow
               arrowSize={28}
+              onClick={handleDownloadBrochure}
             >
               Download Brochure
             </Button>

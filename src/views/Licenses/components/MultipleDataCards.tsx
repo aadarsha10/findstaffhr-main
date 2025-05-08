@@ -1,32 +1,82 @@
 "use client"
+import React, { useState, useMemo, useCallback } from 'react'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import { Document, Page, pdfjs } from 'react-pdf'
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
+import 'react-pdf/dist/esm/Page/TextLayer.css'
 
-import register from "@/assets/Licenses/registration.png"
+// Set up the worker source directly using pdfjs from react-pdf
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+
+// Import license image
 import license from "@/assets/Licenses/license.png"
 import TickBadge from "@/assets/LandingPage/CompaniesAndEmployeeCard/tick-badge.svg"
 
+// PDF files path - use the one from public assets
+const documentsPath = '/assets/Licenses/documents.pdf'
+
 export default function MultipleCards() {
   const [activeTab, setActiveTab] = useState('privacy')
+  const [legalNumPages, setLegalNumPages] = useState<number | null>(null)
+  const [legalPageNumber, setLegalPageNumber] = useState<number>(1)
+  
+  // Memoize tab change handlers
+  const handlePrivacyTab = useCallback(() => setActiveTab('privacy'), []);
+  const handleLegalTab = useCallback(() => setActiveTab('legal'), []);
+  const handleLicenseTab = useCallback(() => setActiveTab('license'), []);
+  
+  // Memoize callback to prevent unnecessary re-renders
+  const onLegalDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
+    setLegalNumPages(numPages)
+  }, []);
+
+  // Memoize navigation functions
+  const goToPrevPage = useCallback(() => 
+    setLegalPageNumber(p => Math.max(1, p - 1))
+  , []);
+  
+  const goToNextPage = useCallback(() => 
+    setLegalPageNumber(p => Math.min(legalNumPages || 1, p + 1))
+  , [legalNumPages]);
+
+  // PDF loading options for optimal performance
+  // Memoize options to prevent unnecessary re-renders
+  const options = useMemo(() => ({
+    cMapUrl: '/cmaps/',
+    cMapPacked: true,
+    standardFontDataUrl: '/standard_fonts/'
+  }), []); // Empty dependency array means this only runs once
 
   return (
     <div className='container mx-auto max-w-5xl items-center justify-center px-4 md:px-6 pt-8 font-primary'>
-      <div className="flex gap-6 justify-start mb-6">
+      <div className="flex gap-3 justify-start mb-8">
         <button
-          className={`${activeTab === 'privacy' ? 'flex px-2 py-1 justify-center items-center  rounded-full border border-[#E2E8F0] bg-[#F8FAFC]' : ''}`}
-          onClick={() => setActiveTab('privacy')}
+          className={`px-4 py-2 rounded-md transition-colors ${
+            activeTab === 'privacy' 
+              ? 'bg-[#F8FAFC] text-[#0F172A] font-medium shadow-sm border border-[#E2E8F0]' 
+              : 'text-[#64748B] hover:text-[#334155] hover:bg-[#F1F5F9]'
+          }`}
+          onClick={handlePrivacyTab}
         >
           Privacy & Policy
         </button>
         <button
-          className={`${activeTab === 'registration' ? 'flex px-2 py-1 justify-center items-center  rounded-full border border-[#E2E8F0] bg-[#F8FAFC]' : ''}`}
-          onClick={() => setActiveTab('registration')}
+          className={`px-4 py-2 rounded-md transition-colors ${
+            activeTab === 'legal' 
+              ? 'bg-[#F8FAFC] text-[#0F172A] font-medium shadow-sm border border-[#E2E8F0]' 
+              : 'text-[#64748B] hover:text-[#334155] hover:bg-[#F1F5F9]'
+          }`}
+          onClick={handleLegalTab}
         >
-          Registration Document
+          Legal Documents
         </button>
         <button
-          className={`${activeTab === 'license' ? 'flex px-2 py-1 justify-center items-center  rounded-full border border-[#E2E8F0] bg-[#F8FAFC]' : ''}`}
-          onClick={() => setActiveTab('license')}
+          className={`px-4 py-2 rounded-md transition-colors ${
+            activeTab === 'license' 
+              ? 'bg-[#F8FAFC] text-[#0F172A] font-medium shadow-sm border border-[#E2E8F0]' 
+              : 'text-[#64748B] hover:text-[#334155] hover:bg-[#F1F5F9]'
+          }`}
+          onClick={handleLicenseTab}
         >
           License Document
         </button>
@@ -139,24 +189,110 @@ export default function MultipleCards() {
           </div>
         )}
 
-        {activeTab === 'registration' && (
+        {activeTab === 'legal' && (
           <div className="flex flex-col items-center gap-6 w-full mb-16">
-            <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Employment Contracts</h2>
-            <div className="flex justify-center w-full">
-              <Image 
-                src={register} 
-                alt="Employment Contract" 
-                className="max-w-full h-auto object-contain rounded-[24px] bg-lightgray bg-no-repeat bg-center bg-cover shadow-[-8px_8px_8px_0px_rgba(0,0,0,0.10)]"
-                width={625} 
-                height={833}
-              />
+            <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Legal Documents</h2>
+            <div className="flex justify-center w-full flex-col items-center">
+              <div className="shadow-lg rounded-[24px] overflow-hidden bg-white border border-[#E2E8F0] p-2">
+                <Document
+                  file={documentsPath}
+                  onLoadSuccess={onLegalDocumentLoadSuccess}
+                  options={options}
+                  loading={
+                    <div className="flex flex-col items-center justify-center py-20">
+                      <div className="w-12 h-12 border-4 border-[#E2E8F0] border-t-[#0F172A] rounded-full animate-spin mb-4"></div>
+                      <p className="text-[#64748B] text-base">Loading document...</p>
+                    </div>
+                  }
+                  error={
+                    <div className="flex flex-col items-center justify-center py-20 px-4">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="40" 
+                        height="40" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="#EF4444" 
+                        strokeWidth="1.5" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        className="mb-4"
+                      >
+                        <path d="M12 9v4"></path>
+                        <path d="M12 16h.01"></path>
+                        <path d="M6 19L3.8 5.2c-.2-1 .3-2 1.3-2.4c.5-.1 1-.2 1.4 0l7.6 3c.2.1.3.2.4.3C16 3.9 19 2.4 20.5 2c.9-.2 1.8.2 2.3 1c.2.4.2.8.2 1.2c0 1-.4 1.9-.2 2.9c.1.9-.4 1.8-1.2 2.2c-.8.5-1.8.5-2.8.7c-1.4.2-2.8.9-3.5 2.2c-.3.5-.5 1.1-.5 1.7v.1c0 1.9.9 3.7 2.4 4.8c.9.7 1.3 1.9 1 3c-.4 1.1-1.5 1.9-2.7 1.9h-2c-1 0-1.4-.6-2-1.2C9.7 21.2 7 17.7 6 19Z"></path>
+                      </svg>
+                      <p className="text-[#0F172A] text-base font-medium mb-2">Failed to load PDF</p>
+                      <p className="text-[#64748B] text-center">The document could not be loaded. Please try again later.</p>
+                    </div>
+                  }
+                  className="max-w-full"
+                >
+                  <Page
+                    pageNumber={legalPageNumber}
+                    renderTextLayer={false}
+                    className="max-w-full h-auto object-contain bg-white"
+                    width={625}
+                  />
+                </Document>
+              </div>
+              
+              {legalNumPages && (
+                <div className="flex justify-between items-center w-full mt-6 max-w-md">
+                  <button
+                    onClick={goToPrevPage}
+                    disabled={legalPageNumber <= 1}
+                    className="flex items-center justify-center gap-1 px-4 py-2 text-[#334155] bg-white hover:bg-[#F1F5F9] border border-[#E2E8F0] rounded-md transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="m15 18-6-6 6-6"/>
+                    </svg>
+                    Previous
+                  </button>
+                  <div className="flex items-center bg-[#F8FAFC] border border-[#E2E8F0] rounded-md px-4 py-2">
+                    <span className="font-medium text-[#0F172A]">{legalPageNumber}</span>
+                    <span className="mx-2 text-[#64748B]">/</span>
+                    <span className="text-[#64748B]">{legalNumPages}</span>
+                  </div>
+                  <button
+                    onClick={goToNextPage}
+                    disabled={legalPageNumber >= legalNumPages}
+                    className="flex items-center justify-center gap-1 px-4 py-2 text-[#334155] bg-white hover:bg-[#F1F5F9] border border-[#E2E8F0] rounded-md transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    Next
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
 
         {activeTab === 'license' && (
           <div className="flex flex-col items-center gap-6 w-full mb-16">
-            <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">Employment Contracts</h2>
+            <h2 className="text-[#0F172A] text-start  text-3xl font-medium mb-2">License Document</h2>
             <div className="flex justify-center w-full">
               <Image 
                 src={license} 

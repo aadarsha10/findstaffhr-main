@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-avatar": "^1.1.7",
     "@radix-ui/react-dialog": "^1.1.11",
     "@radix-ui/react-dropdown-menu": "^2.1.14",
@@ -16,6 +17,7 @@
     "@types/file-saver": "^2.0.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^12.9.2",
     "lucide-react": "^0.503.0",
@@ -26,7 +28,9 @@
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
     "react-pdf": "^9.2.1",
+    "resend": "^4.5.1",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.2.0"
   },

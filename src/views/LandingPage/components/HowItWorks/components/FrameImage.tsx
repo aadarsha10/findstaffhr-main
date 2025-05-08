@@ -18,6 +18,7 @@ export default function FrameImage() {
           height={200}
           sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 400px"
           priority
+          quality={90}
         />
       </div>
 

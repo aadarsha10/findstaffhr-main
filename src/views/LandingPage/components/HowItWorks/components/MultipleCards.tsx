@@ -20,6 +20,7 @@ export default function FrameImage() {
             height={650}
             sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, 650px"
             priority
+            quality={90}
           />
           <Image
             src={SmallImage}
@@ -28,7 +29,8 @@ export default function FrameImage() {
             width={650}
             height={650}
             sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, 650px"
-            priority
+            loading="lazy"
+            quality={90}
           />
         </div>
       </div>

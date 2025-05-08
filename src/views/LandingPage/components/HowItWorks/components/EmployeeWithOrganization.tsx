@@ -66,6 +66,8 @@ export default function LogoWithJobFields() {
           height={35} 
           className="w-[60px] md:w-[80px] h-auto"
           sizes="(max-width: 768px) 60px, 80px"
+          priority
+          quality={95}
         />
         <Image
           src={isHovered ? Vector2 : currentTopVector}
@@ -78,6 +80,8 @@ export default function LogoWithJobFields() {
           className="absolute -top-3 min-w-[130px] md:min-w-[175px] -left-7 md:-left-10 z-10"
           height={260}
           sizes="(max-width: 768px) 130px, 175px"
+          loading="eager"
+          quality={85}
         />
         <Image
           src={isHovered ? Vector1 : currentBottomVector}
@@ -90,6 +94,8 @@ export default function LogoWithJobFields() {
           className="absolute -bottom-3 min-w-[130px] md:min-w-[175px] -left-7 md:-left-10 z-10"
           height={260}
           sizes="(max-width: 768px) 130px, 175px"
+          loading="eager"
+          quality={85}
         />
         <p className="absolute top-1 -left-24 md:-left-36 text-primary-gray text-xs md:text-sm font-primary font-normal leading-normal bg-secondary-green rounded-lg md:rounded-xl px-2 md:px-3 py-1 md:py-2 text-white shadow-xl">
           Employee

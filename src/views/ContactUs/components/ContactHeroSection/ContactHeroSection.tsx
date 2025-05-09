@@ -208,7 +208,7 @@ export default function ContactHeroSection() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-white via-transparent to-secondary-green/10 h-screen w-full">
+    <div className="bg-gradient-to-b from-white via-transparent to-secondary-green/10 h-[850px] w-full">
       {/* Toast container with custom animations */}
       <Toaster 
         position="top-right"

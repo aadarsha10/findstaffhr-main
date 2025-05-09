@@ -203,20 +203,17 @@ const ContactForm = ({
     setIsSubmitting(true);
 
     try {
-      // Include form type in the request data
+      // Choose the appropriate endpoint based on form type
+      const endpoint = formType === 'apply' 
+        ? "/api/apply-for-job"  // New endpoint for job applications
+        : "/api/request-staff";  // New endpoint for staff requests
+
+      // Include form type and category in the request data
       const requestData = {
         ...formData,
         formType,
         category: title,
-        // Add job-specific fields that the API expects for job applications
-        jobId: formType === 'apply' ? title.toLowerCase().replace(/\s+/g, '-') : undefined,
-        jobTitle: formType === 'apply' ? title : undefined,
-        company: formData.company || "N/A",
       };
-
-      // Use the existing API endpoint for job applications for both types
-      // We know this endpoint exists from our check
-      const endpoint = "/api/send-job-application";
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -422,13 +419,13 @@ const ContactForm = ({
       <Button
         type="submit"
         variant="withArrow"
-        className="h-14 w-[180px] mt-4 pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+        className="h-14  w-[180px] mt-4 pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
         withAnimatedArrow
         arrowSize={28}
         disabled={isSubmitting}
         StyleBg="#11BC41"
       >
-        <span>{isSubmitting ? "Sending..." : formType === 'apply' ? "Apply Now" : "Submit"}</span>
+        <span>{isSubmitting ? "Sending..." : formType === 'apply' ? "Apply for Job" : "Request Staff"}</span>
       </Button>
     </form>
   );

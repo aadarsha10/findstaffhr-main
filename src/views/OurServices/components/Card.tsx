@@ -53,8 +53,8 @@ export default function Card({ cardData }: CardProps) {
                 <Image 
                   src={greenDot} 
                   alt="Green Dot" 
-                  width={24}
-                  height={24}
+                  width={44}
+                  height={44}
                   quality={85}
                   loading="lazy"
                 />

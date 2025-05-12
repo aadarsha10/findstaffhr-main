@@ -3,7 +3,7 @@
 import heroImage from "@/assets/LandingPage/HeroSection/HeroImage.svg";
 import {Button} from "@/components/ui/button";
 import HighlightText from "@/services/HighlightText";
-import NameDisplayCards from "./components/NameDisplayCards";
+// import NameDisplayCards from "./components/NameDisplayCards";
 import Link from "next/link";
 
 export default function HeroSection() {

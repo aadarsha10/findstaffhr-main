@@ -77,7 +77,7 @@ export default function Navbar() {
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between w-full py-6">
           <Link href="/" className="z-40">
-            <Image src={MainLogo} alt="logo" width={166} height={54} priority />
+            <Image src={MainLogo} alt="logo" width={186} height={74} priority />
           </Link>
 
           {/* Desktop Navigation */}
@@ -167,7 +167,7 @@ export default function Navbar() {
               className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
               withAnimatedArrow
               arrowSize={28}
-              StyleBg="#11BC41"
+              StyleBg="#0091e6"
             >
               <span>Contact Us </span>
             </Button>
@@ -227,7 +227,7 @@ export default function Navbar() {
                   withAnimatedArrow
                   arrowSize={28}
                   onClick={() => setIsOpen(false)}
-                  StyleBg="#11BC41"
+                  StyleBg="#0091e6"
                 >
                   <span>Contact Us</span>
                 </Button>

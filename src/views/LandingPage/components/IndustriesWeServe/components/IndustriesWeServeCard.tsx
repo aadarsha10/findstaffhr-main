@@ -423,7 +423,7 @@ const ContactForm = ({
         withAnimatedArrow
         arrowSize={28}
         disabled={isSubmitting}
-        StyleBg="#11BC41"
+        StyleBg="#0091e6"
       >
         <span>{isSubmitting ? "Sending..." : formType === 'apply' ? "Apply for Job" : "Request Staff"}</span>
       </Button>
@@ -446,7 +446,7 @@ export default function IndustriesWeServeCard({
       <div
         className={`relative w-full h-full rounded-[24px] p-[2px] transition-all duration-300 ease-in-out ${
           isHovered
-            ? "bg-gradient-to-b from-[#E9EEF3] to-[#06C53C]"
+            ? "bg-gradient-to-b from-[#E9EEF3] to-[#0091e6]"
             : "bg-transparent border border-gray-200"
         }`}
         onMouseEnter={() => setIsHovered(true)}
@@ -469,7 +469,7 @@ export default function IndustriesWeServeCard({
             <div className="flex flex-grow flex-col ">
               <h3
                 className={`font-primary text-lg font-semibold mb-2 transition-colors duration-300 ease-in-out ${
-                  isHovered ? "text-[#06C53C]" : ""
+                  isHovered ? "text-[#0091e6]" : ""
                 }`}
               >
                 {title}

@@ -506,8 +506,8 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_31_949" result="shape"/>
 </filter>
 <radialGradient id="paint0_radial_31_949" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(631 243) rotate(90) scale(231 610)">
-<stop offset="0.304949" stop-color="#06C53C" stop-opacity="0.3"/>
-<stop offset="0.613149" stop-color="#06C53C" stop-opacity="0"/>
+<stop offset="0.304949" stop-color="#007dc6" stop-opacity="0.3"/>
+<stop offset="0.613149" stop-color="#007dc6" stop-opacity="0"/>
 </radialGradient>
 <clipPath id="clip0_31_949">
 <rect x="20.5" y="12" width="1220" height="462" rx="40" fill="white"/>

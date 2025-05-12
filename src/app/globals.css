@@ -24,14 +24,30 @@
   --color-primary-black: #000000;
   --color-primary-gray: #334155;
   --color-secondary-white: #ffffff;
+
   /* green */
-  --color-primary-green: #08802A;
-  --color-secondary-green: #06C53C;
-  --color-tertiary-green: #11BC42;
-  --color-quaternary-green: #E2F7E8;
+    /* --color-primary-green: #08802A;
+    --color-secondary-green: #06C53C;
+    --color-tertiary-green: #11BC42;
+    --color-quaternary-green: #E2F7E8; */
+
+/* orange */
+    /* --color-primary-green: #db610a;
+    --color-secondary-green: #f68a3c;
+    --color-tertiary-green: #0091e6;
+    --color-quaternary-green: #fde2ce; */
+
+  /* blue */
+
+  --color-primary-green: #006199;
+  --color-secondary-green: #0091e6;
+  --color-tertiary-green: #007dc6;
+  --color-quaternary-green: #ccecff;
+
+
  /* purple */
- --color-primary-purple: #9333EA;
- --color-secondary-purple: #F3E8FF;
+ --color-primary-purple: #db610a;
+ --color-secondary-purple: #0091e6;
 
 
 

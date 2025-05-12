@@ -7,7 +7,7 @@ import service1 from "@/assets/LandingPage/OurServices/service1.png";
 import service2 from "@/assets/LandingPage/OurServices/service2.png";
 import service3 from "@/assets/LandingPage/OurServices/service3.png";
 import service4 from "@/assets/LandingPage/OurServices/service4.png";
-import service5 from "@/assets/LandingPage/OurServices/service5.png";
+import service5 from "@/assets/LandingPage/OurServices/service5.webp";
 import service6 from "@/assets/LandingPage/OurServices/service6.png";
 import HighlightText from "@/services/HighlightText";
 
@@ -203,7 +203,7 @@ export default function OurServices() {
               <div
                 className={`flex w-[60px] md:w-[75px] p-[5px] md:p-[6px] items-center gap-[7.5px] rounded-[749.25px] ${
                   !isForWorkers
-                    ? "bg-[rgba(98,177,40,0.12)]"
+                    ? "bg-[#ccecff]"
                     : "bg-[rgba(51,65,85,0.12)]"
                 }`}
               >

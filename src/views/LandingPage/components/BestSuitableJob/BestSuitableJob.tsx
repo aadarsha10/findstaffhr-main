@@ -52,7 +52,7 @@ export default function BestSuitableJob() {
               <div className="group min-w-max transition-all duration-700 ease-in-out">
                 <button
                   onClick={() => setActiveImage(2)}
-                  className="text-base md:text-xl lg:text-[24px] bg-[#F59E0B] group-hover:bg-tertiary-green px-3 md:px-4 py-1 md:py-2 rounded-full font-primary font-normal text-center shadow-sm transition-all duration-700 ease-in-out min-w-max"
+                  className="text-base md:text-xl lg:text-[24px] bg-[#f47920] group-hover:bg-tertiary-green px-3 md:px-4 py-1 md:py-2 rounded-full font-primary font-normal text-center shadow-sm transition-all duration-700 ease-in-out min-w-max"
                 >
                   <span className="flex items-center whitespace-nowrap transition-all duration-700 ease-in-out">
                     Without Aarohi HR Solutions

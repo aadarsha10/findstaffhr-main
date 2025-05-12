@@ -5,17 +5,17 @@
 <defs>
 <linearGradient id="paint0_linear_61_590" x1="1353" y1="343.75" x2="7.99965" y2="343.75" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
-<stop offset="0.217363" stop-color="#97DDAB"/>
-<stop offset="0.835887" stop-color="#97DDAB"/>
+<stop offset="0.217363" stop-color="#0091e6"/>
+<stop offset="0.835887" stop-color="#0091e6"/>
 <stop offset="1" stop-color="white"/>
 </linearGradient>
 <linearGradient id="paint1_linear_61_590" x1="1239.9" y1="578.434" x2="763.506" y2="513.556" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
-<stop offset="1" stop-color="#97DDAB"/>
+<stop offset="1" stop-color="#0091e6"/>
 </linearGradient>
 <linearGradient id="paint2_linear_61_590" x1="66.0842" y1="580.434" x2="542.477" y2="515.556" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
-<stop offset="1" stop-color="#97DDAB"/>
+<stop offset="1" stop-color="#0091e6"/>
 </linearGradient>
 </defs>
 </svg>

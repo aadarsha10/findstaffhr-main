@@ -60,7 +60,7 @@ export const generateJobApplicationNotificationHtml = ({
           padding: 20px;
           background-color: #ffffff;
           border-radius: 8px;
-          border-top: 4px solid #06C53C;
+          border-top: 4px solid #0091e6;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         .header {
@@ -100,14 +100,14 @@ export const generateJobApplicationNotificationHtml = ({
           background-color: #F8FAFC;
           padding: 8px 12px;
           border-radius: 4px;
-          border-left: 2px solid #06C53C;
+          border-left: 2px solid #0091e6;
         }
         .message-box {
           background-color: #F8FAFC;
           padding: 12px;
           border-radius: 4px;
           margin-top: 5px;
-          border-left: 2px solid #06C53C;
+          border-left: 2px solid #0091e6;
         }
         .job-details {
           background-color: #F1F9F5;
@@ -268,7 +268,7 @@ export const generateJobApplicationConfirmationHtml = ({
           padding: 20px;
           background-color: #ffffff;
           border-radius: 8px;
-          border-top: 5px solid #06C53C;
+          border-top: 5px solid #0091e6;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
         .header {
@@ -324,7 +324,7 @@ export const generateJobApplicationConfirmationHtml = ({
           padding: 15px;
           border-radius: 6px;
           margin: 20px 0;
-          border-left: 3px solid #06C53C;
+          border-left: 3px solid #0091e6;
         }
         .footer {
           text-align: center;
@@ -343,7 +343,7 @@ export const generateJobApplicationConfirmationHtml = ({
         }
         .button {
           display: inline-block;
-          background-color: #06C53C;
+          background-color: #0091e6;
           color: white;
           text-decoration: none;
           padding: 10px 25px;

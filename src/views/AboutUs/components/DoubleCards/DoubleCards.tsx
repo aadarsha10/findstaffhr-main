@@ -15,13 +15,13 @@ export default function DoubleCards() {
         
         {/* Mission Card */}
         <div className="w-full h-full self-start">
-          <div className="relative w-[400px] h-[282.346px] transform rotate-[4.04deg] p-[38.133px_10.895px_10.895px_10.895px] flex flex-col items-start gap-[10.895px] rounded-[21.79px] border-[0.908px] border-solid border-[#E2E8F0] bg-white">
+          <div className="relative w-[400px] h-[282.346px] transform rotate-[4.04deg] p-[38.133px_10.895px_10.895px_10.895px] flex flex-col items-start gap-[10.895px] rounded-[21.79px] border-[0.908px] border-solid border-blue-100 bg-white">
             <Image 
               src={Pin1} 
               alt="Pin" 
               className="absolute -top-5 left-1/2 transform -translate-x-1/2"
             />
-            <div className="flex w-[380.666px] p-[21.79px] flex-col justify-between items-end flex-1 rounded-[21.79px] border-[0.908px] border-solid border-[#D0FBDC] bg-[#E8FDEE]">
+            <div className="flex w-[380.666px] p-[21.79px] flex-col justify-between items-end flex-1 rounded-[21.79px] border-[0.908px] border-solid border-blue-500 bg-blue-100">
               <div className="flex w-[38.133px] h-[38.133px] transform rotate-[-5.124deg] p-[4.767px] justify-center items-center aspect-[38.13/38.13]">
                 <Image src={Mission} alt="Mission" />
               </div>
@@ -43,7 +43,7 @@ export default function DoubleCards() {
               alt="Pin" 
               className="absolute -top-5 left-1/2 transform -translate-x-1/2"
             />
-            <div className="flex w-[380.666px] p-[21.79px] flex-col justify-between items-end flex-1 rounded-[21.79px] border-[0.908px] border-solid border-[#D3A3FF] bg-[#F5EAFF]">
+            <div className="flex w-[380.666px] p-[21.79px] flex-col justify-between items-end flex-1 rounded-[21.79px] border-[0.908px] border-solid border-orange-500 bg-orange-100">
               <div className="flex w-[38.133px] h-[38.133px] transform rotate-[-5.124deg] p-[4.767px] justify-center items-center aspect-[38.13/38.13]">
                 <Image src={Vision} alt="Vision" />
               </div>

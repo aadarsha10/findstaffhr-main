@@ -47,7 +47,7 @@ export default function Testomonials() {
             <div
               className={`flex w-[60px] md:w-[75px] p-[4px] md:p-[6px] items-center gap-[5px] md:gap-[7.5px] rounded-[749.25px] ${
                 !isForCompanies
-                  ? "bg-[rgba(98,177,40,0.12)]"
+                  ? "bg-[#ccecff]"
                   : "bg-[rgba(51,65,85,0.12)]"
               }`}
             >

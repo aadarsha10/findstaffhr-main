@@ -18,7 +18,7 @@ const successToast = (message: string) => {
         <div className="flex-1 w-0 p-4">
           <div className="flex items-start">
             <div className="flex-shrink-0 pt-0.5">
-              <CheckCircle2 className="h-6 w-6 text-[#06C53C]" />
+              <CheckCircle2 className="h-6 w-6 text-[#0091e6]" />
             </div>
             <div className="ml-3 flex-1">
               <p className="text-sm font-medium text-gray-900">
@@ -384,7 +384,7 @@ export default function ContactHeroSection() {
                 withAnimatedArrow
                 arrowSize={28}
                 disabled={isSubmitting}
-                StyleBg="#11BC41"
+                StyleBg="#0091e6"
               >
                 <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </Button>

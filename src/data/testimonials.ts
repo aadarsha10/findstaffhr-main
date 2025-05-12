@@ -1,15 +1,26 @@
 import { StaticImageData } from "next/image";
 
 // Import company logos
-import hawai from "@/assets/LandingPage/Testomonials/hawai.svg";
-import bmw from "@/assets/LandingPage/Testomonials/bmw.png";
-import pepsi from "@/assets/LandingPage/Testomonials/pepsi.png";
-import dell from "@/assets/LandingPage/Testomonials/dell.png";
-import china from "@/assets/LandingPage/Testomonials/china.png";
-import bear from "@/assets/LandingPage/Testomonials/bear.png";
-import pg from "@/assets/LandingPage/Testomonials/p&g.png";
-import queen from "@/assets/LandingPage/Testomonials/queen.png";
-import wheel from "@/assets/LandingPage/Testomonials/wheel.png";
+// import hawai from "@/assets/LandingPage/Testomonials/hawai.svg";
+// import bmw from "@/assets/LandingPage/Testomonials/bmw.png";
+// import pepsi from "@/assets/LandingPage/Testomonials/pepsi.png";
+// import dell from "@/assets/LandingPage/Testomonials/dell.png";
+// import china from "@/assets/LandingPage/Testomonials/china.png";
+// import bear from "@/assets/LandingPage/Testomonials/bear.png";
+// import pg from "@/assets/LandingPage/Testomonials/p&g.png";
+// import queen from "@/assets/LandingPage/Testomonials/queen.png";
+// import wheel from "@/assets/LandingPage/Testomonials/wheel.png";
+
+import slider1 from "@/assets/LandingPage/TrustedBy/slider1.png";
+import slider2 from "@/assets/LandingPage/TrustedBy/slider2.png";
+import slider3 from "@/assets/LandingPage/TrustedBy/slider3.png";
+import slider4 from "@/assets/LandingPage/TrustedBy/slider4.png";
+import slider5 from "@/assets/LandingPage/TrustedBy/slider5.png";
+import slider6 from "@/assets/LandingPage/TrustedBy/slider6.png";
+import slider7 from "@/assets/LandingPage/TrustedBy/slider7.png";
+import slider8 from "@/assets/LandingPage/TrustedBy/slider8.png";
+import slider9 from "@/assets/LandingPage/TrustedBy/slider9.png";
+
 
 // Import person images
 import person1 from "@/assets/LandingPage/Testomonials/person1.png";
@@ -33,66 +44,66 @@ export interface Testimonial {
 export const companyTestimonials: Testimonial[] = [
   {
     id: 0,
-    logo: hawai,
+    logo: slider1,
     logoAlt: "Hawaii Hotel logo",
     text: "Aarohi HR Solutions made hiring so simple. We had our hotel fully staffed within weeks—with skilled, polite workers who were ready to go. They handled everything from sourcing to visa paperwork flawlessly.",
-    position: "Operations Manager, Marina Bay Hotel, Global",
+    position: "Operations Manager, Porto Holding, Qatar",
   },
   {
     id: 1,
-    logo: bmw,
+    logo: slider2,
     logoAlt: "BMW logo",
     text: "As a global brand, finding skilled manufacturing workers has always been challenging. Aarohi HR Solutions connected us with qualified technical staff who met our exact requirements and quality standards.",
-    position: "HR Director, BMW Manufacturing",
+    position: "HR Director, Al Siddiqi Holding, Qatar",
   },
   {
     id: 2,
-    logo: pepsi,
+    logo: slider3,
     logoAlt: "Pepsi logo",
     text: "The hospitality industry demands consistency and excellence. Aarohi HR Solutions has been our trusted partner in staffing our restaurants with dedicated professionals who understand our brand values.",
-    position: "Regional Manager, PepsiCo Food Services",
+    position: "Regional Manager, Al Fardan Group, Qatar",
   },
   {
     id: 3,
-    logo: dell,
+    logo: slider4,
     logoAlt: "Dell logo",
     text: "Our tech support centers require staff with specific skills and excellent communication abilities. Aarohi HR Solutions consistently delivers candidates who exceed our expectations.",
-    position: "Talent Acquisition Lead, Dell Technologies",
+    position: "Talent Acquisition Lead, United Business Dev, UAE",
   },
   {
     id: 4,
-    logo: china,
+    logo: slider5,
     logoAlt: "China Airlines logo",
     text: "Finding multilingual staff for our international routes has never been easier. Aarohi HR Solutions understood our unique requirements and found us candidates with both language skills and hospitality expertise.",
-    position: "Cabin Crew Manager, China Airlines",
+    position: "Cabin Crew Manager,  Abuissa Holding, Qatar",
   },
   {
     id: 5,
-    logo: bear,
+    logo: slider6,
     logoAlt: "Bear logo",
     text: "Our chain of luxury hotels demands the highest standards. Aarohi HR Solutions has consistently provided us with hospitality professionals who deliver exceptional guest experiences.",
-    position: "Director of Operations, Bear Resorts & Spas",
+    position: "Director of Operations, Marriott, Qatar",
   },
   {
     id: 6,
-    logo: pg,
+    logo: slider7,
     logoAlt: "P&G logo",
     text: "With facilities across multiple countries, our staffing needs are complex. Aarohi HR Solutions has been instrumental in helping us navigate international hiring with ease and compliance.",
-    position: "Global Workforce Manager, Procter & Gamble",
+    position: "Global Workforce Manager, Marriott, Qatar",
   },
   {
     id: 7,
-    logo: queen,
+    logo: slider8,
     logoAlt: "Queen Hotels logo",
     text: "The seasonal nature of our business requires flexibility in staffing. Aarohi HR Solutions has consistently provided us with reliable seasonal workers who maintain our high standards of service.",
-    position: "General Manager, Queen Hotels Group",
+    position: "General Manager, Qabila Westbay, Qatar",
   },
   {
     id: 8,
-    logo: wheel,
+    logo: slider9,
     logoAlt: "Wheel Transport logo",
     text: "Finding qualified drivers and logistics personnel across our global operations was challenging until we partnered with Aarohi HR Solutions. Their network and vetting process is unmatched.",
-    position: "Fleet Operations Director, Wheel Transport Solutions",
+    position: "Fleet Operations Director, Autograph Collections Hotels, Qatar",
   },
 ];
 

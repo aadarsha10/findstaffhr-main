@@ -17,7 +17,7 @@ export default function Hero({ beforehighlight, highlightText, subtitle, descrip
       className="h-auto w-full relative"
       style={{
         background:
-          "linear-gradient(180deg, rgba(17, 188, 66, 0.00) 13.38%, rgba(17, 188, 66, 0.15) 95.29%)",
+          "linear-gradient(180deg, rgba(17, 159, 188, 0) 13.38%, rgba(17, 157, 188, 0.15) 95.29%)",
       }}
     >
       <div className="container mx-auto max-w-7xl px-4 py-16 md:px-6 mb-24">

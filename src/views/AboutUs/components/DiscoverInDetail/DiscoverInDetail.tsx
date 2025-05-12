@@ -15,15 +15,15 @@ const QuarterCircleGroup = () => {
         >
           {/* Largest quarter-circle */}
           <div
-            className={`absolute top-0 -right-16 w-[600px] h-[600px] rounded-bl-full bg-green-100`}
+            className={`absolute top-0 -right-16 w-[600px] h-[600px] rounded-bl-full bg-blue-100`}
           />
           {/* Middle quarter-circle */}
           <div
-            className={`absolute top-0 -right-12 w-[500px] h-[500px] rounded-bl-full bg-green-200/40`}
+            className={`absolute top-0 -right-12 w-[500px] h-[500px] rounded-bl-full bg-blue-200/40`}
           />
           {/* Smallest quarter-circle */}
           <div
-            className={`absolute top-0 -right-8 w-[400px] h-[400px]  rounded-bl-full bg-green-300/30`}
+            className={`absolute top-0 -right-8 w-[400px] h-[400px]  rounded-bl-full bg-blue-300/30`}
           />
         </div>
       </div>
@@ -38,7 +38,7 @@ export default function DiscoverInDetail() {
 
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6 py-14 font-primary">
-      <div className="bg-[#06C53C14] rounded-[24px] shadow-sm p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+      <div className="bg-[#0091e614] rounded-[24px] shadow-sm p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
         <QuarterCircleGroup />
         <div className="flex-1 flex flex-col md:flex-row items-center justify-between relative z-10">
           <div className="flex flex-col max-w-2xl items-start justify-center gap-2">
@@ -59,7 +59,7 @@ export default function DiscoverInDetail() {
               withAnimatedArrow
               arrowSize={28}
               onClick={handleDownloadBrochure}
-              StyleBg="#11BC41"
+              StyleBg="#0091e6"
             >
               Download Brochure
             </Button>

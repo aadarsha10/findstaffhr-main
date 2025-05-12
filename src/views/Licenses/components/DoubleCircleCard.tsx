@@ -36,19 +36,19 @@ const QuarterCircleGroup = memo(({ isCompanies }: { isCompanies: boolean }) => {
           {/* Largest quarter-circle */}
           <div
             className={`absolute -top-16 -right-16 w-68 h-68 rounded-bl-full ${
-              isCompanies ? "bg-green-100" : "bg-purple-200"
+              isCompanies ? "bg-blue-100" : "bg-orange-200"
             }`}
           />
           {/* Middle quarter-circle */}
           <div
             className={`absolute -top-12 -right-12 w-52 h-52 rounded-bl-full ${
-              isCompanies ? "bg-green-200" : "bg-purple-300"
+              isCompanies ? "bg-blue-200" : "bg-orange-300"
             }`}
           />
           {/* Smallest quarter-circle */}
           <div
             className={`absolute -top-8 -right-8 w-36 h-36 rounded-bl-full ${
-              isCompanies ? "bg-green-300/40" : "bg-purple-400/40"
+              isCompanies ? "bg-blue-300/40" : "bg-orange-400/40"
             }`}
           />
         </div>
@@ -119,7 +119,7 @@ const Card = memo(({ data }: CardProps) => (
           withAnimatedArrow
           arrowSize={24}
           arrowContainerClassName="ml-2 md:ml-3.5 flex p-4 md:p-6 items-center justify-center rounded-[999px] bg-white/25 relative overflow-hidden"
-          StyleBg={data.buttonVariant === "withArrow" ? "#11BC41" : "#6D28D9"}
+          StyleBg={data.buttonVariant === "withArrow" ? "#0091e6" : "#f47920"}
         >
           <span>{data.isCompanies ? "Learn More" : "Our Services"}</span>
         </Button>
@@ -149,8 +149,8 @@ const injectGlobalStyles = () => {
     
     /* Define background colors as CSS variables */
     :root {
-      --companies-bg-color: var(--quaternary-green-70, rgba(236, 253, 245, 0.7));
-      --employees-bg-color: var(--secondary-purple-70, rgba(243, 232, 255, 0.7));
+      --companies-bg-color: var(--quaternary-green-70, rgba(236, 248, 253, 0.7));
+      --employees-bg-color: var(--secondary-purple-70, rgba(255, 243, 232, 0.7));
     }
   `;
   document.head.appendChild(styleElement);

@@ -377,7 +377,7 @@ export default function JobApplicationModal({
                 withAnimatedArrow
                 arrowSize={28}
                 disabled={isSubmitting}
-                StyleBg="#11BC41"
+                StyleBg="#0091e6"
               >
                 <span>{isSubmitting ? "Sending..." : "Apply Now"}</span>
               </Button>

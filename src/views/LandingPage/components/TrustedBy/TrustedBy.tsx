@@ -11,6 +11,14 @@ import slider2 from "@/assets/LandingPage/TrustedBy/slider2.png";
 import slider3 from "@/assets/LandingPage/TrustedBy/slider3.png";
 import slider4 from "@/assets/LandingPage/TrustedBy/slider4.png";
 import slider5 from "@/assets/LandingPage/TrustedBy/slider5.png";
+import slider6 from "@/assets/LandingPage/TrustedBy/slider6.png";
+import slider7 from "@/assets/LandingPage/TrustedBy/slider7.png";
+import slider8 from "@/assets/LandingPage/TrustedBy/slider8.png";
+import slider9 from "@/assets/LandingPage/TrustedBy/slider9.png";
+import slider10 from "@/assets/LandingPage/TrustedBy/slider10.png";
+import slider11 from "@/assets/LandingPage/TrustedBy/slider11.png";
+import slider12 from "@/assets/LandingPage/TrustedBy/slider12.png";
+
 
 interface TrustedByProps {
   heading: string;
@@ -26,7 +34,7 @@ export default function TrustedBy({
   className,
 }: TrustedByProps) {
   const sliderImages = useMemo(
-    () => [slider1, slider2, slider3, slider4, slider5],
+    () => [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12],
     []
   );
 
@@ -108,6 +116,7 @@ export default function TrustedBy({
         backgroundPosition: "top",
         backgroundSize: "auto",
         minHeight: "246px",
+
       }
     : {
         minHeight: "180px", // Smaller height when no background
@@ -115,7 +124,7 @@ export default function TrustedBy({
 
   return (
     <div
-      className={`flex flex-col relative w-full -mt-10 ${className}`}
+      className={`flex flex-col relative w-full -mt-10  ${className}`}
       style={backgroundStyles}
     >
       <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
@@ -151,10 +160,10 @@ export default function TrustedBy({
                         alt={`Trusted partner ${
                           (index % sliderImages.length) + 1
                         }`}
-                        className="object-contain h-auto w-auto grayscale"
+                        className="object-contain h-auto w-auto "
                         width={70}
                         height={70}
-                        style={{maxWidth: "100%", maxHeight: "100%"}}
+                       
                         quality={80}
                         loading={index < 5 ? "eager" : "lazy"}
                         sizes="70px"

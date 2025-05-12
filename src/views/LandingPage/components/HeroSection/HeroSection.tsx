@@ -51,7 +51,7 @@ export default function HeroSection() {
             className="h-14 w-auto pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group hover:cursor-pointer"
             withAnimatedArrow
             arrowSize={28}
-            StyleBg="#11BC41"
+            StyleBg="#0091e6"
           >
             <span>Find your Sector</span>
           </Button>
@@ -69,7 +69,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="w-full h-full hidden md:block absolute inset-0">
-        <NameDisplayCards />
+        {/* <NameDisplayCards /> */}
       </div>
     </div>
   );

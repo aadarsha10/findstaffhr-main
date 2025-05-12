@@ -52,7 +52,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D8A3C] relative min-h-[400px] font-primary md:min-h-[300px] rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-10 mb-10 mx-2 md:mx-10">
+    <footer className="bg-[#006199] relative min-h-[400px] font-primary md:min-h-[300px] rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-10 mb-10 mx-2 md:mx-10">
       {/* Background Vector */}
       <div className="absolute bottom-0 left-0 right-0 z-0">
         <Image

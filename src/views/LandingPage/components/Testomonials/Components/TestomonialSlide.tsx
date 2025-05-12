@@ -137,14 +137,14 @@ export default function TestomonialSlide({
               animate="animate"
               exit="exit"
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="flex items-center justify-center w-[100px] h-[100px] md:w-[144px] md:h-[144px] relative overflow-hidden"
+              className="flex items-center justify-center w-[100px] h-[100px] md:w-[344px] md:h-[344px] relative overflow-hidden"
             >
               <Image
                 src={currentTestimonial.logo}
                 alt={currentTestimonial.logoAlt}
-                width={144}
-                height={144}
-                className={`object-contain ${
+                width={!isForCompanies ? 144 : 344}
+                height={!isForCompanies ? 144 : 344}
+                className={`object-cover  ${
                   !isForCompanies ? "rounded-full" : ""
                 }`}
                 sizes="(max-width: 768px) 100px, 144px"
@@ -252,19 +252,17 @@ const TestimonialDot = memo(function TestimonialDot({
         animate={{
           width: currentIndex === index ? 35 : 25,
           height: currentIndex === index ? 35 : 25,
-          border: currentIndex === index ? "2px solid #55B947" : "none",
+          border: currentIndex === index ? "2px solid rgb(71, 149, 185)" : "none",
         }}
         className="relative rounded-full flex items-center justify-center"
       >
-        <div className="w-full h-full rounded-full overflow-hidden bg-transparent p-[2px]">
+        <div className="w-full h-full rounded-full overflow-hidden  p-[2px]">
           <Image
             src={testimonial.logo}
             alt={`${testimonial.logoAlt} index`}
             width={currentIndex === index ? 42 : 30}
             height={currentIndex === index ? 42 : 30}
-            className={`object-cover transition-all duration-300 ease-in-out mix-blend-multiply ${
-              !isForCompanies ? "rounded-full" : ""
-            }`}
+            className={`object-cover transition-all  duration-300 ease-in-out  rounded-full `}
             style={{
               width: "100%",
               height: "100%",

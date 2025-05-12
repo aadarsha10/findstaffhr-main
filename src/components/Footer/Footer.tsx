@@ -18,6 +18,7 @@ const companyLinks = [
   {href: "/", label: "Home"},
   {href: "/aboutus", label: "About us"},
   {href: "/ourservices/companies", label: "Our Services"},
+  {href: "/clients", label: "Our Clients"},
 ];
 
 // Sectors links data
@@ -39,7 +40,11 @@ const contactInfo = [
   },
   {
     heading: "Phone / Address",
-    items: ["+977 1 4961807", "Basundhara-3, Kathmandu"],
+    items: ["+977-1-4961807", "Basundhara-3, Kathmandu"],
+  },
+  {
+    heading: "Fax",
+    items: ["+977-1-4962925"],
   },
   {heading: "Email", items: ["info@aarohihrsolutions.com"]},
   {

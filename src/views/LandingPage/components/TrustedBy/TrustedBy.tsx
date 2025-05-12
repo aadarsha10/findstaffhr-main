@@ -18,6 +18,7 @@ import slider9 from "@/assets/LandingPage/TrustedBy/slider9.png";
 import slider10 from "@/assets/LandingPage/TrustedBy/slider10.png";
 import slider11 from "@/assets/LandingPage/TrustedBy/slider11.png";
 import slider12 from "@/assets/LandingPage/TrustedBy/slider12.png";
+import Link from "next/link";
 
 
 interface TrustedByProps {
@@ -123,7 +124,8 @@ export default function TrustedBy({
       };
 
   return (
-    <div
+    <Link href="/clients">
+       <div
       className={`flex flex-col relative w-full -mt-10  ${className}`}
       style={backgroundStyles}
     >
@@ -177,5 +179,6 @@ export default function TrustedBy({
         </div>
       </div>
     </div>
+    </Link>
   );
 }

@@ -189,7 +189,7 @@ export default function TrustedBy({
       <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
         <div className="w-full">
           <p
-            className={`text-[#020617] font-primary ${headerStyle}  text-xl tracking-wide leading-tight font-normal mb-4`}
+            className={`text-[#020617] font-primary ${headerStyle}  text-xl tracking-wide leading-tight font-normal mb-10`}
           >
             {heading}
           </p>
@@ -213,19 +213,19 @@ export default function TrustedBy({
               {[...sliderImages, ...sliderImages, ...sliderImages].map(
                 (image, index) => (
                   <div key={index} className="slider-item flex-shrink-0">
-                    <div className="flex items-center justify-center h-16">
+                    <div className="flex items-center justify-center h-full">
                       <Image
                         src={image.src}
                         alt={`Trusted partner ${
                           (index % sliderImages.length) + 1
                         }`}
                         className="object-contain h-auto w-auto "
-                        width={70}
-                        height={70}
-                       
-                        quality={80}
+                        width={2500}
+                        height={2500}
+                        quality={100}
+                        priority={index < 5 ? true : false}
                         loading={index < 5 ? "eager" : "lazy"}
-                        sizes="70px"
+                        sizes="2500px"
                       />
                     </div>
                   </div>

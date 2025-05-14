@@ -5,10 +5,12 @@ import company1 from "@/assets/Services-assets/ForCompanies/company1.png";
 import company2 from "@/assets/Services-assets/ForCompanies/company2.png";
 import company3 from "@/assets/Services-assets/ForCompanies/company3.png";
 import company4 from "@/assets/Services-assets/ForCompanies/company4.png";
-import company5 from "@/assets/Services-assets/ForCompanies/company5.png";
+import company5 from "@/assets/LandingPage/OurServices/service6.png";
 import company6 from "@/assets/Services-assets/ForCompanies/company6.png";
 import DoubleCIrcleCard from "@/components/atom/DoubleCircleSectionCard";
 import OurOpenings from "./components/OurOpenings";
+
+import Matrix from "./components/Matrix";
 
 // Hero data
 const heroData = {
@@ -119,7 +121,7 @@ export default function ForCompanies() {
         ))}
 
         <OurOpenings />
-
+        <Matrix />
         <DoubleCIrcleCard 
           heading="Ready to Take the Next Step?"
           paragraph="We’re just a call or message away. Whether you’re a business or a job seeker, our team is here to make the process simple, legal, and stress-free."

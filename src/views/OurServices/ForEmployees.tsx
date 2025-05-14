@@ -5,7 +5,8 @@ import employee1 from "@/assets/Services-assets/ForEmployee/employee1.png";
 import employee2 from "@/assets/Services-assets/ForEmployee/employee2.png";
 import company3 from "@/assets/Services-assets/ForCompanies/company3.png";
 import company4 from "@/assets/Services-assets/ForCompanies/company4.png";
-import company5 from "@/assets/Services-assets/ForCompanies/company5.png";
+import company5 from "@/assets/LandingPage/OurServices/service6.png";
+
 import company6 from "@/assets/Services-assets/ForCompanies/company6.png";
 import DoubleCIrcleCard from "@/components/atom/DoubleCircleSectionCard";
 // Hero data

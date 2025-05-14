@@ -42,7 +42,7 @@ export default function MessagefromChairman() {
               being a part of your journey.
             </p>
             <p className="text-[#334155] text-start text-base mt-4">
-              Arjun Thapa
+              <span className="font-semibold">Arjun Thapa</span>
               <br />
               Chairman, Aarohi HR Solutions
             </p>

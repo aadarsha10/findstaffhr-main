@@ -18,6 +18,63 @@ import slider9 from "@/assets/LandingPage/TrustedBy/slider9.png";
 import slider10 from "@/assets/LandingPage/TrustedBy/slider10.png";
 import slider11 from "@/assets/LandingPage/TrustedBy/slider11.png";
 import slider12 from "@/assets/LandingPage/TrustedBy/slider12.png";
+import slider13 from "@/assets/LandingPage/TrustedBy/slider13.png";
+import slider14 from "@/assets/LandingPage/TrustedBy/slider14.png";
+import slider15 from "@/assets/LandingPage/TrustedBy/slider15.png";
+import slider16 from "@/assets/LandingPage/TrustedBy/slider16.png";
+import slider17 from "@/assets/LandingPage/TrustedBy/slider17.png";
+import slider18 from "@/assets/LandingPage/TrustedBy/slider18.png";
+import slider19 from "@/assets/LandingPage/TrustedBy/slider19.png";
+import slider20 from "@/assets/LandingPage/TrustedBy/slider20.png";
+import slider21 from "@/assets/LandingPage/TrustedBy/slider21.png";
+import slider22 from "@/assets/LandingPage/TrustedBy/slider22.png";
+import slider23 from "@/assets/LandingPage/TrustedBy/slider23.png";
+import slider24 from "@/assets/LandingPage/TrustedBy/slider24.png";
+import slider25 from "@/assets/LandingPage/TrustedBy/slider25.png";
+import slider26 from "@/assets/LandingPage/TrustedBy/slider26.png";
+import slider27 from "@/assets/LandingPage/TrustedBy/slider27.png";
+import slider28 from "@/assets/LandingPage/TrustedBy/slider28.png";
+import slider29 from "@/assets/LandingPage/TrustedBy/slider29.png";
+import slider30 from "@/assets/LandingPage/TrustedBy/slider30.png";
+import slider31 from "@/assets/LandingPage/TrustedBy/slider31.png";
+import slider32 from "@/assets/LandingPage/TrustedBy/slider32.png";
+import slider33 from "@/assets/LandingPage/TrustedBy/slider33.png";
+import slider34 from "@/assets/LandingPage/TrustedBy/slider34.png";
+import slider35 from "@/assets/LandingPage/TrustedBy/slider35.png";
+import slider36 from "@/assets/LandingPage/TrustedBy/slider36.png";
+import slider37 from "@/assets/LandingPage/TrustedBy/slider37.png";
+import slider38 from "@/assets/LandingPage/TrustedBy/slider38.png";
+import slider39 from "@/assets/LandingPage/TrustedBy/slider39.png";
+import slider40 from "@/assets/LandingPage/TrustedBy/slider40.png";
+import slider41 from "@/assets/LandingPage/TrustedBy/slider41.png";
+import slider42 from "@/assets/LandingPage/TrustedBy/slider42.png";
+import slider43 from "@/assets/LandingPage/TrustedBy/slider43.png";
+import slider44 from "@/assets/LandingPage/TrustedBy/slider44.png";
+import slider45 from "@/assets/LandingPage/TrustedBy/slider45.png";
+import slider46 from "@/assets/LandingPage/TrustedBy/slider46.png";
+import slider47 from "@/assets/LandingPage/TrustedBy/slider47.png";
+import slider48 from "@/assets/LandingPage/TrustedBy/slider48.png";
+import slider49 from "@/assets/LandingPage/TrustedBy/slider49.png";
+import slider50 from "@/assets/LandingPage/TrustedBy/slider50.png";
+import slider51 from "@/assets/LandingPage/TrustedBy/slider51.png";
+import slider52 from "@/assets/LandingPage/TrustedBy/slider52.png";
+import slider53 from "@/assets/LandingPage/TrustedBy/slider53.png";
+import slider54 from "@/assets/LandingPage/TrustedBy/slider54.png";
+import slider55 from "@/assets/LandingPage/TrustedBy/slider55.png";
+import slider56 from "@/assets/LandingPage/TrustedBy/slider56.png";
+import slider57 from "@/assets/LandingPage/TrustedBy/slider57.png";
+import slider58 from "@/assets/LandingPage/TrustedBy/slider58.png";
+
+
+
+
+
+
+
+
+
+
+
 import Link from "next/link";
 
 
@@ -35,7 +92,7 @@ export default function TrustedBy({
   className,
 }: TrustedByProps) {
   const sliderImages = useMemo(
-    () => [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12],
+    () => [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12, slider13, slider14, slider15, slider16, slider17, slider18, slider19, slider20, slider21, slider22, slider23, slider24, slider25, slider26, slider27, slider28, slider29, slider30, slider31, slider32, slider33, slider34, slider35, slider36, slider37, slider38, slider39, slider40, slider41, slider42, slider43, slider44, slider45, slider46, slider47, slider48, slider49, slider50, slider51, slider52, slider53, slider54, slider55, slider56, slider57, slider58],
     []
   );
 

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {Linkedin, Instagram, Facebook} from "lucide-react";
+import { Linkedin, Instagram, Facebook, Youtube} from "lucide-react";
+import { PiTiktokLogo } from "react-icons/pi";
+
 // import FindStaff from "../../assets/Footer/Find-staff.svg";
 // import MainLogo from "@/assets/Navbar/mainLogo.png";
 import Vector from "../../assets/Footer/Vector.svg";
@@ -8,28 +10,50 @@ import Logo2 from "../../assets/Footer/logo2.png";
 
 // Social media links data
 const socialLinks = [
-  {icon: Linkedin, href: "#", ariaLabel: "LinkedIn"},
-  {icon: Instagram, href: "#", ariaLabel: "Instagram"},
-  {icon: Facebook, href: "#", ariaLabel: "Facebook"},
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/aarohi-h-r-solutions-pvt-ltd-nepal/",
+    ariaLabel: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/aarohihrsolutions?igsh=bDVqYWF6NWsyMHY3",
+    ariaLabel: "Instagram",
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/aarohihrsolution",
+    ariaLabel: "Facebook",
+  },
+  {
+    icon: Youtube,
+    href: "https://youtube.com/@aarohihrsolutions",
+    ariaLabel: "Youtube",
+  },
+  {
+    icon: PiTiktokLogo,
+    href: "https://www.tiktok.com/@aarohi_hr_solutions?_t=ZS-8wLKMJvdIoh&_r=1",
+    ariaLabel: "Tiktok",
+  },
 ];
 
 // Company links data
 const companyLinks = [
-  {href: "/", label: "Home"},
-  {href: "/aboutus", label: "About us"},
-  {href: "/ourservices/companies", label: "Our Services"},
-  {href: "/clients", label: "Our Clients"},
+  { href: "/", label: "Home" },
+  { href: "/aboutus", label: "About us" },
+  { href: "/ourservices/companies", label: "Our Services" },
+  { href: "/clients", label: "Our Clients" },
 ];
 
 // Sectors links data
 const sectorLinks = [
-  {href: "", label: "Construction & Engineering"},
-  {href: "", label: "Hospitality"},
-  {href: "", label: "Tourism"},
-  {href: "", label: "Domestic & Care Services"},
-  {href: "", label: "Logistics & Warehousing"},
-  {href: "", label: "Retail & Customer Service"},
-  {href: "", label: "Manufacturing & Industrial"},
+  { href: "", label: "Construction & Engineering" },
+  { href: "", label: "Hospitality" },
+  { href: "", label: "Tourism" },
+  { href: "", label: "Domestic & Care Services" },
+  { href: "", label: "Logistics & Warehousing" },
+  { href: "", label: "Retail & Customer Service" },
+  { href: "", label: "Manufacturing & Industrial" },
 ];
 
 // Contact information
@@ -46,7 +70,7 @@ const contactInfo = [
     heading: "Fax",
     items: ["+977-1-4962925"],
   },
-  {heading: "Email", items: ["info@aarohihrsolutions.com"]},
+  { heading: "Email", items: ["info@aarohihrsolutions.com"] },
   {
     heading: "Working Hours",
     items: ["Sunday to Friday | 9:00 AM – 6:00 PM (NST)"],
@@ -65,7 +89,7 @@ export default function Footer() {
           alt="Background Design"
           width={1200}
           height={142}
-          style={{width: "100%", height: "auto"}}
+          style={{ width: "100%", height: "auto" }}
           priority={false}
         />
       </div>
@@ -77,25 +101,20 @@ export default function Footer() {
           <div className="w-full">
             <div className="flex flex-col items-start">
               <Link href="/">
-              <Image
-                src={Logo2}
-                alt="Aarohi HR Solutions Logo"
-                width={194}
-                height={90}
-                className="w-[120px] md:w-[194px] h-auto"
-              />
+                <Image
+                  src={Logo2}
+                  alt="Aarohi HR Solutions Logo"
+                  width={194}
+                  height={90}
+                  className="w-[120px] md:w-[194px] h-auto"
+                />
               </Link>
-
 
               <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
                 Hire reliable, pre-screened talent from Asia with full
-                recruitment, visa, and relocation support - tailored for
-                global fast-paced industries.
+                recruitment, visa, and relocation support - tailored for global
+                fast-paced industries.
               </p>
-
-             
-              
-
 
               <div className="flex gap-4 mt-4">
                 {socialLinks.map((social, index) => (

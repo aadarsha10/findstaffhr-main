@@ -477,7 +477,7 @@ export default function IndustriesWeServeCard({
               <p className="text-[#334155] font-primary text-sm mb-4 font-normal">
                 {description}
               </p>
-              <div className="flex flex-wrap gap-2   ">
+              <div className="flex flex-wrap gap-2 h-[100px] overflow-y-auto    ">
                 {jobs.map((job) => (
                   <p
                     key={job}

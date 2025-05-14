@@ -1,7 +1,7 @@
 "use client";
 
 import React, {useState, useEffect, useRef, useMemo, useCallback} from "react";
-import BackgroundSvg from "@/assets/LandingPage/TrustedBy/Background.svg";
+// import BackgroundSvg from "@/assets/LandingPage/TrustedBy/Background.svg";
 
 import Image from "next/image";
 
@@ -76,19 +76,20 @@ import slider58 from "@/assets/LandingPage/TrustedBy/slider58.png";
 
 
 import Link from "next/link";
+import HighlightText from "@/services/HighlightText";
 
 
 interface TrustedByProps {
   heading: string;
   headerStyle: string;
-  showBackground?: boolean;
+  // showBackground?: boolean;
   className: string;
 }
 
 export default function TrustedBy({
   heading,
-  headerStyle,
-  showBackground = true,
+  // headerStyle,
+  // showBackground = true,
   className,
 }: TrustedByProps) {
   const sliderImages = useMemo(
@@ -167,31 +168,40 @@ export default function TrustedBy({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const backgroundStyles = showBackground
-    ? {
-        backgroundImage: `url(${BackgroundSvg.src})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top",
-        backgroundSize: "auto",
-        minHeight: "246px",
+  // const backgroundStyles = showBackground
+  //   ? {
+  //       backgroundImage: `url(${BackgroundSvg.src})`,
+  //       backgroundRepeat: "no-repeat",
+  //       backgroundPosition: "top",
+  //       backgroundSize: "auto",
+  //       minHeight: "246px",
 
-      }
-    : {
-        minHeight: "180px", // Smaller height when no background
-      };
+  //     }
+  //   : {
+  //       minHeight: "180px", // Smaller height when no background
+  //     };
 
   return (
     <Link href="/clients">
        <div
-      className={`flex flex-col relative w-full -mt-10  ${className}`}
-      style={backgroundStyles}
+      className={`flex flex-col relative w-full -mt-10 ${className} py-24 `}
+      // style={backgroundStyles}
     >
-      <div className="container mx-auto max-w-5xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center md:mt-12 mt-16 w-full">
         <div className="w-full">
           <p
-            className={`text-[#020617] font-primary ${headerStyle}  text-xl tracking-wide leading-tight font-normal mb-10`}
+            // className={`text-[#020617] font-primary ${headerStyle}  text-2xl tracking-wide leading-tight font-normal mb-10`}
+            className="text-primary  text-start tracking-wider leading-[1.15] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-5xl max-w-5xl mb-16 "
+          >
+            {/* {heading} */}
+            <HighlightText
+            className="font-semibold px-1 sm:px-2 md:px-4"
+            highlightColor="bg-tertiary-green"
+            duration={700}
+            delayAnimation={700}
           >
             {heading}
+          </HighlightText>
           </p>
         </div>
 

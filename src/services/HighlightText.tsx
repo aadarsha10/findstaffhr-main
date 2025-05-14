@@ -43,10 +43,8 @@ export function HighlightText({
         const entry = entries[0];
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Unobserve after animation is triggered to prevent re-triggering
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
+        } else {
+          setIsVisible(false);
         }
       },
       {
@@ -89,17 +87,22 @@ export function HighlightText({
         className={cn(
           "absolute inset-0 w-0 origin-left z-0",
           highlightColor,
-          isVisible ? "animate-highlight-bg" : ""
+          isVisible ? "animate-highlight-bg" : "w-0"
         )}
+        style={{
+          animation: isVisible ? `highlight-bg ${duration}ms cubic-bezier(0.33, 1, 0.68, 1) ${delayAnimation}ms forwards` : 'none'
+        }}
       />
 
       {/* Text element that changes color simultaneously with background */}
       <span
         className={cn(
           "relative z-10",
-          isVisible ? "animate-highlight-text" : "",
           textClassName
         )}
+        style={{
+          animation: isVisible ? `highlight-text ${duration}ms cubic-bezier(0.33, 1, 0.68, 1) ${delayAnimation}ms forwards` : 'none'
+        }}
       >
         {children}
       </span>

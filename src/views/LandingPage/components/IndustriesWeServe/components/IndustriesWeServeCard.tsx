@@ -22,44 +22,27 @@ interface IndustriesWeServeCardProps {
   jobs: Array<string>;
 }
 
-// Toast component for success message with animation
+// Toast components
 const SuccessToast = ({ message }: { message: string }) => (
   <div className="flex items-start p-4 rounded-lg bg-white shadow-lg border-l-4 border-green-500 max-w-md w-full">
-    <div className="flex-shrink-0">
-      <CheckCircle className="h-6 w-6 text-green-500" />
-    </div>
-    <div className="ml-3 flex-1">
-      <p className="text-sm font-medium text-gray-900">{message}</p>
-    </div>
+    <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0" />
+    <p className="ml-3 text-sm font-medium text-gray-900">{message}</p>
   </div>
 );
 
-// Toast component for error message with animation
 const ErrorToast = ({ message }: { message: string }) => (
   <div className="flex items-start p-4 rounded-lg bg-white shadow-lg border-l-4 border-red-500 max-w-md w-full">
-    <div className="flex-shrink-0">
-      <XCircle className="h-6 w-6 text-red-500" />
-    </div>
-    <div className="ml-3 flex-1">
-      <p className="text-sm font-medium text-gray-900">{message}</p>
-    </div>
+    <XCircle className="h-6 w-6 text-red-500 flex-shrink-0" />
+    <p className="ml-3 text-sm font-medium text-gray-900">{message}</p>
   </div>
 );
 
 // Custom toast functions
-const showSuccessToast = (message: string) => {
-  toast.custom(
-    () => <SuccessToast message={message} />,
-    { position: "top-right", duration: 4000 }
-  );
-};
+const showSuccessToast = (message: string) => 
+  toast.custom(() => <SuccessToast message={message} />, { position: "top-right", duration: 4000 });
 
-const showErrorToast = (message: string) => {
-  toast.custom(
-    () => <ErrorToast message={message} />,
-    { position: "top-right", duration: 4000 }
-  );
-};
+const showErrorToast = (message: string) => 
+  toast.custom(() => <ErrorToast message={message} />, { position: "top-right", duration: 4000 });
 
 // Custom Button component for industry cards
 interface CustomButtonProps {
@@ -68,28 +51,26 @@ interface CustomButtonProps {
   onClick?: () => void;
 }
 
-const CustomButton = ({ children, className, onClick }: CustomButtonProps) => {
-  return (
-    <Button
-      className={cn(
-        "group bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[150px] md:w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-100 hover:cursor-pointer",
-        className
-      )}
-      withAnimatedArrow
-      arrowSize={24}
-      arrowColor="#64748B"
-      arrowContainerClassName="-ml-3.5 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
-      StyleBg="#E2E8F0"
-      onClick={onClick}
-    >
-      <span className="w-full text-[12px] md:text-sm md:min-w-[95px]">
-        {children}
-      </span>
-    </Button>
-  );
-};
+const CustomButton = ({ children, className, onClick }: CustomButtonProps) => (
+  <Button
+    className={cn(
+      "group bg-gray-100 text-primary-gray rounded-[999px] h-12 w-[150px] md:w-[160px] pl-[14px] pr-[4px] py-2 hover:bg-gray-100 hover:cursor-pointer",
+      className
+    )}
+    withAnimatedArrow
+    arrowSize={24}
+    arrowColor="#64748B"
+    arrowContainerClassName="-ml-3.5 flex p-5 items-center justify-center rounded-[999px] bg-gray-200 relative overflow-hidden"
+    StyleBg="#E2E8F0"
+    onClick={onClick}
+  >
+    <span className="w-full text-[12px] md:text-sm md:min-w-[95px]">
+      {children}
+    </span>
+  </Button>
+);
 
-// Contact Form Component - Used for both Apply Job and Request Staff
+// Contact Form Component
 const ContactForm = ({ 
   title, 
   description, 
@@ -99,7 +80,7 @@ const ContactForm = ({
   description: string; 
   formType: 'apply' | 'request' 
 }) => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     fullName: "",
     email: "",
     phone: "",
@@ -108,8 +89,9 @@ const ContactForm = ({
     message: formType === 'apply' 
       ? `I'm interested in job opportunities in ${title}. ${description}` 
       : `I'm looking to hire staff for ${title}. ${description}`,
-  });
-
+  };
+  
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({
     fullName: "",
@@ -118,32 +100,15 @@ const ContactForm = ({
     message: "",
   });
 
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validatePhone = (phone: string) => !phone || /^[0-9+\-\s()]{7,20}$/.test(phone);
 
-  const validatePhone = (phone: string) => {
-    if (!phone) return true; // Phone is optional
-    const regex = /^[0-9+\-\s()]{7,20}$/;
-    return regex.test(phone);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-
-    // Clear error when user types
+    setFormData(prev => ({ ...prev, [id]: value }));
+    
     if (errors[id as keyof typeof errors]) {
-      setErrors((prev) => ({
-        ...prev,
-        [id]: "",
-      }));
+      setErrors(prev => ({ ...prev, [id]: "" }));
     }
   };
 
@@ -156,7 +121,6 @@ const ContactForm = ({
       message: "",
     };
 
-    // Validate full name
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name is required";
       isValid = false;
@@ -165,7 +129,6 @@ const ContactForm = ({
       isValid = false;
     }
 
-    // Validate email
     if (!formData.email.trim()) {
       newErrors.email = "Email address is required";
       isValid = false;
@@ -174,13 +137,11 @@ const ContactForm = ({
       isValid = false;
     }
 
-    // Validate phone (optional field)
     if (formData.phone && !validatePhone(formData.phone)) {
       newErrors.phone = "Please enter a valid phone number";
       isValid = false;
     }
 
-    // Validate message
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
       isValid = false;
@@ -195,20 +156,15 @@ const ContactForm = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
     try {
-      // Choose the appropriate endpoint based on form type
       const endpoint = formType === 'apply' 
-        ? "/api/apply-for-job"  // New endpoint for job applications
-        : "/api/request-staff";  // New endpoint for staff requests
+        ? "/api/apply-for-job" 
+        : "/api/request-staff";
 
-      // Include form type and category in the request data
       const requestData = {
         ...formData,
         formType,
@@ -217,54 +173,26 @@ const ContactForm = ({
 
       const response = await fetch(endpoint, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestData),
       });
 
-      // Check if the response is ok before attempting to parse JSON
       if (!response.ok) {
         const errorText = await response.text();
         let errorMessage = `Error: ${response.status} ${response.statusText}`;
         
         try {
-          // Try to parse the error as JSON
           const errorJson = JSON.parse(errorText);
-          if (errorJson.error) {
-            errorMessage = errorJson.error;
-          }
+          if (errorJson.error) errorMessage = errorJson.error;
         } catch (parseError) {
-          // If the error isn't valid JSON, just use the status text
           console.error("Could not parse error response:", parseError);
         }
         
         throw new Error(errorMessage);
       }
 
-      // If response is OK, try to parse the JSON
-      try {
-        const text = await response.text();
-        // No need to store the result if we're not using it
-        JSON.parse(text);
-      } catch (parseError) {
-        console.error("Error parsing success response:", parseError);
-        // Even if we can't parse the response, it was a success (status 200)
-      }
-
       showSuccessToast(`Your ${formType === 'apply' ? 'application' : 'staff request'} has been sent successfully!`);
-
-      // Reset form
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: formType === 'apply' ? `Application for ${title}` : `Staff Request for ${title}`,
-        message: formType === 'apply' 
-          ? `I'm interested in job opportunities in ${title}. ${description}` 
-          : `I'm looking to hire staff for ${title}. ${description}`,
-      });
+      setFormData(initialFormData);
 
     } catch (error) {
       console.error(`Error sending ${formType}:`, error);
@@ -274,152 +202,74 @@ const ContactForm = ({
     }
   };
 
+  const renderFormField = (
+    id: string, 
+    label: string, 
+    type: string, 
+    placeholder: string, 
+    required: boolean = false,
+    errorKey?: keyof typeof errors
+  ) => (
+    <div className="flex flex-col w-full">
+      <label htmlFor={id} className="text-[#334155] text-sm font-normal mb-2">
+        {label}{required && <span className="text-red-500">*</span>}
+      </label>
+      {type === 'textarea' ? (
+        <textarea
+          id={id}
+          rows={4}
+          value={formData[id as keyof typeof formData] as string}
+          onChange={handleChange}
+          placeholder={placeholder}
+          className={`w-full px-4 py-3 rounded-xl border ${
+            errorKey && errors[errorKey] ? "border-red-500" : "border-[#E2E8F0]"
+          } bg-white text-[#94A3B8] text-sm font-normal`}
+          required={required}
+        />
+      ) : (
+        <input
+          type={type}
+          id={id}
+          value={formData[id as keyof typeof formData] as string}
+          onChange={handleChange}
+          placeholder={placeholder}
+          className={`w-full px-4 py-3 rounded-full border ${
+            errorKey && errors[errorKey] ? "border-red-500" : "border-[#E2E8F0]"
+          } bg-white text-[#94A3B8] text-sm font-normal`}
+          required={required}
+        />
+      )}
+      {errorKey && errors[errorKey] && (
+        <div className="flex items-center mt-1 text-red-500 text-xs">
+          <AlertCircle className="h-3 w-3 mr-1" />
+          <span>{errors[errorKey]}</span>
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="flex flex-col w-full">
-          <label
-            htmlFor="fullName"
-            className="text-[#334155] text-sm font-normal mb-2"
-          >
-            Full Name<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            placeholder="Enter your full name"
-            className={`w-full px-4 py-3 rounded-full border ${
-              errors.fullName ? "border-red-500" : "border-[#E2E8F0]"
-            } bg-white text-[#94A3B8] text-sm font-normal`}
-            required
-          />
-          {errors.fullName && (
-            <div className="flex items-center mt-1 text-red-500 text-xs">
-              <AlertCircle className="h-3 w-3 mr-1" />
-              <span>{errors.fullName}</span>
-            </div>
-          )}
-        </div>
-        
-        <div className="flex flex-col w-full">
-          <label
-            htmlFor="email"
-            className="text-[#334155] text-sm font-normal mb-2"
-          >
-            Email Address<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email address"
-            className={`w-full px-4 py-3 rounded-full border ${
-              errors.email ? "border-red-500" : "border-[#E2E8F0]"
-            } bg-white text-[#94A3B8] text-sm font-normal`}
-            required
-          />
-          {errors.email && (
-            <div className="flex items-center mt-1 text-red-500 text-xs">
-              <AlertCircle className="h-3 w-3 mr-1" />
-              <span>{errors.email}</span>
-            </div>
-          )}
-        </div>
-      
-        <div className="flex flex-col w-full">
-          <label
-            htmlFor="phone"
-            className="text-[#334155] text-sm font-normal mb-2"
-          >
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Enter your phone number"
-            className={`w-full px-4 py-3 rounded-full border ${
-              errors.phone ? "border-red-500" : "border-[#E2E8F0]"
-            } bg-white text-[#94A3B8] text-sm font-normal`}
-          />
-          {errors.phone && (
-            <div className="flex items-center mt-1 text-red-500 text-xs">
-              <AlertCircle className="h-3 w-3 mr-1" />
-              <span>{errors.phone}</span>
-            </div>
-          )}
-        </div>
-      
-        <div className="flex flex-col w-full">
-          <label
-            htmlFor="company"
-            className="text-[#334155] text-sm font-normal mb-2"
-          >
-            {formType === 'apply' ? 'Current Company' : 'Your Company'}{formType === 'request' && <span className="text-red-500">*</span>}
-          </label>
-          <input
-            type="text"
-            id="company"
-            value={formData.company}
-            onChange={handleChange}
-            required={formType === 'request'}
-            placeholder={formType === 'apply' ? "Current or previous employer" : "Company name"}
-            className="w-full px-4 py-3 rounded-full border border-[#E2E8F0] bg-white text-[#94A3B8] text-sm font-normal"
-          />
-        </div>
-      </div>
-
-      <div className="flex flex-col w-full">
-        <label
-          htmlFor="subject"
-          className="text-[#334155] text-sm font-normal mb-2"
-        >
-          Subject
-        </label>
-        <input
-          type="text"
-          id="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          placeholder="Enter message subject"
-          className="w-full px-4 py-3 rounded-full border border-[#E2E8F0] bg-white text-[#94A3B8] text-sm font-normal"
-        />
-      </div>
-
-      <div className="flex flex-col w-full">
-        <label
-          htmlFor="message"
-          className="text-[#334155] text-sm font-normal mb-2"
-        >
-          Message<span className="text-red-500">*</span>
-        </label>
-        <textarea
-          id="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Write your message here"
-          className={`w-full px-4 py-3 rounded-xl border ${
-            errors.message ? "border-red-500" : "border-[#E2E8F0]"
-          } bg-white text-[#94A3B8] text-sm font-normal`}
-          required
-        ></textarea>
-        {errors.message && (
-          <div className="flex items-center mt-1 text-red-500 text-xs">
-            <AlertCircle className="h-3 w-3 mr-1" />
-            <span>{errors.message}</span>
-          </div>
+        {renderFormField("fullName", "Full Name", "text", "Enter your full name", true, "fullName")}
+        {renderFormField("email", "Email Address", "email", "Enter your email address", true, "email")}
+        {renderFormField("phone", "Phone Number", "tel", "Enter your phone number", false, "phone")}
+        {renderFormField(
+          "company", 
+          formType === 'apply' ? 'Current Company' : 'Your Company', 
+          "text", 
+          formType === 'apply' ? "Current or previous employer" : "Company name",
+          formType === 'request'
         )}
       </div>
+
+      {renderFormField("subject", "Subject", "text", "Enter message subject")}
+      {renderFormField("message", "Message", "textarea", "Write your message here", true, "message")}
 
       <Button
         type="submit"
         variant="withArrow"
-        className="h-14  w-[180px] mt-4 pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
+        className="h-14 w-[180px] mt-4 pl-[16px] pr-[4px] py-2 relative overflow-hidden font-primary text-sm font-normal group"
         withAnimatedArrow
         arrowSize={28}
         disabled={isSubmitting}
@@ -451,22 +301,19 @@ export default function IndustriesWeServeCard({
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        style={{
-          backgroundClip: "padding-box", // Ensure gradient only covers padding area (border)
-        }}
+        style={{ backgroundClip: "padding-box" }}
       >
-        {/* Card content */}
         <div className="flex flex-col h-full bg-white rounded-[23px] overflow-hidden relative border border-transparent">
           <div
             className="w-full h-[160px] bg-center bg-no-repeat bg-cover rounded-t-[22px]"
             style={{ backgroundImage: `url(${imageUrl})` }}
           />
           <div
-            className={`p-6 flex flex-col  transition-all duration-300 ease-in-out ${
+            className={`p-6 flex flex-col transition-all duration-300 ease-in-out ${
               isHovered ? "h-[280px]" : "h-[230px]"
             }`}
           >
-            <div className="flex flex-grow flex-col ">
+            <div className="flex flex-grow flex-col">
               <h3
                 className={`font-primary text-lg font-semibold mb-2 transition-colors duration-300 ease-in-out ${
                   isHovered ? "text-[#0091e6]" : ""
@@ -477,21 +324,27 @@ export default function IndustriesWeServeCard({
               <p className="text-[#334155] font-primary text-sm mb-4 font-normal">
                 {description}
               </p>
-              <div className="flex flex-wrap gap-2 h-[100px] overflow-y-auto    ">
+              <div 
+                className="flex flex-wrap gap-2 h-[100px] overflow-y-auto custom-scrollbar" 
+                style={{
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none'
+                }}
+              >
                 {jobs.map((job) => (
-                  <p
+                  <span
                     key={job}
-                    className="bg-quaternary-green flex items-center gap-2 rounded-full px-2 py-1 text-primary-gray font-primary text-sm font-normal"
+                    className="bg-quaternary-green inline-flex items-center gap-2 rounded-full px-3 py-1 text-primary-gray font-primary text-sm whitespace-nowrap"
                   >
-                    <Image src={Icon} alt="icon" />
+                    <Image src={Icon} alt="" width={16} height={16} />
                     {job}
-                  </p>
+                  </span>
                 ))}
               </div>
             </div>
             <div
               className={`flex gap-2 overflow-hidden transition-all duration-300 ease-in-out ${
-                isHovered ? "opacity-100  h-[48px]" : "opacity-0  h-0"
+                isHovered ? "opacity-100 h-[48px]" : "opacity-0 h-0"
               }`}
             >
               <Dialog open={openApplyJob} onOpenChange={setOpenApplyJob}>

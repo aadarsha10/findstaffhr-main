@@ -1,6 +1,6 @@
 "use client";
 
-import heroImage from "@/assets/LandingPage/HeroSection/HeroImage.svg";
+import heroImage from "@/assets/LandingPage/HeroSection/hero.png";
 import {Button} from "@/components/ui/button";
 import HighlightText from "@/services/HighlightText";
 // import NameDisplayCards from "./components/NameDisplayCards";
@@ -23,6 +23,9 @@ export default function HeroSection() {
       className="w-full h-[calc(90vh-88px)] container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center relative bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage.src})`,
+        backgroundSize: '1500px 500px',
+        backgroundPosition: 'bottom',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="relative z-10 px-4 flex flex-col items-center justify-items-start mt-5 w-full">

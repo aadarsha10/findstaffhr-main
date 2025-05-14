@@ -32,10 +32,13 @@ export default function IndustriesWeServe() {
       description: "Delivering exceptional guest experiences",
       imageUrl: Industries1.src,
       jobs: [
-        "Waiters & Waitresses",
-        "Housekeepers",
+        "Hotel/Restaurant Manager",
+        "Cooks/Chefs/Assistant Cook",
         "Front Desk Staff",
-        "Kitchen Helpers",
+        "Housekeeping Staff",
+        "Receptionist",
+        "Waiters & Waitresses",
+
       ],
     },
     {
@@ -43,7 +46,7 @@ export default function IndustriesWeServe() {
       title: "Construction & Engineering",
       description: "Reliable manpower for your toughest projects",
       imageUrl: Industries2.src,
-      jobs: ["Masons", "Electricians", "Plumbers", "Steel Fixers"],
+      jobs: ["Masons & Carpenters", "Electricians & Plumbers", "Steel Fixers & Riggers"],
     },
     {
       id: 3,
@@ -54,6 +57,7 @@ export default function IndustriesWeServe() {
         "Commercial Cleaners",
         "Office Janitors",
         "Housekeepers",
+        "Building Maintenance Staff",
         "Sanitation Workers",
       ],
     },
@@ -62,7 +66,7 @@ export default function IndustriesWeServe() {
       title: "Logistics & Warehousing",
       description: "Organized, efficient, and on time",
       imageUrl: Industries4.src,
-      jobs: ["Assistants", "Clerks", " Helpers", "Forklift Operators"],
+      jobs: ["Warehouse Assistants", "Inventory Clerks", " Loaders & Unloaders", "Delivery Helpers","Forklift Operators"],
     },
     {
       id: 5,
@@ -72,8 +76,10 @@ export default function IndustriesWeServe() {
       jobs: [
         "Restaurant Staff",
         "Kitchen Porters",
+
         "Cooks & Commis Chefsf",
         "Dishwashers",
+        "Bakery Assistants"
       ],
     },
     {
@@ -81,7 +87,7 @@ export default function IndustriesWeServe() {
       title: "Kitchen & Pastry",
       description: "Keeping Global spotless and operational",
       imageUrl: Industries6.src,
-      jobs: ["Chef", "Helpers", "Movers", "Commis Sushi", "Sushi Chef"],
+      jobs: ["Chef & Commis Chef", "Helpers & Kitchen Staff", "Movers & Packers", "Commis Sushi", "Sushi Chef"],
     },
     {
       id: 7,

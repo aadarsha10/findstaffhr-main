@@ -12,9 +12,9 @@ export default function AboutUs() {
     <div className="flex flex-col  py-16">
       <HeroAboutSection />
       <TrustedBy
-        heading={"Powering the world’s best companies"}
+        heading={"Trusted companies"}
         headerStyle={"text-center"}
-        showBackground={false}
+        // showBackground={false}
         className={"py-24"}
       />
       <DoubleCards />

@@ -30,7 +30,7 @@ export default function HeroSection() {
     >
       <div className="relative z-10 px-4 flex flex-col items-center justify-items-start mt-5 w-full">
         <h1 className="text-primary  text-center tracking-wider leading-[1.15] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-5xl max-w-5xl mt-16 md:mt-0">
-          Bringing{" "}
+          <span className="">Bringing</span>{" "}
           <HighlightText
             className="font-semibold px-1 sm:px-2 md:px-4"
             highlightColor="bg-tertiary-green"

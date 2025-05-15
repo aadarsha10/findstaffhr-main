@@ -59,6 +59,11 @@ export default function TestomonialSlide({
     testimonials: activeTestimonials,
     isForCompanies,
   });
+  
+  // Early return with loading state if currentTestimonial is undefined
+  if (!currentTestimonial) {
+    return <div className="w-full flex items-center justify-center">Loading testimonials...</div>;
+  }
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -99,7 +104,7 @@ export default function TestomonialSlide({
                 }}
                 className="text-base md:text-lg lg:text-xl font-primary text-primary-gray leading-normal"
               >
-                {currentTestimonial.text}
+                {currentTestimonial?.text || ""}
               </motion.p>
             </motion.div>
           </AnimatePresence>
@@ -122,7 +127,7 @@ export default function TestomonialSlide({
                 transition={{ duration: 0.3 }}
                 className="text-xs md:text-sm lg:text-base font-primary text-secondary-green font-normal leading-normal"
               >
-                {currentTestimonial.position}
+                {currentTestimonial?.position || ""}
               </motion.p>
             </AnimatePresence>
           </div>
@@ -139,18 +144,20 @@ export default function TestomonialSlide({
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="flex items-center justify-center w-[100px] h-[100px] md:w-[344px] md:h-[344px] relative overflow-hidden"
             >
-              <Image
-                src={currentTestimonial.logo}
-                alt={currentTestimonial.logoAlt}
-                width={!isForCompanies ? 144 : 344}
-                height={!isForCompanies ? 144 : 344}
-                className={`object-cover  ${
-                  !isForCompanies ? "rounded-full" : ""
-                }`}
-                sizes="(max-width: 768px) 100px, 144px"
-                priority
-                unoptimized={currentIndex === 3 && !isForCompanies}
-              />
+              {currentTestimonial?.logo && (
+                <Image
+                  src={currentTestimonial.logo}
+                  alt={currentTestimonial?.logoAlt || "Testimonial logo"}
+                  width={!isForCompanies ? 144 : 344}
+                  height={!isForCompanies ? 144 : 344}
+                  className={`object-cover ${
+                    !isForCompanies ? "rounded-full" : ""
+                  }`}
+                  sizes="(max-width: 768px) 100px, 144px"
+                  priority
+                  unoptimized={currentIndex === 3 && !isForCompanies}
+                />
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -243,26 +250,26 @@ const TestimonialDot = memo(function TestimonialDot({
   return (
     <motion.button
       onClick={() => handleDotClick(index)}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 0.8 }}
       whileTap={{ scale: 0.9 }}
       aria-label={`Go to testimonial ${index + 1}`}
       className="focus:outline-none transition-transform duration-300 flex-shrink-0"
     >
       <motion.div
         animate={{
-          width: currentIndex === index ? 35 : 25,
-          height: currentIndex === index ? 35 : 25,
-          border: currentIndex === index ? "2px solid rgb(71, 149, 185)" : "none",
+          width: currentIndex === index ? 60 : 45,
+          height: currentIndex === index ? 60 : 45,
+          border: currentIndex === index ? "3px solid rgb(71, 149, 185)" : "none",
         }}
         className="relative rounded-full flex items-center justify-center"
       >
-        <div className="w-full h-full rounded-full overflow-hidden  p-[2px]">
+        <div className="w-full h-full rounded-full overflow-hidden p-[4px]">
           <Image
             src={testimonial.logo}
             alt={`${testimonial.logoAlt} index`}
-            width={currentIndex === index ? 42 : 30}
-            height={currentIndex === index ? 42 : 30}
-            className={`object-cover transition-all  duration-300 ease-in-out  rounded-full `}
+            width={currentIndex === index ? 80 : 65}
+            height={currentIndex === index ? 80 : 65}
+            className={`object-cover transition-all duration-300 ease-in-out rounded-full`}
             style={{
               width: "100%",
               height: "100%",

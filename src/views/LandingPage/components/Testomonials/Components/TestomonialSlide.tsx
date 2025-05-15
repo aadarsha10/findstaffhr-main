@@ -59,6 +59,11 @@ export default function TestomonialSlide({
     testimonials: activeTestimonials,
     isForCompanies,
   });
+  
+  // Early return with loading state if currentTestimonial is undefined
+  if (!currentTestimonial) {
+    return <div className="w-full flex items-center justify-center">Loading testimonials...</div>;
+  }
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -99,7 +104,7 @@ export default function TestomonialSlide({
                 }}
                 className="text-base md:text-lg lg:text-xl font-primary text-primary-gray leading-normal"
               >
-                {currentTestimonial.text}
+                {currentTestimonial?.text || ""}
               </motion.p>
             </motion.div>
           </AnimatePresence>
@@ -122,7 +127,7 @@ export default function TestomonialSlide({
                 transition={{ duration: 0.3 }}
                 className="text-xs md:text-sm lg:text-base font-primary text-secondary-green font-normal leading-normal"
               >
-                {currentTestimonial.position}
+                {currentTestimonial?.position || ""}
               </motion.p>
             </AnimatePresence>
           </div>
@@ -139,18 +144,20 @@ export default function TestomonialSlide({
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="flex items-center justify-center w-[100px] h-[100px] md:w-[344px] md:h-[344px] relative overflow-hidden"
             >
-              <Image
-                src={currentTestimonial.logo}
-                alt={currentTestimonial.logoAlt}
-                width={!isForCompanies ? 144 : 344}
-                height={!isForCompanies ? 144 : 344}
-                className={`object-cover  ${
-                  !isForCompanies ? "rounded-full" : ""
-                }`}
-                sizes="(max-width: 768px) 100px, 144px"
-                priority
-                unoptimized={currentIndex === 3 && !isForCompanies}
-              />
+              {currentTestimonial?.logo && (
+                <Image
+                  src={currentTestimonial.logo}
+                  alt={currentTestimonial?.logoAlt || "Testimonial logo"}
+                  width={!isForCompanies ? 144 : 344}
+                  height={!isForCompanies ? 144 : 344}
+                  className={`object-cover ${
+                    !isForCompanies ? "rounded-full" : ""
+                  }`}
+                  sizes="(max-width: 768px) 100px, 144px"
+                  priority
+                  unoptimized={currentIndex === 3 && !isForCompanies}
+                />
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

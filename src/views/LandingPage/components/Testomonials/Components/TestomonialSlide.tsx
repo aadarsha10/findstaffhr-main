@@ -243,26 +243,26 @@ const TestimonialDot = memo(function TestimonialDot({
   return (
     <motion.button
       onClick={() => handleDotClick(index)}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 0.8 }}
       whileTap={{ scale: 0.9 }}
       aria-label={`Go to testimonial ${index + 1}`}
       className="focus:outline-none transition-transform duration-300 flex-shrink-0"
     >
       <motion.div
         animate={{
-          width: currentIndex === index ? 35 : 25,
-          height: currentIndex === index ? 35 : 25,
-          border: currentIndex === index ? "2px solid rgb(71, 149, 185)" : "none",
+          width: currentIndex === index ? 60 : 45,
+          height: currentIndex === index ? 60 : 45,
+          border: currentIndex === index ? "3px solid rgb(71, 149, 185)" : "none",
         }}
         className="relative rounded-full flex items-center justify-center"
       >
-        <div className="w-full h-full rounded-full overflow-hidden  p-[2px]">
+        <div className="w-full h-full rounded-full overflow-hidden p-[4px]">
           <Image
             src={testimonial.logo}
             alt={`${testimonial.logoAlt} index`}
-            width={currentIndex === index ? 42 : 30}
-            height={currentIndex === index ? 42 : 30}
-            className={`object-cover transition-all  duration-300 ease-in-out  rounded-full `}
+            width={currentIndex === index ? 80 : 65}
+            height={currentIndex === index ? 80 : 65}
+            className={`object-cover transition-all duration-300 ease-in-out rounded-full`}
             style={{
               width: "100%",
               height: "100%",

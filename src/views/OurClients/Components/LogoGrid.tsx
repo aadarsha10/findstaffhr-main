@@ -1,5 +1,5 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 
 // Import all slider images
 import slider1 from "@/assets/LandingPage/TrustedBy/slider1.png";
@@ -61,7 +61,6 @@ import slider56 from "@/assets/LandingPage/TrustedBy/slider56.png";
 import slider57 from "@/assets/LandingPage/TrustedBy/slider57.png";
 import slider58 from "@/assets/LandingPage/TrustedBy/slider58.png";
 
-
 export default function LogoGrid() {
   const logos = [
     { id: 1, src: slider1, alt: "Partner 1" },
@@ -113,7 +112,7 @@ export default function LogoGrid() {
     { id: 47, src: slider47, alt: "Partner 47" },
     { id: 48, src: slider48, alt: "Partner 48" },
     { id: 49, src: slider49, alt: "Partner 49" },
-    { id: 50, src: slider50, alt: "Partner 50" }, 
+    { id: 50, src: slider50, alt: "Partner 50" },
     { id: 51, src: slider51, alt: "Partner 51" },
     { id: 52, src: slider52, alt: "Partner 52" },
     { id: 53, src: slider53, alt: "Partner 53" },
@@ -122,21 +121,41 @@ export default function LogoGrid() {
     { id: 56, src: slider56, alt: "Partner 56" },
     { id: 57, src: slider57, alt: "Partner 57" },
     { id: 58, src: slider58, alt: "Partner 58" },
-    ];
+  ];
 
   return (
     <div className="py-16 bg-gradient-to-b from-white to-quaternary-green/30">
       <div className="container mx-auto max-w-6xl px-4">
-        <h2 className="text-3xl font-bold text-left mb-12 text-primary-green">Our Valued Partners</h2>
+        <h2 className="text-3xl font-bold text-left mb-12 text-primary-green">
+          Our Valued Partners
+        </h2>
+        <p className="text-primary-gray text-base font-normal leading-normal mb-10">
+          At Aarohi HR Solutions, our unwavering dedication to meeting the
+          diverse needs of our valued clients has been the cornerstone of our
+          service. From the dynamic demands of the security sector to the
+          essential support in sourcing domestic workers, supermarket staff, and
+          agricultural laborers, we have consistently delivered tailored
+          solutions across a spectrum of industries. Our expertise extends to
+          providing skilled professionals for construction engineering projects
+          and fulfilling staffing requirements for hospitals and pharmacies,
+          etc. Among our esteemed clientele are trusted partners who have
+          benefited from our personalized approach and commitment to excellence.
+          We take pride in our ability to understand the unique challenges and
+          requirements of each sector, ensuring that we exceed expectations in
+          every engagement. As we continue to evolve and innovate, our clients
+          remain at the heart of everything we do, driving us to continually
+          deliver value and exceed their expectations. Some of our valuable
+          clients are listed as below:
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {logos.map((logo) => (
-            <div 
-              key={logo.id} 
+            <div
+              key={logo.id}
               className="logo-card bg-primary-green/30 group relative overflow-hidden rounded-lg p-6 flex items-center justify-center border border-quaternary-green shadow-sm hover:shadow-md transition-all duration-300"
             >
               <div className="absolute -top-10 -right-10 w-20 h-20 bg-tertiary-green rounded-full transition-transform duration-300 group-hover:scale-150"></div>
               <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-tertiary-green rounded-full transition-transform duration-300 group-hover:scale-150"></div>
-              
+
               <div className="relative z-10 flex items-center justify-center h-40 w-full transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src={logo.src}
@@ -152,5 +171,5 @@ export default function LogoGrid() {
         </div>
       </div>
     </div>
-  )
+  );
 }

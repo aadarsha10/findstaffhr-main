@@ -16,12 +16,14 @@ export default function Imap() {
       { threshold: 0.1 }
     );
 
-    if (mapRef.current) {
-      observer.observe(mapRef.current);
+    const currentRef = mapRef.current;
+    
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (mapRef.current) {
+      if (currentRef) {
         observer.disconnect();
       }
     };

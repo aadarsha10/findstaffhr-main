@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Instagram, Facebook, Youtube, Phone, Printer, Mail, Clock, Building } from "lucide-react";
+import { Linkedin, Instagram, Facebook, Youtube, Phone, Printer, Mail, Clock } from "lucide-react";
 import { PiTiktokLogo } from "react-icons/pi";
 
 // import FindStaff from "../../assets/Footer/Find-staff.svg";

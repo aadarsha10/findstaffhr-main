@@ -9,71 +9,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
-import Job from "@/assets/Services-assets/job.png";
 import Global from "@/assets/Services-assets/global.svg";
 import Money from "@/assets/Services-assets/money-3.svg";
 import Clock from "@/assets/Services-assets/clock.svg";
 import People from "@/assets/Services-assets/people.svg";
 
 import Image from "next/image";
-
-// Job opening data
-const jobOpenings = [
-  {
-    id: 1,
-    company: "Alpha Omega Solutions",
-    location: "Qatar",
-    salary: "$50,000 - $70,000",
-    type: "Full-time",
-    employees: "10-50 employees",
-    imageUrl: Job,
-  },
-  {
-    id: 2,
-    company: "Falcon Technologies",
-    location: "UAE",
-    salary: "$60,000 - $85,000",
-    type: "Contract",
-    employees: "50-100 employees",
-    imageUrl: Job,
-  },
-  {
-    id: 3,
-    company: "Global Systems Inc.",
-    location: "Saudi Arabia",
-    salary: "$55,000 - $75,000",
-    type: "Part-time",
-    employees: "100-200 employees",
-    imageUrl: Job,
-  },
-  {
-    id: 4,
-    company: "Horizon Enterprises",
-    location: "Bahrain",
-    salary: "$45,000 - $65,000",
-    type: "Remote",
-    employees: "5-20 employees",
-    imageUrl: Job,
-  },
-  {
-    id: 5,
-    company: "Delta Engineering",
-    location: "Oman",
-    salary: "$70,000 - $90,000",
-    type: "Full-time",
-    employees: "200+ employees",
-    imageUrl: Job,
-  },
-  {
-    id: 6,
-    company: "Phoenix Innovations",
-    location: "Kuwait",
-    salary: "$65,000 - $85,000",
-    type: "Hybrid",
-    employees: "50-100 employees",
-    imageUrl: Job,
-  }
-];
+import jobsData from "@/data/jobsData";
 
 export default function OurOpenings() {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -90,7 +32,7 @@ export default function OurOpenings() {
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start w-full gap-4">
           <p className="text-primary-gray max-w-4xl font-primary text-base font-normal leading-normal">
-            Discover exciting internship and job openings in Dubai, handpicked
+            Discover exciting internship and job openings abroad, handpicked
             from verified and trusted employers. Start your international career
             journey with confidence and the right opportunities.
           </p>
@@ -138,7 +80,7 @@ export default function OurOpenings() {
           }}
           className="w-full"
         >
-          {jobOpenings.map((job) => (
+          {jobsData.map((job) => (
             <SwiperSlide key={job.id} className="!w-auto">
               <div className="flex flex-col w-[320px] p-4 gap-2 rounded-2xl border border-[#E2E8F0] bg-white">
                 <Image 

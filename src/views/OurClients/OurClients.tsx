@@ -10,7 +10,7 @@ export default function OurClients() {
         smallHeading="Our Clients"
         highlightText="Trusted by"
         subtitle="Our valued partners"
-        description="Aarohi HR Solutions is fully licensed and compliant with all relevant laws and regulations in Dubai, providing businesses and job seekers with trustworthy and legally sound staffing services." beforehighlight={""} />
+        description="Aarohi HR Solutions is fully licensed and compliant with all relevant laws and regulations abroad, providing businesses and job seekers with trustworthy and legally sound staffing services." beforehighlight={""} />
         <LogoGrid />
         <DoubleCircleCard />
     </>

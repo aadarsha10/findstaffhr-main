@@ -7,7 +7,7 @@ import {Button} from "../ui/button";
 import {Menu, ChevronDown} from "lucide-react";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {usePathname} from "next/navigation";
-import MainLogo from "@/assets/Navbar/mainLogo.png";
+import MainLogo from "@/assets/Navbar/Aarohi_logo.png";
 
 // Define the navigation items to avoid repetition
 const navItems = [
@@ -76,8 +76,8 @@ export default function Navbar() {
     <div className="w-full bg-white">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between w-full py-6">
-          <Link href="/" className="z-40">
-            <Image src={MainLogo} alt="logo" width={186} height={74} priority />
+          <Link href="/" className="z-40 max-w-[240px] max-h-[220px]">
+            <Image src={MainLogo} alt="logo" width={240} height={220} priority />
           </Link>
 
           {/* Desktop Navigation */}

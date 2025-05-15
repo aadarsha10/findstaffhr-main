@@ -38,7 +38,7 @@ const companiesData: CardData[] = [
     id: "2",
     title: "International Recruitment",
     description:
-      "We connect skilled Asian workers to verified jobs in Dubai with a safe, transparent process from start to finish.",
+      "We connect skilled Asian workers to verified jobs abroad with a safe, transparent process from start to finish.",
     benefits: [
       "Legal, ethical job placements",
       "Verified Dubai employers",

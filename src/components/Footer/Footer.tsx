@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Instagram, Facebook, Youtube} from "lucide-react";
+import { Linkedin, Instagram, Facebook, Youtube, Phone, Printer, Mail, Clock } from "lucide-react";
 import { PiTiktokLogo } from "react-icons/pi";
 
 // import FindStaff from "../../assets/Footer/Find-staff.svg";
 // import MainLogo from "@/assets/Navbar/mainLogo.png";
 import Vector from "../../assets/Footer/Vector.svg";
 import Logo2 from "../../assets/Footer/logo2.png";
+import Certificate from "../../assets/Footer/certification.jpg";
+import Iaf from "../../assets/Footer/Iaf.png";
 
 // Social media links data
 const socialLinks = [
@@ -60,19 +62,27 @@ const sectorLinks = [
 const contactInfo = [
   {
     heading: null,
+    icon: "",
     items: ["Aarohi HR Solutions (P) Ltd.", "Basundhara-3, Kathmandu"],
   },
   {
     heading: "Phone / Address",
+    icon: Phone,
     items: ["+977-1-4961807", "Basundhara-3, Kathmandu"],
   },
   {
     heading: "Fax",
+    icon: Printer,
     items: ["+977-1-4962925"],
   },
-  { heading: "Email", items: ["info@aarohihrsolutions.com"] },
+  { 
+    heading: "Email", 
+    icon: Mail, 
+    items: ["info@aarohihrsolutions.com"] 
+  },
   {
     heading: "Working Hours",
+    icon: Clock,
     items: ["Sunday to Friday | 9:00 AM – 6:00 PM (NST)"],
   },
 ];
@@ -131,6 +141,13 @@ export default function Footer() {
               <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
                 Govt. Lic. No: 1244/074/075 <br /> Reg. No.: 165209/073/074
               </p>
+              <p className="text-xs sm:text-sm text-white mt-4 md:mt-6 leading-relaxed max-w-xs">
+              ISO 9001:2015 <br /> Certificate No.:124104/A/0001/UK/En
+              </p>
+              <div className="flex  gap-4 mt-4">
+                <Image src={Certificate} width={100} height={80} alt="Certificate" />
+                <Image src={Iaf} width={80} height={80} alt="Iaf" />
+              </div>
             </div>
           </div>
 
@@ -180,18 +197,20 @@ export default function Footer() {
                 <h3 className="text-sm md:text-base text-white font-bold mb-3">
                   Contact us
                 </h3>
-                <div className="text-xs md:text-sm text-white space-y-4">
+                <div className="text-xs md:text-sm text-white space-y-6">
                   {contactInfo.map((section, index) => (
                     <div key={index} className="mb-2">
                       {section.heading && (
-                        <p className="font-bold text-gray-100">
-                          {section.heading}
-                        </p>
+                        <div className="font-bold text-gray-100 flex items-center gap-2 mb-1">
+                          {section.icon && <section.icon size={16} />}
+                          <p>{section.heading}</p>
+                        </div>
                       )}
                       {section.items.map((item, itemIndex) => (
-                        <p key={itemIndex} className="text-gray-200">
-                          {item}
-                        </p>
+                        <div key={itemIndex} className="text-gray-200 flex items-center gap-2 ">
+                          {itemIndex === 0 && !section.heading && section.icon && <section.icon size={16} />}
+                          <p>{item}</p>
+                        </div>
                       ))}
                     </div>
                   ))}
@@ -202,16 +221,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="mt-16 md:mt-32">
+        <div className="mt-6">
           <div className="w-full mx-auto mb-6 md:mb-8">
-            {/* <Image
-              src={FindStaff}
-              alt="Aarohi HR Solutions"
-              width={1200}
-              height={48}
-              style={{width: "100%", height: "auto"}}
-              className="opacity-90"
-            /> */}
+          
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center font-semibold gap-3 md:gap-0 text-[10px] md:text-xs text-white">
             <p>All rights reserved © {currentYear} Aarohi HR Solutions</p>
@@ -223,7 +235,6 @@ export default function Footer() {
               >
                 Privacy Policy
               </Link>
-              <span>|</span>
               <Link
                 href="/licenses"
                 className="hover:text-gray-200 transition-colors"

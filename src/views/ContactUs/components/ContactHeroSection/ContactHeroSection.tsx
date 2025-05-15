@@ -233,7 +233,7 @@ export default function ContactHeroSection() {
             </h1>
             <p>
               We&apos;re here to help—whether you&apos;re hiring or job hunting
-              in Dubai. Reach us through the details below.
+              abroad. Reach us through the details below.
             </p>
             <Image
               src={Tower}

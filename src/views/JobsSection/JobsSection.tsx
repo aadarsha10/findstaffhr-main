@@ -10,9 +10,9 @@ export default function JobsSection() {
       <Hero
         smallHeading="Jobs"
       beforehighlight={"Expore"}
-        highlightText="Opportunites in Dubai"
+        highlightText="Opportunites abroad"
         subtitle="with Trusted Employers"
-        description="Discover exciting internship and job openings in Dubai, handpicked from verified and trusted employers. Start your international career journey with confidence and the right opportunities."
+        description="Discover exciting internship and job openings abroad, handpicked from verified and trusted employers. Start your international career journey with confidence and the right opportunities."
       />
       <JobListingSection />
       <DoubleCIrcleCard

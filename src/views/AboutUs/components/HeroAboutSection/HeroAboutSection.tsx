@@ -9,7 +9,8 @@ export default function HeroAboutSection() {
     <div className="container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center py-12">
       <header className="flex flex-col items-center justify-items-start  w-full mb-16 ">
         <h1 className="text-primary text-center tracking-wider leading-[1.15] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-5xl max-w-5xl mt-16 md:mt-0">
-          From{" "}
+         <div className="flex items-center justify-center gap-4">
+          <span>From</span>{" "}
           <HighlightText
             className="font-semibold px-1 sm:px-2 md:px-4"
             highlightColor="bg-tertiary-green"
@@ -18,7 +19,7 @@ export default function HeroAboutSection() {
           >
             Asia to the World
           </HighlightText>{" "}
-          <br />
+          </div>
           <span className="sm:hidden">Seamless Staffing Solutions</span>
           <span className="hidden sm:inline">Seamless Staffing Solutions</span>
         </h1>

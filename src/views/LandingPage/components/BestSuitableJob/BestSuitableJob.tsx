@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import OverlayImage1 from "@/assets/LandingPage/BestSuitableJob/overlay1.svg";
 import OverlayImage2 from "@/assets/LandingPage/BestSuitableJob/overlay2.svg";
 import HighlightText from "@/services/HighlightText";
@@ -9,19 +9,20 @@ export default function BestSuitableJob() {
 
   return (
     <div className="container mx-auto max-w-7xl px-4 md:px-6 flex flex-col items-center py-12 md:py-24 w-full">
-      <div className="w-full flex flex-col items-center mb-2 md:mb-16">
-        <h1 className="text-primary text-center items-center space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
-          Finding you{" "}
-          <HighlightText
-            className="font-semibold px-2 md:px-4"
-            highlightColor="bg-tertiary-green"
-            duration={700}
-            delayAnimation={700}
-          >
-            Best suitable Job
-          </HighlightText>{" "}
-          with <br />
-          skill assessment & preference
+      <div className="w-full flex flex-col items-center mb-2 md:mb-16 ">
+        <h1 className="text-primary w-full  text-center items-center space-x-2 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-tight font-normal">
+          <div className="flex items-center justify-center gap-4">
+            <span> Finding you</span>{" "}
+            <HighlightText
+              className="font-semibold px-2 md:px-4"
+              highlightColor="bg-tertiary-green"
+              duration={700}
+              delayAnimation={700}
+            >
+              Best suitable Job
+            </HighlightText>{" "}
+          </div>
+          with skill assessment & preference
         </h1>
         <p className="text-primary-gray md:max-w-[874px] mt-4 md:mt-6 text-center font-primary text-base md:text-lg lg:text-xl font-normal leading-normal px-2">
           We match your skills and preferences to the roles that fit you best —

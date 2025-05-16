@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Instagram, Facebook, Youtube, Phone, Printer, Mail, Clock } from "lucide-react";
+import { Linkedin, Instagram, Facebook, Youtube, Phone, Printer, Mail, Clock, MapPin } from "lucide-react";
 import { PiTiktokLogo } from "react-icons/pi";
 
 // import FindStaff from "../../assets/Footer/Find-staff.svg";
@@ -63,13 +63,19 @@ const contactInfo = [
   {
     heading: null,
     icon: "",
-    items: ["Aarohi HR Solutions (P) Ltd.", "Basundhara-3, Kathmandu"],
+    items: ["Aarohi HR Solutions (P) Ltd."],
+  },
+  {
+    heading: "Address",
+    icon: MapPin,
+    items: ["Basundhara-3, Kathmandu"],
   },
   {
     heading: "Phone / Address",
     icon: Phone,
-    items: ["+977-1-4961807", "Basundhara-3, Kathmandu"],
+    items: ["+977-1-4961807"],
   },
+ 
   {
     heading: "Fax",
     icon: Printer,

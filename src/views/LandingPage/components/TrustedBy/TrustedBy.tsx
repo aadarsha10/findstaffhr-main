@@ -63,7 +63,11 @@ import slider54 from "@/assets/LandingPage/TrustedBy/slider54.png";
 import slider55 from "@/assets/LandingPage/TrustedBy/slider55.png";
 import slider56 from "@/assets/LandingPage/TrustedBy/slider56.png";
 import slider57 from "@/assets/LandingPage/TrustedBy/slider57.png";
-import slider58 from "@/assets/LandingPage/TrustedBy/slider58.png";
+
+
+
+
+
 
 
 
@@ -93,7 +97,7 @@ export default function TrustedBy({
   className,
 }: TrustedByProps) {
   const sliderImages = useMemo(
-    () => [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12, slider13, slider14, slider15, slider16, slider17, slider18, slider19, slider20, slider21, slider22, slider23, slider24, slider25, slider26, slider27, slider28, slider29, slider30, slider31, slider32, slider33, slider34, slider35, slider36, slider37, slider38, slider39, slider40, slider41, slider42, slider43, slider44, slider45, slider46, slider47, slider48, slider49, slider50, slider51, slider52, slider53, slider54, slider55, slider56, slider57, slider58],
+    () => [ slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12, slider13, slider14, slider15, slider16, slider17, slider18, slider19, slider20, slider21, slider22, slider23, slider24, slider25, slider26, slider27, slider28, slider29, slider30, slider31, slider32, slider33, slider34, slider35, slider36, slider37, slider38, slider39, slider40, slider41, slider42, slider43, slider44, slider45, slider46, slider47, slider48, slider49, slider50, slider51, slider52, slider53, slider54, slider55, slider56, slider57],
     []
   );
 
@@ -217,7 +221,7 @@ export default function TrustedBy({
           >
             <div
               ref={sliderRef}
-              className="slider-track flex items-center gap-10 transition-none"
+              className="slider-track flex items-center gap-20 transition-none"
             >
               {/* Triple the images to create a more seamless continuous loop */}
               {[...sliderImages, ...sliderImages, ...sliderImages].map(
@@ -230,12 +234,12 @@ export default function TrustedBy({
                           (index % sliderImages.length) + 1
                         }`}
                         className="object-contain h-auto w-auto "
-                        width={2500}
+                        width={500}
                         height={2500}
                         quality={100}
                         priority={index < 5 ? true : false}
                         loading={index < 5 ? "eager" : "lazy"}
-                        sizes="2500px"
+                        sizes="500px"
                       />
                     </div>
                   </div>

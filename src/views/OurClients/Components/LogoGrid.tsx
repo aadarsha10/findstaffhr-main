@@ -59,10 +59,79 @@ import slider54 from "@/assets/LandingPage/TrustedBy/slider54.png";
 import slider55 from "@/assets/LandingPage/TrustedBy/slider55.png";
 import slider56 from "@/assets/LandingPage/TrustedBy/slider56.png";
 import slider57 from "@/assets/LandingPage/TrustedBy/slider57.png";
+
 import slider58 from "@/assets/LandingPage/TrustedBy/slider58.png";
+import slider59 from "@/assets/LandingPage/TrustedBy/slider59.png";
+import slider60 from "@/assets/LandingPage/TrustedBy/slider60.png";
+import slider61 from "@/assets/LandingPage/TrustedBy/slider61.png";
+import slider62 from "@/assets/LandingPage/TrustedBy/slider62.png";
+import slider63 from "@/assets/LandingPage/TrustedBy/slider63.png";
+import slider64 from "@/assets/LandingPage/TrustedBy/slider64.svg";
+import slider65 from "@/assets/LandingPage/TrustedBy/slider65.png";
+import slider66 from "@/assets/LandingPage/TrustedBy/slider66.png";
+import slider67 from "@/assets/LandingPage/TrustedBy/slider67.png";
+import slider68 from "@/assets/LandingPage/TrustedBy/slider68.svg";
+import slider69 from "@/assets/LandingPage/TrustedBy/slider69.png";
+import slider70 from "@/assets/LandingPage/TrustedBy/slider70.png";
+import slider71 from "@/assets/LandingPage/TrustedBy/slider71.png";
+import slider72 from "@/assets/LandingPage/TrustedBy/slider72.png";
+import slider73 from "@/assets/LandingPage/TrustedBy/slider73.png";
+import slider74 from "@/assets/LandingPage/TrustedBy/slider74.png";
+import slider75 from "@/assets/LandingPage/TrustedBy/slider75.png";
+import slider76 from "@/assets/LandingPage/TrustedBy/slider76.png";
+import slider77 from "@/assets/LandingPage/TrustedBy/slider77.png";
+import slider78 from "@/assets/LandingPage/TrustedBy/slider78.png";
+import slider79 from "@/assets/LandingPage/TrustedBy/slider79.png";
+import slider80 from "@/assets/LandingPage/TrustedBy/slider80.png";
+import slider81 from "@/assets/LandingPage/TrustedBy/slider81.png";
+import slider82 from "@/assets/LandingPage/TrustedBy/slider82.png";
+import slider83 from "@/assets/LandingPage/TrustedBy/slider83.png";
+import slider84 from "@/assets/LandingPage/TrustedBy/slider84.png";
+import slider85 from "@/assets/LandingPage/TrustedBy/slider85.png";
+import slider86 from "@/assets/LandingPage/TrustedBy/slider86.jpeg";
+import slider87 from "@/assets/LandingPage/TrustedBy/slider87.jpg";
+import slider88 from "@/assets/LandingPage/TrustedBy/slider88.png";
+import slider89 from "@/assets/LandingPage/TrustedBy/slider89.png";
+import slider90 from "@/assets/LandingPage/TrustedBy/slider90.png";
+import slider91 from "@/assets/LandingPage/TrustedBy/slider91.png";
+import slider92 from "@/assets/LandingPage/TrustedBy/slider92.png";
 
 export default function LogoGrid() {
   const logos = [
+    { id: 59, src: slider59, alt: "Partner 59" },
+    { id: 60, src: slider60, alt: "Partner 60" },
+    { id: 61, src: slider61, alt: "Partner 61" },
+    { id: 62, src: slider62, alt: "Partner 62" },
+    { id: 63, src: slider63, alt: "Partner 63" },
+    { id: 64, src: slider64, alt: "Partner 64" },
+    { id: 65, src: slider65, alt: "Partner 65" },
+    { id: 66, src: slider66, alt: "Partner 66" },
+    { id: 67, src: slider67, alt: "Partner 67" },
+    { id: 68, src: slider68, alt: "Partner 68" },
+    { id: 69, src: slider69, alt: "Partner 69" },
+    { id: 70, src: slider70, alt: "Partner 70" },
+    { id: 71, src: slider71, alt: "Partner 71" },
+    { id: 72, src: slider72, alt: "Partner 72" },
+    { id: 73, src: slider73, alt: "Partner 73" },
+    { id: 74, src: slider74, alt: "Partner 74" },
+    { id: 75, src: slider75, alt: "Partner 75" },
+    { id: 76, src: slider76, alt: "Partner 76" },
+    { id: 77, src: slider77, alt: "Partner 77" },
+    { id: 78, src: slider78, alt: "Partner 78" },
+    { id: 79, src: slider79, alt: "Partner 79" },
+    { id: 80, src: slider80, alt: "Partner 80" },
+    { id: 81, src: slider81, alt: "Partner 81" },
+    { id: 82, src: slider82, alt: "Partner 82" },
+    { id: 83, src: slider83, alt: "Partner 83" },
+    { id: 84, src: slider84, alt: "Partner 84" },
+    { id: 85, src: slider85, alt: "Partner 85" },
+    { id: 86, src: slider86, alt: "Partner 86" },
+    { id: 87, src: slider87, alt: "Partner 87" },
+    { id: 88, src: slider88, alt: "Partner 88" },
+    { id: 89, src: slider89, alt: "Partner 89" },
+    { id: 90, src: slider90, alt: "Partner 90" },
+    { id: 91, src: slider91, alt: "Partner 91" },
+    { id: 92, src: slider92, alt: "Partner 92" },
     { id: 1, src: slider1, alt: "Partner 1" },
     { id: 2, src: slider2, alt: "Partner 2" },
     { id: 3, src: slider3, alt: "Partner 3" },

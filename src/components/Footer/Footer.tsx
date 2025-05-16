@@ -71,7 +71,7 @@ const contactInfo = [
     items: ["Basundhara-3, Kathmandu"],
   },
   {
-    heading: "Phone / Address",
+    heading: "Phone",
     icon: Phone,
     items: ["+977-1-4961807"],
   },

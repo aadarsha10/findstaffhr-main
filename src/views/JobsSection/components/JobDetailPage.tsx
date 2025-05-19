@@ -1,9 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Global from "@/assets/Services-assets/global.svg";
-import Money from "@/assets/Services-assets/money-3.svg";
 import Clock from "@/assets/Services-assets/clock.svg";
 import People from "@/assets/Services-assets/people.svg";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
@@ -69,7 +68,7 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
   const similarJobs = jobsData.filter((j) => j.id !== job.id);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
-
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   // Adding CSS to hide scrollbar but keep functionality
   React.useEffect(() => {
@@ -90,16 +89,26 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
     };
   }, []);
 
-  const closeApplicationModal = () => {
+  // Memoize modal handlers to prevent unnecessary re-renders
+  const closeApplicationModal = useCallback(() => {
     setIsApplicationModalOpen(false);
-  };
+  }, []);
   
-  const openApplicationModal = () => {
+  const openApplicationModal = useCallback(() => {
     setIsApplicationModalOpen(true);
-  };
+  }, []);
+
+  const toggleImageModal = useCallback(() => {
+    setIsImageModalOpen(prev => !prev);
+  }, []);
+
+  // Prevent propagation when clicking the modal content
+  const handleModalContentClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+  }, []);
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 md:px-6 py-8 font-primary">
+    <div className="container mx-auto max-w-6xl px-4 md:px-6 py-8 font-primary">
       <div className="mb-6">
         <Breadcrumb
           items={[
@@ -110,14 +119,19 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
         />
       </div>
 
-      <div className="bg-white  overflow-hidden">
+      <div className="bg-white overflow-hidden">
         {/* Job header */}
-        <div className="w-full h-[250px] relative">
+        <div 
+          className="w-full h-[250px] relative cursor-pointer"
+          onClick={toggleImageModal}
+          aria-label="Click to view larger image"
+        >
           <Image
             src={job.imageUrl}
             alt={`${job.company} cover`}
             className="w-full h-full object-cover rounded-2xl shadow-md"
             layout="fill"
+            priority
           />
         </div>
 
@@ -150,14 +164,7 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
                   Location
                 </span>
               </div>
-              <div className="flex flex-col items-start">
-                <p className="text-primary-balck text-base font-medium">
-                  {job.salary}
-                </p>
-                <span className="text-[#475569] text-sm font-normal">
-                  Salary
-                </span>
-              </div>
+             
             </div>
             <div className="flex items-center justify-center mt-4 md:mt-0">
               <Button
@@ -277,16 +284,7 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
                             {similarJob.location}
                           </span>
                         </div>
-                        <div className="flex items-center gap-2 mt-1">
-                          <Image
-                            src={Money}
-                            alt="money"
-                            className="h-5 w-5 text-gray-500"
-                          />
-                          <span className="text-[#475569] text-base font-normal">
-                            {similarJob.salary}
-                          </span>
-                        </div>
+                      
                         <div className="flex items-center gap-2 mt-1">
                           <Image
                             src={Clock}
@@ -353,6 +351,42 @@ export default function JobDetailPage({ job }: { job: JobDetailProps }) {
         onClose={closeApplicationModal} 
         job={job}
       />
+
+      {/* Image Modal - Using Portal would be better but keeping it simple */}
+      {isImageModalOpen && (
+        <div 
+          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+          onClick={toggleImageModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] w-full h-full"
+            onClick={handleModalContentClick}
+          >
+            <button
+              onClick={toggleImageModal}
+              className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 z-10 hover:bg-black/70 transition-colors"
+              aria-label="Close image preview"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <div className="relative w-full h-full">
+              <Image
+                src={job.imageUrl}
+                alt={`${job.company} cover full view`}
+                className="object-contain w-full h-full"
+                layout="fill"
+                quality={100}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Global from "@/assets/Services-assets/global.svg";
-import Money from "@/assets/Services-assets/money-3.svg";
+
 import Clock from "@/assets/Services-assets/clock.svg";
 import People from "@/assets/Services-assets/people.svg";
 import Image from "next/image";
@@ -41,16 +41,7 @@ export default function JobListingSection() {
                       {jobData.location}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={Money}
-                      alt="money"
-                      className="h-5 w-5 text-gray-500"
-                    />
-                    <span className="text-[#475569] text-base font-normal">
-                      {jobData.salary}
-                    </span>
-                  </div>
+                
                   <div className="flex items-center gap-2">
                     <Image
                       src={Clock}

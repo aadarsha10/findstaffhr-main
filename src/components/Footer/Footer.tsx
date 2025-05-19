@@ -9,7 +9,7 @@ import Vector from "../../assets/Footer/Vector.svg";
 import Logo2 from "../../assets/Footer/logo2.png";
 import Certificate from "../../assets/Footer/certification.jpg";
 import Iaf from "../../assets/Footer/Iaf.png";
-
+import { FaWhatsapp } from "react-icons/fa";
 // Social media links data
 const socialLinks = [
   {
@@ -61,33 +61,34 @@ const sectorLinks = [
 // Contact information
 const contactInfo = [
   {
-    heading: null,
+
     icon: "",
     items: ["Aarohi HR Solutions (P) Ltd."],
   },
   {
-    heading: "Address",
+    
     icon: MapPin,
     items: ["Basundhara-3, Kathmandu"],
   },
   {
-    heading: "Phone",
+
     icon: Phone,
-    items: ["+977-1-4961807"],
+    items: ["+977-1-4961807", "+977-1-4962925"],
   },
  
   {
-    heading: "Fax",
     icon: Printer,
     items: ["+977-1-4962925"],
   },
   { 
-    heading: "Email", 
     icon: Mail, 
     items: ["info@aarohihrsolutions.com"] 
   },
   {
-    heading: "Working Hours",
+    icon: FaWhatsapp,
+    items: ["+974-70075850(Qatar)", "+977-9802063773(Nepal)"],
+  },
+  {
     icon: Clock,
     items: ["Sunday to Friday | 9:00 AM – 6:00 PM (NST)"],
   },
@@ -114,7 +115,7 @@ export default function Footer() {
         {/* Main Content - Restructured */}
         <div className="flex flex-col md:flex-row w-full gap-10 md:gap-16 lg:gap-20">
           {/* Logo and description section - Now at top */}
-          <div className="w-full">
+          <div className="w-full md:w-2/3">
             <div className="flex flex-col items-start">
               <Link href="/">
                 <Image
@@ -158,7 +159,7 @@ export default function Footer() {
           </div>
 
           {/* Links grid section - Now at bottom with increased gap */}
-          <div className="w-full">
+          <div className="w-full md:w-4/5">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {/* Company */}
               <div>
@@ -205,19 +206,15 @@ export default function Footer() {
                 </h3>
                 <div className="text-xs md:text-sm text-white space-y-6">
                   {contactInfo.map((section, index) => (
-                    <div key={index} className="mb-2">
-                      {section.heading && (
-                        <div className="font-bold text-gray-100 flex items-center gap-2 mb-1">
-                          {section.icon && <section.icon size={16} />}
-                          <p>{section.heading}</p>
-                        </div>
-                      )}
-                      {section.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="text-gray-200 flex items-center gap-2 ">
-                          {itemIndex === 0 && !section.heading && section.icon && <section.icon size={16} />}
-                          <p>{item}</p>
-                        </div>
-                      ))}
+                    <div key={index} className="mb-2 flex items-center gap-2">
+                      {section.icon && <section.icon className="text-white min-w-6 min-h-6 mt-0.5" size={16} />}
+                      <div>
+                        {section.items.map((item, itemIndex) => (
+                          <p key={itemIndex} className="text-xs md:text-sm text-white">
+                            {item}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>

@@ -9,7 +9,8 @@ export default function OurStory() {
       <header className="text-start flex flex-col items-start justify-start gap-2 mb-24">
         <h2 className="text-primary-gray text-lg font-semibold">Our Story</h2>
         <h1 className="text-primary  text-start font-normal text-3xl sm:text-4xl md:text-5xl lg:text-5xl max-w-5xl mt-16 md:mt-0">
-          From Nepal to{" "}
+         <div className="flex items-center gap-2">
+         <span> From Nepal to</span>{" "}
           <HighlightText
             className="font-semibold px-1 sm:px-2 md:px-4"
             highlightColor="bg-tertiary-green"
@@ -18,12 +19,13 @@ export default function OurStory() {
           >
             the World
           </HighlightText>{" "}
+         </div>
           <br />
-          <span className="sm:hidden mt-2">
+          <span className="hidden  md:block -mt-10">
             {" "}
             Connecting Talent with opportunity
           </span>
-          <span className="hidden sm:inline mt-2">
+          <span className="block md:hidden -mt-10 ">
             {" "}
             Connecting Talent with opportunity
           </span>
